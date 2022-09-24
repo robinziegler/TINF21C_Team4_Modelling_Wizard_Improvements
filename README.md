@@ -8,12 +8,12 @@ Primär soll in diesem Projekt nach einer fundierten Testphase und Usability-Ana
 verbessert und Fehler im Programm identifiziert und korrigiert werden.
 
 # Collaborators
-- [Dana Frey] https://github.com/DanaFrey
-- [Fabian Kreuzer] https://github.com/Fabiankreuzer
-- [Nils Hoffmann] https://github.com/HoffmannNils
-- [Maximilian Trumpp] https://github.com/maximiliantrumpp
-- [Michael Grote] https://github.com/michi3214
-- [Robin Ziegler] https://github.com/robinziegler
+- [Dana Frey]https://github.com/DanaFrey
+- [Fabian Kreuzer]https://github.com/Fabiankreuzer
+- [Nils Hoffmann]https://github.com/HoffmannNils
+- [Maximilian Trumpp]https://github.com/maximiliantrumpp
+- [Michael Grote]https://github.com/michi3214
+- [Robin Ziegler]https://github.com/robinziegler
 
 
 # Tasks
