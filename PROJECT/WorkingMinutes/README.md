@@ -1,1 +1,1 @@
-Link to WorkingMinutes: [Here](https://github.com/H4CK3R-01/TINF20C_ModellingWizard_Devices/issues/4)
+Link to WorkingMinutes: [Here](https://github.com/robinziegler/TINF21C_Team4_Modelling_Wizard_Improvements/issues/3)
