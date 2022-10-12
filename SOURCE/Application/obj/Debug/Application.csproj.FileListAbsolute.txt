@@ -1,0 +1,43 @@
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\Application.exe.config
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\Application.exe
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\Application.pdb
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\ModellingWizard.dll
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\SevenZipSharp.dll
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\AML.Engine.dll
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\LumenWorks.Framework.IO.dll
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\AML.Editor.PluginContracts.dll
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\ModellingWizard.pdb
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\ModellingWizard.dll.config
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\AML.Engine.xml
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\LumenWorks.Framework.IO.xml
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\bin\Debug\AML.Editor.PluginContracts.xml
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\obj\Debug\Application.csproj.AssemblyReference.cache
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\obj\Debug\App.Form1.resources
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\obj\Debug\Application.Properties.Resources.resources
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\obj\Debug\Application.csproj.GenerateResource.cache
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\obj\Debug\Application.csproj.CoreCompileInputs.cache
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\obj\Debug\Application.csproj.CopyComplete
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\obj\Debug\Application.exe
+C:\xsensors\TINF20C_ModellingWizard_Devices\SOURCE\Application\obj\Debug\Application.pdb
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\ModellingWizard.dll
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\SevenZipSharp.dll
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\AML.Engine.dll
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\LumenWorks.Framework.IO.dll
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\AML.Editor.PluginContracts.dll
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\ModellingWizard.pdb
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\ModellingWizard.dll.config
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\AML.Engine.xml
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\LumenWorks.Framework.IO.xml
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\AML.Editor.PluginContracts.xml
+C:\xsensors\Modelling Wizard\SOURCE\Application\obj\Debug\Application.csproj.AssemblyReference.cache
+C:\xsensors\Modelling Wizard\SOURCE\Application\obj\Debug\App.Form1.resources
+C:\xsensors\Modelling Wizard\SOURCE\Application\obj\Debug\Application.Properties.Resources.resources
+C:\xsensors\Modelling Wizard\SOURCE\Application\obj\Debug\Application.csproj.GenerateResource.cache
+C:\xsensors\Modelling Wizard\SOURCE\Application\obj\Debug\Application.csproj.CoreCompileInputs.cache
+C:\xsensors\Modelling Wizard\SOURCE\Application\obj\Debug\Application.csproj.CopyComplete
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\Modelling Wizard +.exe.config
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\Modelling Wizard +.exe
+C:\xsensors\Modelling Wizard\SOURCE\Application\bin\Debug\Modelling Wizard +.pdb
+C:\xsensors\Modelling Wizard\SOURCE\Application\obj\Debug\Modelling Wizard +.exe
+C:\xsensors\Modelling Wizard\SOURCE\Application\obj\Debug\Modelling Wizard +.pdb
+C:\xsensors\Modelling Wizard\SOURCE\Application\obj\Debug\Application.csproj.SuggestedBindingRedirects.cache
