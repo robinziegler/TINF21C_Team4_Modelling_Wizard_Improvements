@@ -7,6 +7,7 @@ The primary goal of this project is to improve the GUI after a thorough test pha
 
 # Collaborators
 - [Dana Frey](https://github.com/DanaFrey)
+- Sophie Kirschner (https://github.com/sophiekirschner)
 - [Fabian Kreuzer](https://github.com/Fabiankreuzer)
 - [Nils Hoffmann](https://github.com/HoffmannNils)
 - [Maximilian Trumpp](https://github.com/maximiliantrumpp)
