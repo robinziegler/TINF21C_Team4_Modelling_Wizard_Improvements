@@ -5,6 +5,7 @@
     x:Class="ModellingWizard.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls = "using:CommunityToolkit.WinUI.UI.Controls"
     xmlns:local="using:ModellingWizard"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -19,20 +20,19 @@
         <MenuBar>
             <MenuBarItem Title="File">
                 <MenuFlyoutItem Text="New"/>
-                <MenuFlyoutItem Text="Open..."/>
+                <MenuFlyoutItem Text="Open"/>
                 <MenuFlyoutItem Text="Save"/>
                 <MenuFlyoutItem Text="Exit"/>
             </MenuBarItem>
 
-            <MenuBarItem Title="Edit">
-                <MenuFlyoutItem Text="Undo"/>
-                <MenuFlyoutItem Text="Cut"/>
-                <MenuFlyoutItem Text="Copy"/>
-                <MenuFlyoutItem Text="Paste"/>
+            <MenuBarItem Title="Libaries">
+                <MenuFlyoutItem Text="Add Libary"/>
+                <MenuFlyoutSeparator/>
             </MenuBarItem>
 
             <MenuBarItem Title="Help">
                 <MenuFlyoutItem Text="About"/>
+                <MenuFlyoutItem Text="Manual"/>
             </MenuBarItem>
         </MenuBar>
         
@@ -45,6 +45,7 @@
             </NavigationView.MenuItems>
             <Frame x:Name="ContentFrame"/>
         </NavigationView>
+        
     </Grid>
    
 </Window>
