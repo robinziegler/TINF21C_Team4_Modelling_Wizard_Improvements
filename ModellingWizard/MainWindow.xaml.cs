@@ -58,7 +58,8 @@ namespace ModellingWizard
             }
             ContentFrame.Navigate(
                 Type.GetType(item.Tag.ToString()), item.Content);
-            NavigationView.Header = item.Content;
+            //NavigationView.Header = item.Content;
+            NavigationView.Header = null;
             NavigationView.SelectedItem = item;
         }
     }

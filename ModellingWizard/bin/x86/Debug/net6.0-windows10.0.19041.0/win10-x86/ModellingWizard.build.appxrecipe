@@ -10,34 +10,34 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>87cfa8d2-89c6-4b49-8063-cf02f0212854</PackageIdentityName>
     <PackageIdentityPublisher>CN=m.trumpp</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppX</LayoutDir>
+    <LayoutDir>D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppxManifest.xml">
+    <AppXManifest Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\resources.pri">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.runtimeconfig.json">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.runtimeconfig.json">
       <PackagePath>ModellingWizard.runtimeconfig.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.dll">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.dll">
       <PackagePath>ModellingWizard.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\apphost.exe">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\apphost.exe">
       <PackagePath>ModellingWizard.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.deps.json">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.deps.json">
       <PackagePath>ModellingWizard.deps.json</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\microsoft.netcore.app.runtime.win-x86\6.0.14\runtimes\win-x86\lib\net6.0\Microsoft.CSharp.dll">
@@ -715,6 +715,30 @@
     <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.28\lib\net6.0\WinRT.Runtime.dll">
       <PackagePath>WinRT.Runtime.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.common\8.1.0\lib\net6.0\CommunityToolkit.Common.dll">
+      <PackagePath>CommunityToolkit.Common.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.diagnostics\8.1.0\lib\net6.0\CommunityToolkit.Diagnostics.dll">
+      <PackagePath>CommunityToolkit.Diagnostics.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.highperformance\8.1.0\lib\net6.0\CommunityToolkit.HighPerformance.dll">
+      <PackagePath>CommunityToolkit.HighPerformance.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.mvvm\8.1.0\lib\net6.0\CommunityToolkit.Mvvm.dll">
+      <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.dll">
+      <PackagePath>CommunityToolkit.WinUI.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.dll">
+      <PackagePath>CommunityToolkit.WinUI.UI.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui.controls.datagrid\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.DataGrid.dll">
+      <PackagePath>CommunityToolkit.WinUI.UI.Controls.DataGrid.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui.controls.primitives\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.Primitives.dll">
+      <PackagePath>CommunityToolkit.WinUI.UI.Controls.Primitives.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\microsoft.windowsappsdk\1.2.230217.4\lib\net6.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
       <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
     </AppxPackagedFile>
@@ -760,25 +784,37 @@
     <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\microsoft.windowsappsdk\1.2.230217.4\runtimes\win10-x86\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.pri">
+      <PackagePath>CommunityToolkit.WinUI.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.pri">
+      <PackagePath>CommunityToolkit.WinUI.UI.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui.controls.datagrid\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.DataGrid.pri">
+      <PackagePath>CommunityToolkit.WinUI.UI.Controls.DataGrid.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui.controls.primitives\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.Primitives.pri">
+      <PackagePath>CommunityToolkit.WinUI.UI.Controls.Primitives.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

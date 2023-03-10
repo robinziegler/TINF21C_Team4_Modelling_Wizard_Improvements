@@ -10,14 +10,14 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>87cfa8d2-89c6-4b49-8063-cf02f0212854</PackageIdentityName>
     <PackageIdentityPublisher>CN=m.trumpp</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppX</LayoutDir>
+    <LayoutDir>D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppX</LayoutDir>
     <RegisteredManifestChecksum>03CEA5B05E5745ADB9838BDA49B73151D56EA73A7585B85DB44A8A85D0D5BFCD</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>87cfa8d2-89c6-4b49-8063-cf02f0212854_1.0.0.0_x86__ne609dwsf6sf2</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>87cfa8d2-89c6-4b49-8063-cf02f0212854_ne609dwsf6sf2!App</RegisteredUserModeAppID>
@@ -26,32 +26,32 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppxManifest.xml">
+    <AppXManifest Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-03-10T08:44:15.787</Modified>
+      <Modified>2023-03-10T14:42:34.473</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\resources.pri">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-03-10T08:44:15.580</Modified>
+      <Modified>2023-03-10T14:42:34.253</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.runtimeconfig.json">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.runtimeconfig.json">
       <PackagePath>ModellingWizard.runtimeconfig.json</PackagePath>
-      <Modified>2023-03-09T14:48:50.011</Modified>
+      <Modified>2023-03-10T12:58:55.070</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.dll">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.dll">
       <PackagePath>ModellingWizard.dll</PackagePath>
-      <Modified>2023-03-10T08:44:15.400</Modified>
+      <Modified>2023-03-10T14:42:34.077</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\apphost.exe">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\apphost.exe">
       <PackagePath>ModellingWizard.exe</PackagePath>
-      <Modified>2023-03-10T08:44:15.427</Modified>
+      <Modified>2023-03-10T14:42:34.101</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.deps.json">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.deps.json">
       <PackagePath>ModellingWizard.deps.json</PackagePath>
-      <Modified>2023-03-09T14:48:50.005</Modified>
+      <Modified>2023-03-10T12:58:54.991</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\microsoft.netcore.app.runtime.win-x86\6.0.14\runtimes\win-x86\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -953,6 +953,38 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2022-11-16T01:34:42.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.common\8.1.0\lib\net6.0\CommunityToolkit.Common.dll">
+      <PackagePath>CommunityToolkit.Common.dll</PackagePath>
+      <Modified>2023-01-17T22:56:08.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.diagnostics\8.1.0\lib\net6.0\CommunityToolkit.Diagnostics.dll">
+      <PackagePath>CommunityToolkit.Diagnostics.dll</PackagePath>
+      <Modified>2023-01-17T22:56:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.highperformance\8.1.0\lib\net6.0\CommunityToolkit.HighPerformance.dll">
+      <PackagePath>CommunityToolkit.HighPerformance.dll</PackagePath>
+      <Modified>2023-01-17T22:56:12.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.mvvm\8.1.0\lib\net6.0\CommunityToolkit.Mvvm.dll">
+      <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
+      <Modified>2023-01-17T22:56:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.dll">
+      <PackagePath>CommunityToolkit.WinUI.dll</PackagePath>
+      <Modified>2021-11-18T21:56:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.dll">
+      <PackagePath>CommunityToolkit.WinUI.UI.dll</PackagePath>
+      <Modified>2021-11-18T21:56:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui.controls.datagrid\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.DataGrid.dll">
+      <PackagePath>CommunityToolkit.WinUI.UI.Controls.DataGrid.dll</PackagePath>
+      <Modified>2021-11-18T21:56:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui.controls.primitives\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.Primitives.dll">
+      <PackagePath>CommunityToolkit.WinUI.UI.Controls.Primitives.dll</PackagePath>
+      <Modified>2021-11-18T21:57:02.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\microsoft.windowsappsdk\1.2.230217.4\lib\net6.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
       <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
       <Modified>2023-01-13T03:11:06.000</Modified>
@@ -1013,31 +1045,47 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2023-02-10T22:55:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.pri">
+      <PackagePath>CommunityToolkit.WinUI.pri</PackagePath>
+      <Modified>2021-11-18T21:50:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.pri">
+      <PackagePath>CommunityToolkit.WinUI.UI.pri</PackagePath>
+      <Modified>2021-11-18T21:50:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui.controls.datagrid\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.DataGrid.pri">
+      <PackagePath>CommunityToolkit.WinUI.UI.Controls.DataGrid.pri</PackagePath>
+      <Modified>2021-11-18T21:49:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\communitytoolkit.winui.ui.controls.primitives\7.1.2\lib\net5.0-windows10.0.18362\CommunityToolkit.WinUI.UI.Controls.Primitives.pri">
+      <PackagePath>CommunityToolkit.WinUI.UI.Controls.Primitives.pri</PackagePath>
+      <Modified>2021-11-18T21:50:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2023-01-24T12:06:52.300</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <Modified>2023-01-24T12:06:52.300</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <Modified>2023-01-24T12:06:52.300</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <Modified>2023-01-24T12:06:52.300</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <Modified>2023-01-24T12:06:52.300</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <Modified>2023-01-24T12:06:52.300</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\DHBW\SWE\ModellingWizard-WinUI3\ModellingWizard\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <Modified>2023-01-24T12:06:52.300</Modified>
     </AppxPackagedFile>

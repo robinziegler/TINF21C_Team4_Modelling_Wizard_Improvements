@@ -39,13 +39,12 @@
         <!-- Subpages -->
         <NavigationView x:Name="NavigationView" Grid.Row="1" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" SelectionChanged="NavigationView_SelectionChanged">
             <NavigationView.MenuItems>
-                <NavigationViewItem  Content="Generetic Data" Tag="" IsSelected="True"/>
-                <NavigationViewItem  Content="Interfaces" Tag="" />
-                <NavigationViewItem  Content="Attributes" Tag="" />
+                <NavigationViewItem  Content="Genereic Data" Tag="ModellingWizard.UIs.SubPages.GenericData" IsSelected="True"/>
+                <NavigationViewItem  Content="Interfaces" Tag="ModellingWizard.UIs.SubPages.Interfaces" />
+                <NavigationViewItem  Content="Attachments" Tag="ModellingWizard.UIs.SubPages.Attachments" />
             </NavigationView.MenuItems>
             <Frame x:Name="ContentFrame"/>
         </NavigationView>
-        
     </Grid>
    
 </Window>

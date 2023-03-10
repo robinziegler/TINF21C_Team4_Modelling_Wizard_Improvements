@@ -1,2 +1,5 @@
 App.xbf
 MainWindow.xbf
+UIs\SubPages\Attachments.xbf
+UIs\SubPages\GenericData.xbf
+UIs\SubPages\Interfaces.xbf

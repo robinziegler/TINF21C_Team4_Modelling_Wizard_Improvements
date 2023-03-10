@@ -11,5 +11,14 @@
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="UIs\SubPages\GenericData.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UIs\SubPages\Attachments.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UIs\SubPages\Interfaces.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

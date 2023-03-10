@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Michi\\Source\\Repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj": {}
+    "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Michi\\Source\\Repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj": {
+    "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Michi\\Source\\Repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
+        "projectUniqueName": "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
         "projectName": "ModellingWizard",
-        "projectPath": "C:\\Users\\Michi\\Source\\Repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
-        "packagesPath": "C:\\Users\\Michi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Michi\\Source\\Repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\obj\\",
+        "projectPath": "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
+        "packagesPath": "C:\\Users\\m.trumpp\\.nuget\\packages\\",
+        "outputPath": "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Michi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\Anwendungsdaten\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -66,6 +66,10 @@
               "version": "[7.1.2, )"
             },
             "CommunityToolkit.WinUI.UI": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
+            "CommunityToolkit.WinUI.UI.Controls.DataGrid": {
               "target": "Package",
               "version": "[7.1.2, )"
             },
