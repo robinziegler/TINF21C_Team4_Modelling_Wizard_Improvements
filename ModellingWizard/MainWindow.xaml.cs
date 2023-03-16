@@ -30,6 +30,10 @@ namespace ModellingWizard
         public MainWindow()
         {
             this.InitializeComponent();
+
+            /* start with load stuff */
+            Processes.Libaries.Manager.LoadAvaiableLiabaries();
+
         }
 
         private void myButton_Click(object sender, RoutedEventArgs e)
