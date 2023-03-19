@@ -32,7 +32,7 @@ namespace ModellingWizard
             this.InitializeComponent();
 
             /* start with load stuff */
-            Processes.Libaries.Manager.LoadAvaiableLiabaries();
+            Processes.Libaries.Manager.LoadAvailableLibaries();
 
         }
 

@@ -15,10 +15,12 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Button Content="Add Role Class" Name="AddRoleClassButton" Click="AddRoleClassButton_Click"/>
+        <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition />
@@ -28,7 +30,7 @@
                 
             </TreeView>
         </Grid>
-        <controls:DataGrid Grid.Row="1">
+        <controls:DataGrid Grid.Row="2">
             <controls:DataGrid.Columns>
                 <controls:DataGridTextColumn Header="Atrribute" />
                 <controls:DataGridTextColumn Header="Value"/>

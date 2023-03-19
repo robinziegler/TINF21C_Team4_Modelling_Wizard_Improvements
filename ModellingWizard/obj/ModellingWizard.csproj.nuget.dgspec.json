@@ -45,6 +45,14 @@
         "net6.0-windows10.0.19041": {
           "targetAlias": "net6.0-windows10.0.19041.0",
           "dependencies": {
+            "Aml.Editor.Plugin.Contract": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Aml.Engine": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "CommunityToolkit.Common": {
               "target": "Package",
               "version": "[8.1.0, )"

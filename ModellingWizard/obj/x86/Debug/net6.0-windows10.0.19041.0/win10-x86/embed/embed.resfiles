@@ -1,5 +1,6 @@
 App.xbf
 MainWindow.xbf
+UIs\ModalViews\GenericData\AddRoleClass.xbf
 UIs\SubPages\Attachments.xbf
 UIs\SubPages\GenericData.xbf
 UIs\SubPages\Interfaces.xbf

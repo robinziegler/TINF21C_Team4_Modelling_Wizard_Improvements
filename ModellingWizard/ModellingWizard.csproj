@@ -13,6 +13,8 @@
     <DefaultLanguage>DE</DefaultLanguage>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Resources\Libaries\AutomationComponentLibrary_v1_0_0.aml" />
+    <None Remove="UIs\ModalViews\GenericData\AddRoleClass.xaml" />
     <None Remove="UIs\SubPages\Attachments.xaml" />
     <None Remove="UIs\SubPages\GenericData.xaml" />
     <None Remove="UIs\SubPages\Interfaces.xaml" />
@@ -26,9 +28,14 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Resources\Libaries\AutomationComponentLibrary_v1_0_0.aml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aml.Editor.Plugin.Contract" Version="4.0.2" />
+    <PackageReference Include="Aml.Engine" Version="3.1.1" />
     <PackageReference Include="CommunityToolkit.Common" Version="8.1.0" />
     <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.1.0" />
     <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.1.0" />
@@ -51,6 +58,19 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="UIs\SubPages\GenericData.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -66,7 +86,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Libaries\" />
+    <Folder Include="UIs\ModalViews\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="UIs\ModalViews\GenericData\AddRoleClass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!-- 

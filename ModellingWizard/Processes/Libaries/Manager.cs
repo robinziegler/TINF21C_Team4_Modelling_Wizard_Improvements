@@ -8,9 +8,9 @@ namespace ModellingWizard.Processes.Libaries
 {
     class Manager
     {
-        public static void LoadAvaiableLiabaries()
+        public static void LoadAvailableLibaries()
         {
-
+            Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0_Full, "AutomationComponentLibrary_v1_0_0_Full");
         }
     }
 }
