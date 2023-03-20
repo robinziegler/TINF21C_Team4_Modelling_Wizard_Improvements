@@ -26,8 +26,18 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Libaries">
-                <MenuFlyoutItem Text="Add Libary"/>
+                <MenuFlyoutItem Name="ChangeLibary_AutomationComponentLibrary_v1_0_0"                    Text="AutomationComponentLibrary_v1_0_0"                 Click="ChangeLibary_AutomationComponentLibrary_v1_0_0_Click" />
+                <MenuFlyoutItem Name="ChangeLibary_AutomationComponentLibrary_v1_0_0_CAEX3_BETA"         Text="AutomationComponentLibrary_v1_0_0_CAEX3_BETA"      Click="ChangeLibary_AutomationComponentLibrary_v1_0_0_CAEX3_BETA_Click" />
+                <MenuFlyoutItem Name="ChangeLibary_AutomationComponentLibrary_v1_0_0_Full"               Text="AutomationComponentLibrary_v1_0_0_Full"            Click="ChangeLibary_AutomationComponentLibrary_v1_0_0_Full_Click" />
+                <MenuFlyoutItem Name="ChangeLibary_AutomationComponentLibrary_v1_0_0_Full_CAEX3_BETA"    Text="AutomationComponentLibrary_v1_0_0_Full_CAEX3_BETA" Click="ChangeLibary_AutomationComponentLibrary_v1_0_0_Full_CAEX3_BETA_Click" />
+                <MenuFlyoutItem Name="ChangeLibary_ElectricConnectorLibrary_v1_0_0"                      Text="ElectricConnectorLibrary_v1_0_0"                   Click="ChangeLibary_ElectricConnectorLibrary_v1_0_0_Click" />
+                <MenuFlyoutItem Name="ChangeLibary_IndustrialSensorLibrary_v1_0_0"                       Text="IndustrialSensorLibrary_v1_0_0"                    Click="ChangeLibary_IndustrialSensorLibrary_v1_0_0_Click" />
+                <MenuFlyoutItem Name="ChangeLibary_AddLibary"                                            Text="Add Libary"                                        Click="ChangeLibary_AddLibary_Click"/>
                 <MenuFlyoutSeparator/>
+            </MenuBarItem>
+
+            <MenuBarItem Title="Options">
+                <MenuFlyoutItem Name="AppMode" Text="Advanced Mode" Click="AppMode_Click"/>
             </MenuBarItem>
 
             <MenuBarItem Title="Help">

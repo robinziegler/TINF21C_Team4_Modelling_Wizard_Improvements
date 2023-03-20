@@ -14,30 +14,32 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Button Content="Add Role Class" Name="AddRoleClassButton" Click="AddRoleClassButton_Click"/>
-        <Grid Grid.Row="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <TextBlock Text="Added gernerics"/>
-            <TreeView>
-                
+            <Grid Background="White">
+                <TextBlock Text="Added gernerics" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <Button Content="Add Role Class" Name="AddRoleClassButton" Click="AddRoleClassButton_Click" HorizontalAlignment="Right" Visibility="Visible" Margin="0,0,10,0"/>
+            </Grid>
+
+            <TreeView Grid.Row="1">
+
             </TreeView>
         </Grid>
-        <controls:DataGrid Grid.Row="2">
+        <controls:DataGrid Grid.Column="1">
             <controls:DataGrid.Columns>
-                <controls:DataGridTextColumn Header="Atrribute" />
+                <controls:DataGridTextColumn Header="Atrribute"/>
                 <controls:DataGridTextColumn Header="Value"/>
-                <controls:DataGridTextColumn Header="Default"/>
-                <controls:DataGridTextColumn Header="Units"/>
-                <controls:DataGridTextColumn Header="DataType"/>
-                <controls:DataGridComboBoxColumn Header="Semantic"/>
+                <controls:DataGridTextColumn Header="Default" x:Name="DefaultGrid"/>
+                <controls:DataGridTextColumn Header="Units" x:Name="UnitsGrid"/>
+                <controls:DataGridTextColumn Header="DataType" x:Name="DataTypeGrid"/>
+                <controls:DataGridComboBoxColumn Header="Semantic" x:Name="SemanticGrid"/>
             </controls:DataGrid.Columns>
         </controls:DataGrid>
     </Grid>

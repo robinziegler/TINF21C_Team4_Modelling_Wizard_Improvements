@@ -31,7 +31,7 @@ namespace ModellingWizard.UIs.ModalViews.GenericData
         public AddRoleClass()
         {
             this.InitializeComponent();
-            Processes.Libaries.Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0_Full, "Testt").SubObjects.ForEach(x =>
+            Objects.Instances.RoleClassLib.SubObjects.ForEach(x =>
             {
                 TreeViewNode t = new() { Content = x.Name };
                 x.SubObjects.ForEach(y =>

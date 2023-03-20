@@ -16,6 +16,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System.Threading.Tasks;
+using ModellingWizard.Objects;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -46,10 +47,25 @@ namespace ModellingWizard.UIs.SubPages
             dialog.DefaultButton = ContentDialogButton.Primary;
             dialog.Content = Win;
 
-            var result = await dialog.ShowAsync();
+            ContentDialogResult result = await dialog.ShowAsync();
+            if(result == ContentDialogResult.Primary)
+            {
+                Win.RoleClassTreeView.SelectedItems.Count();
+            }
+        }
 
-            Win.RoleClassTreeView.SelectedItems.Count();
-            Console.WriteLine();
+        public void SetMode(bool Expert)
+        {
+            Visibility visibility = Expert ? Visibility.Visible : Visibility.Collapsed;
+            /* Settings */
+            //AddRoleClassButton.Visibility = visibility;
+
+            /* Table */
+            DefaultGrid.Visibility = visibility;
+            UnitsGrid.Visibility = visibility;
+            DataTypeGrid.Visibility = visibility;
+            SemanticGrid.Visibility = visibility;
+
         }
     }
 }
