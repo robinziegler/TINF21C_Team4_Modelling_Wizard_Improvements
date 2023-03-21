@@ -2577,23 +2577,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\m.trumpp\\.nuget\\packages\\": {},
+    "C:\\Users\\Michi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
+      "projectUniqueName": "C:\\Users\\Michi\\Source\\Repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
       "projectName": "ModellingWizard",
-      "projectPath": "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
-      "packagesPath": "C:\\Users\\m.trumpp\\.nuget\\packages\\",
-      "outputPath": "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\obj\\",
+      "projectPath": "C:\\Users\\Michi\\Source\\Repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
+      "packagesPath": "C:\\Users\\Michi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Michi\\Source\\Repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "U:\\Anwendungsdaten\\NuGet\\NuGet.Config",
+        "C:\\Users\\Michi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
