@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <None Update="App.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </None>
+    <Page Update="UIs\ModalViews\Help_Menu\ManualPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UIs\ModalViews\Attachments\AddAttachment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UIs\ModalViews\GenericData\AddRoleClass.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UIs\SubPages\GenericData.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UIs\SubPages\Attachments.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UIs\SubPages\Interfaces.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

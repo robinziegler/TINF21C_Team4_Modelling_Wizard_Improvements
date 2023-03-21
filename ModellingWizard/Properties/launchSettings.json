@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ModellingWizard (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ModellingWizard (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
