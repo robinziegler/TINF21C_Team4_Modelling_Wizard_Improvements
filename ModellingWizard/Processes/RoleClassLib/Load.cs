@@ -6,18 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModellingWizard.Processes.Libaries
+namespace ModellingWizard.Processes.RoleClassLib
 {
     public class Load
     {
-        public static Objects.Libaries.LibaryFile LoadLib(byte[] binary, string name)
+        public static Objects.Libaries.Libary LoadLib(byte[] binary, string name)
         {
-            Objects.Libaries.LibaryFile Lib = new();
+            Objects.Libaries.Libary Lib = new();
             CAEXDocument doc = CAEXDocument.LoadFromBinary(binary);
             Lib.Name = name;
             foreach (var classLibType in doc.CAEXFile.RoleClassLib)
             {
-                Objects.Libaries.LibaryFile SubLib = new();
+                Objects.Libaries.Libary SubLib = new();
                 SubLib.Name = classLibType.Name;
 
                 foreach (var classLib in classLibType.RoleClass)
@@ -30,9 +30,9 @@ namespace ModellingWizard.Processes.Libaries
             return Lib;
         }
 
-        private static Objects.Libaries.LibaryFile LoadSubLibs(RoleFamilyType input)
+        private static Objects.Libaries.Libary LoadSubLibs(RoleFamilyType input)
         {
-            Objects.Libaries.LibaryFile SubLib = new()
+            Objects.Libaries.Libary SubLib = new()
             {
                 Name = input.Name,
                 Attributes = CheckForAttributes(input)

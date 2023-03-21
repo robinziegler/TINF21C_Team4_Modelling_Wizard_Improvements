@@ -19,10 +19,9 @@
         <!-- Menu at the top -->
         <MenuBar>
             <MenuBarItem Title="File">
-                <MenuFlyoutItem Text="New"/>
-                <MenuFlyoutItem Text="Open"/>
-                <MenuFlyoutItem Text="Save"/>
-                <MenuFlyoutItem Text="Exit"/>
+                <MenuFlyoutItem Name="File_New" Text="New" Click="File_New_Click"/>
+                <MenuFlyoutItem Name="File_Open" Text="Open" Click="File_Open_Click"/>
+                <MenuFlyoutItem Name="File_Save" Text="Save" Click="File_Save_Click"/>
             </MenuBarItem>
 
             <MenuBarItem Title="Libaries">
@@ -33,7 +32,6 @@
                 <MenuFlyoutItem Name="ChangeLibary_ElectricConnectorLibrary_v1_0_0"                      Text="ElectricConnectorLibrary_v1_0_0"                   Click="ChangeLibary_ElectricConnectorLibrary_v1_0_0_Click" />
                 <MenuFlyoutItem Name="ChangeLibary_IndustrialSensorLibrary_v1_0_0"                       Text="IndustrialSensorLibrary_v1_0_0"                    Click="ChangeLibary_IndustrialSensorLibrary_v1_0_0_Click" />
                 <MenuFlyoutItem Name="ChangeLibary_AddLibary"                                            Text="Add Libary"                                        Click="ChangeLibary_AddLibary_Click"/>
-                <MenuFlyoutSeparator/>
             </MenuBarItem>
 
             <MenuBarItem Title="Options">
@@ -41,8 +39,8 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Help">
-                <MenuFlyoutItem Text="About"/>
-                <MenuFlyoutItem Text="Manual"/>
+                <MenuFlyoutItem Name="Help_About" Text="About" Click="Help_About_Click"/>
+                <MenuFlyoutItem Name="Help_Manual" Text="Manual" Click="Help_Manual_Click"/>
             </MenuBarItem>
         </MenuBar>
         

@@ -28,9 +28,9 @@
                 <Button Content="Add Role Class" Name="AddRoleClassButton" Click="AddRoleClassButton_Click" HorizontalAlignment="Right" Visibility="Visible" Margin="0,0,10,0"/>
             </Grid>
 
-            <TreeView Grid.Row="1">
-
-            </TreeView>
+            <ListView Grid.Row="1">
+                
+            </ListView>
         </Grid>
         <controls:DataGrid Grid.Column="1">
             <controls:DataGrid.Columns>

@@ -8,11 +8,15 @@ namespace ModellingWizard.Objects
 {
     internal class Instances
     {
-        /* Configuration Data */
-        public static Objects.Libaries.LibaryFile RoleClassLib { get; set; } = Processes.Libaries.Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0_Full, "AutomationComponentLibrary_v1_0_0_Full");
+        /* App Settings */
         public static bool ExpertMode { get; set; } = true;
 
-        /* File Data */
+        /* Configuration Data */
+        public static Objects.Libaries.Libary RoleClassLib { get; set; } = Processes.RoleClassLib.Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0_Full, "AutomationComponentLibrary_v1_0_0_Full");
+        public static Objects.Libaries.Libary InterfacesLib { get; set; } = Processes.RoleClassLib.Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0_Full, "AutomationComponentLibrary_v1_0_0_Full");
 
+        /* File Data */
+        public static Objects.Libaries.Libary Loaded_RoleClass_Data { get; set; }
+        public static Objects.Libaries.Libary Loaded_Interfaces_Data { get; set; }
     }
 }

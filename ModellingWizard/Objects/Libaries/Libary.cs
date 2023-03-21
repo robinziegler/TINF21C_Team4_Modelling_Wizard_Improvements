@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace ModellingWizard.Objects.Libaries
 {
-    public class LibaryFile
+    public class Libary
     {
         public string Name { get; set; }
         public List<LibaryObject> Attributes { get; set; }
-        public List<LibaryFile> SubObjects { get; set; }
+        public List<Libary> SubObjects { get; set; }
 
-        public LibaryFile()
+        public Libary()
         {
             Attributes = new();
             SubObjects = new();
