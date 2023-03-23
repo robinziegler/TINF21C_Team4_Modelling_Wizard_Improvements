@@ -29,6 +29,8 @@ namespace ModellingWizard.UIs.ModalViews.Help_Menu
         public AboutPage()
         {
             this.InitializeComponent();
+            this.Height = 500;
+            this.Width = 500;
         }
     }
 }

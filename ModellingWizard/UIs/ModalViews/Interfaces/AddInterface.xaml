@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid Height="500" Width="500">
         <TreeView Name="InterfaceTreeView" SelectionMode="Multiple" CanDrag="False" x:FieldModifier="public"/>
     </Grid>
 </Page>

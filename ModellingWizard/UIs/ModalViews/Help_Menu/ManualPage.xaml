@@ -12,7 +12,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Width="548" Height="1000">
+    <Grid Height="500" Width="500">
         <controls:WebView2 x:Name="MyWebView2" Source="https://github.com/H4CK3R-01/TINF20C_ModellingWizard_Devices/wiki/6.-User-Manual#table-of-contents" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Height="Auto" Width="Auto" ScrollViewer.IsVerticalRailEnabled="True"/>
     </Grid>
 </Page>
