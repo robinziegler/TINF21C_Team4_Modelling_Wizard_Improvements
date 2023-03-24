@@ -159,6 +159,23 @@
           }
         }
       },
+      "CommunityToolkit.WinUI.UI.Controls.Layout/7.1.2": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.WinUI.UI": "7.1.2",
+          "Microsoft.WindowsAppSDK": "1.0.0"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "CommunityToolkit.WinUI.UI.Controls.Primitives/7.1.2": {
         "type": "package",
         "dependencies": {
@@ -503,6 +520,23 @@
           }
         }
       },
+      "CommunityToolkit.WinUI.UI.Controls.Layout/7.1.2": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.WinUI.UI": "7.1.2",
+          "Microsoft.WindowsAppSDK": "1.0.0"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "CommunityToolkit.WinUI.UI.Controls.Primitives/7.1.2": {
         "type": "package",
         "dependencies": {
@@ -830,6 +864,23 @@
           }
         }
       },
+      "CommunityToolkit.WinUI.UI.Controls.Layout/7.1.2": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.WinUI.UI": "7.1.2",
+          "Microsoft.WindowsAppSDK": "1.0.0"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "CommunityToolkit.WinUI.UI.Controls.Primitives/7.1.2": {
         "type": "package",
         "dependencies": {
@@ -1153,6 +1204,23 @@
         },
         "runtime": {
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
+      "CommunityToolkit.WinUI.UI.Controls.Layout/7.1.2": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.WinUI.UI": "7.1.2",
+          "Microsoft.WindowsAppSDK": "1.0.0"
+        },
+        "compile": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.dll": {
             "related": ".pdb;.pri;.xml"
           }
         }
@@ -1549,6 +1617,28 @@
         "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.xml",
         "lib/net5.0-windows10.0.18362/Design/CommunityToolkit.WinUI.UI.Controls.DataGrid.DesignTools.dll",
         "lib/net5.0-windows10.0.18362/Design/CommunityToolkit.WinUI.UI.Controls.DataGrid.DesignTools.pdb",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "CommunityToolkit.WinUI.UI.Controls.Layout/7.1.2": {
+      "sha512": "FpKo2DdJgREAvttTYhOJTy1ru6ODRG41Da+vMrB7bcqavdbPgSTqYzolLcgvMl2InpIdt+fqn6U6mGQYoV+ksQ==",
+      "type": "package",
+      "path": "communitytoolkit.winui.ui.controls.layout/7.1.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "communitytoolkit.winui.ui.controls.layout.7.1.2.nupkg.sha512",
+        "communitytoolkit.winui.ui.controls.layout.nuspec",
+        "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.dll",
+        "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.pdb",
+        "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.pri",
+        "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.xml",
+        "lib/net5.0-windows10.0.18362/Design/CommunityToolkit.WinUI.UI.Controls.Layout.DesignTools.dll",
+        "lib/net5.0-windows10.0.18362/Design/CommunityToolkit.WinUI.UI.Controls.Layout.DesignTools.pdb",
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
@@ -2571,6 +2661,7 @@
       "CommunityToolkit.WinUI >= 7.1.2",
       "CommunityToolkit.WinUI.UI >= 7.1.2",
       "CommunityToolkit.WinUI.UI.Controls.DataGrid >= 7.1.2",
+      "CommunityToolkit.WinUI.UI.Controls.Layout >= 7.1.2",
       "CommunityToolkit.WinUI.UI.Controls.Primitives >= 7.1.2",
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22621.755",
       "Microsoft.WindowsAppSDK >= 1.2.230217.4"
@@ -2654,6 +2745,10 @@
             "version": "[7.1.2, )"
           },
           "CommunityToolkit.WinUI.UI.Controls.DataGrid": {
+            "target": "Package",
+            "version": "[7.1.2, )"
+          },
+          "CommunityToolkit.WinUI.UI.Controls.Layout": {
             "target": "Package",
             "version": "[7.1.2, )"
           },

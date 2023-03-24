@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fYP0mVnYh8q/1Xwd9EG21tn9ZabF5HOw5pgVDK3T4gXSDZ54rHwQJOJas3GxDUijxsom+OKBYmdtBv+8PO3FYA==",
+  "dgSpecHash": "iChwkGmU7uJ1QaYOWyc6n/oarW41x4o/v+EppSBXf3X0SC5Yrolxj14xiCzPCO5/9xOx3uA30jumwCNLCGdd3g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Michi\\Source\\Repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\Michi\\.nuget\\packages\\communitytoolkit.winui\\7.1.2\\communitytoolkit.winui.7.1.2.nupkg.sha512",
     "C:\\Users\\Michi\\.nuget\\packages\\communitytoolkit.winui.ui\\7.1.2\\communitytoolkit.winui.ui.7.1.2.nupkg.sha512",
     "C:\\Users\\Michi\\.nuget\\packages\\communitytoolkit.winui.ui.controls.datagrid\\7.1.2\\communitytoolkit.winui.ui.controls.datagrid.7.1.2.nupkg.sha512",
+    "C:\\Users\\Michi\\.nuget\\packages\\communitytoolkit.winui.ui.controls.layout\\7.1.2\\communitytoolkit.winui.ui.controls.layout.7.1.2.nupkg.sha512",
     "C:\\Users\\Michi\\.nuget\\packages\\communitytoolkit.winui.ui.controls.primitives\\7.1.2\\communitytoolkit.winui.ui.controls.primitives.7.1.2.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22621.755\\microsoft.windows.sdk.buildtools.10.0.22621.755.nupkg.sha512",
     "C:\\Users\\Michi\\.nuget\\packages\\microsoft.windowsappsdk\\1.2.230217.4\\microsoft.windowsappsdk.1.2.230217.4.nupkg.sha512",

@@ -81,6 +81,10 @@
               "target": "Package",
               "version": "[7.1.2, )"
             },
+            "CommunityToolkit.WinUI.UI.Controls.Layout": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
             "CommunityToolkit.WinUI.UI.Controls.Primitives": {
               "target": "Package",
               "version": "[7.1.2, )"

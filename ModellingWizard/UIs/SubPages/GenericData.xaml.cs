@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation and Contributors.
-// Licensed under the MIT License.
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,19 +15,17 @@ using Microsoft.UI.Xaml.Navigation;
 using System.Threading.Tasks;
 using ModellingWizard.Objects;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
-
 namespace ModellingWizard.UIs.SubPages
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// This is the Generic Data Page
     /// </summary>
     public sealed partial class GenericData : Page
     {
         public GenericData()
         {
             this.InitializeComponent();
+            loadAttributs();
         }
 
         private async void AddRoleClassButton_Click(object sender, RoutedEventArgs e)
@@ -40,7 +35,7 @@ namespace ModellingWizard.UIs.SubPages
 
             // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
             dialog.XamlRoot = this.XamlRoot;
-            dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+            dialog.Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style;
             dialog.Title = "Add role class";
             dialog.PrimaryButtonText = "Add";
             dialog.CloseButtonText = "Cancel";
@@ -66,6 +61,37 @@ namespace ModellingWizard.UIs.SubPages
             DataTypeGrid.Visibility = visibility;
             SemanticGrid.Visibility = visibility;
 
+        }
+
+        public class LibaryObjectTest
+        {
+            public string Name { get; set; }
+            public string Value { get; set; }
+            public string Default { get; set; }
+            public string Unit { get; set; }
+            public string Semantic { get; set; }
+            public string DataType { get; set; }
+        }
+
+        public void loadAttributs()
+        {
+            
+            List<LibaryObjectTest> LibariesTest = new List<LibaryObjectTest>(10);
+
+
+            for (int i = 0; i < 10; i++) { 
+                LibaryObjectTest libary = new LibaryObjectTest();
+                libary.Name = i.ToString();
+                libary.Value = "10";
+                libary.Default = "Default";
+                libary.Unit = "1";
+                libary.Semantic = "maybe";
+                libary.DataType = "String";
+                libary.Default = "TEst";
+
+                LibariesTest.Add(libary);
+            }
+            DataGridAttributs.ItemsSource = LibariesTest;
         }
     }
 }
