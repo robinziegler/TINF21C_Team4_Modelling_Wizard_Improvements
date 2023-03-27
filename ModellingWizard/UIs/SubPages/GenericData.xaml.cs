@@ -17,6 +17,25 @@ using ModellingWizard.Objects;
 
 namespace ModellingWizard.UIs.SubPages
 {
+    // Test Objekt
+    // Only tests 
+    public class AMLObjectTest
+    {
+        public string Name { get; set; }
+        public List<AttributsTest> Attributs { get; set; }
+        public List<AMLObjectTest> underObjects { get; set; }
+    }
+
+    public class AttributsTest
+    {
+        public string Name { get; set; }
+        public string Value { get; set; }
+        public string Default { get; set; }
+        public string Unit { get; set; }
+        public string Semantic { get; set; }
+        public string DataType { get; set; }
+        public List<string> ReferencedClassName { get; set; }
+    }
     /// <summary>
     /// This is the Generic Data Page
     /// </summary>
@@ -25,9 +44,14 @@ namespace ModellingWizard.UIs.SubPages
         public GenericData()
         {
             this.InitializeComponent();
-            loadAttributs();
-        }
 
+            //load test data (should be removed later)
+            loadTestObject();
+
+            // set height of the Grid (should be set to the maximum place that can be used)
+            GenericData_Grid_Row_1.Height = new Microsoft.UI.Xaml.GridLength(600, GridUnitType.Pixel); 
+        }
+        
         private async void AddRoleClassButton_Click(object sender, RoutedEventArgs e)
         {
             var Win = new ModalViews.GenericData.AddRoleClass();
@@ -43,7 +67,7 @@ namespace ModellingWizard.UIs.SubPages
             dialog.Content = Win;
 
             ContentDialogResult result = await dialog.ShowAsync();
-            if(result == ContentDialogResult.Primary)
+            if (result == ContentDialogResult.Primary)
             {
                 Win.RoleClassTreeView.SelectedItems.Count();
             }
@@ -62,36 +86,67 @@ namespace ModellingWizard.UIs.SubPages
             SemanticGrid.Visibility = visibility;
 
         }
+        
+        
 
-        public class LibaryObjectTest
+        public void loadAttributs(List<AttributsTest> attributs)
         {
-            public string Name { get; set; }
-            public string Value { get; set; }
-            public string Default { get; set; }
-            public string Unit { get; set; }
-            public string Semantic { get; set; }
-            public string DataType { get; set; }
+            DataGridAttributs.ItemsSource = attributs;
         }
 
-        public void loadAttributs()
+        private void DataGridAttributs_RowEditEnded(object sender, CommunityToolkit.WinUI.UI.Controls.DataGridRowEditEndedEventArgs e)
         {
-            
-            List<LibaryObjectTest> LibariesTest = new List<LibaryObjectTest>(10);
+            Console.WriteLine("user changed data in datagrid");
+        }
 
 
-            for (int i = 0; i < 10; i++) { 
-                LibaryObjectTest libary = new LibaryObjectTest();
-                libary.Name = i.ToString();
-                libary.Value = "10";
-                libary.Default = "Default";
-                libary.Unit = "1";
-                libary.Semantic = "maybe";
-                libary.DataType = "String";
-                libary.Default = "TEst";
 
-                LibariesTest.Add(libary);
+        
+
+        public List<AMLObjectTest> TestObjekt = new List<AMLObjectTest>();
+
+
+        private void loadTestObject()
+        {
+            List<string> AMLNames = new List<string> {"First Object", "Second Object", "Third Object" };
+            List<string> AttributsNames = new List<string> {"Manufactor", "ID", "Name", "Date", "Costs" };
+            foreach (var name in AMLNames)
+            {
+                AMLObjectTest newObject = new AMLObjectTest();
+                newObject.Name = name;
+                newObject.Attributs = new List<AttributsTest> ();
+                foreach (var AttributName in AttributsNames)
+                {
+                    AttributsTest attribut = new AttributsTest();
+                    attribut.Name = AttributName;
+                    attribut.Value = "Test";
+                    attribut.Default = "Test";
+                    attribut.Unit = "Test";
+                    attribut.Semantic = "Test";
+                    attribut.DataType = "xs:string";
+                    newObject.Attributs.Add(attribut);
+                }
+                TestObjekt.Add(newObject);
             }
-            DataGridAttributs.ItemsSource = LibariesTest;
+        }
+
+        private void ListView_Loading(FrameworkElement sender, object args)
+        {
+            ListView_AMLObjects.ItemsSource = TestObjekt;
+        }
+
+        private void ListView_AMLObjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)      
+            {
+                AMLObjectTest selectedAMLObject = e.AddedItems[0] as AMLObjectTest;    
+                if (selectedAMLObject != null)                                          
+                {
+                    List<AttributsTest> attributs = selectedAMLObject.Attributs;                     
+                    loadAttributs(attributs);
+                }
+            }
+
         }
     }
 }

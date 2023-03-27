@@ -193,14 +193,14 @@
           }
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22621.755": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+          "buildTransitive/Microsoft.Windows.SDK.BuildTools.props": {},
+          "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.2.230217.4": {
+      "Microsoft.WindowsAppSDK/1.2.230313.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.1"
@@ -554,14 +554,14 @@
           }
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22621.755": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+          "buildTransitive/Microsoft.Windows.SDK.BuildTools.props": {},
+          "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.2.230217.4": {
+      "Microsoft.WindowsAppSDK/1.2.230313.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.1"
@@ -898,14 +898,14 @@
           }
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22621.755": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+          "buildTransitive/Microsoft.Windows.SDK.BuildTools.props": {},
+          "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.2.230217.4": {
+      "Microsoft.WindowsAppSDK/1.2.230313.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.1"
@@ -1242,14 +1242,14 @@
           }
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22621.755": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+          "buildTransitive/Microsoft.Windows.SDK.BuildTools.props": {},
+          "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.2.230217.4": {
+      "Microsoft.WindowsAppSDK/1.2.230313.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.1"
@@ -1664,10 +1664,10 @@
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
-    "Microsoft.Windows.SDK.BuildTools/10.0.22621.755": {
-      "sha512": "zGXDCZc2/slVjpNtopNETCjnOqH9KiEdo9dPCcjtNWwK5W+EmOcEn7X5Ftj3tOE9kLvroga1s7WwLh2a5jQEEg==",
+    "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
+      "sha512": "7ZL2sFSioYm1Ry067Kw1hg0SCcW5kuVezC2SwjGbcPE61Nn+gTbH86T73G3LcEOVj0S3IZzNuE/29gZvOLS7VA==",
       "type": "package",
-      "path": "microsoft.windows.sdk.buildtools/10.0.22621.755",
+      "path": "microsoft.windows.sdk.buildtools/10.0.22621.756",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1834,7 +1834,9 @@
         "bin/10.0.22621.0/x86/wintrust.dll.ini",
         "build/Microsoft.Windows.SDK.BuildTools.props",
         "build/Microsoft.Windows.SDK.BuildTools.targets",
-        "microsoft.windows.sdk.buildtools.10.0.22621.755.nupkg.sha512",
+        "buildTransitive/Microsoft.Windows.SDK.BuildTools.props",
+        "buildTransitive/Microsoft.Windows.SDK.BuildTools.targets",
+        "microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
         "microsoft.windows.sdk.buildtools.nuspec",
         "schemas/10.0.22621.0/winrt/AppxManifestSchema.xsd",
         "schemas/10.0.22621.0/winrt/AppxManifestSchema2010_v2.xsd",
@@ -1855,10 +1857,10 @@
         "schemas/10.0.22621.0/winrt/UapManifestSchema_v8.xsd"
       ]
     },
-    "Microsoft.WindowsAppSDK/1.2.230217.4": {
-      "sha512": "mGFBn5UKpH569iYAUZq7dS2ALG9vzxe25n/xGRBK3sdfm96BgyIiL1GZ/vb3M8BFwMj65GbcgFxseNZeajJXOg==",
+    "Microsoft.WindowsAppSDK/1.2.230313.1": {
+      "sha512": "7to3P0Qui25KAWRVRw+WmmHs3s96hN18/bKOZebPuKkbHlr3p0kk/AkcdUJqsjQaGF3D8r3Rvw5r0qODGOUBjQ==",
       "type": "package",
-      "path": "microsoft.windowsappsdk/1.2.230217.4",
+      "path": "microsoft.windowsappsdk/1.2.230313.1",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2320,7 +2322,7 @@
         "manifests/Microsoft.InteractiveExperiences.manifest",
         "manifests/Microsoft.WindowsAppSdk.Foundation.manifest",
         "manifests/manifests/Microsoft.WindowsAppSdk.WinUI.manifest",
-        "microsoft.windowsappsdk.1.2.230217.4.nupkg.sha512",
+        "microsoft.windowsappsdk.1.2.230313.1.nupkg.sha512",
         "microsoft.windowsappsdk.nuspec",
         "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll",
         "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll",
@@ -2663,8 +2665,8 @@
       "CommunityToolkit.WinUI.UI.Controls.DataGrid >= 7.1.2",
       "CommunityToolkit.WinUI.UI.Controls.Layout >= 7.1.2",
       "CommunityToolkit.WinUI.UI.Controls.Primitives >= 7.1.2",
-      "Microsoft.Windows.SDK.BuildTools >= 10.0.22621.755",
-      "Microsoft.WindowsAppSDK >= 1.2.230217.4"
+      "Microsoft.Windows.SDK.BuildTools >= 10.0.22621.756",
+      "Microsoft.WindowsAppSDK >= 1.2.230313.1"
     ]
   },
   "packageFolders": {
@@ -2758,11 +2760,11 @@
           },
           "Microsoft.Windows.SDK.BuildTools": {
             "target": "Package",
-            "version": "[10.0.22621.755, )"
+            "version": "[10.0.22621.756, )"
           },
           "Microsoft.WindowsAppSDK": {
             "target": "Package",
-            "version": "[1.2.230217.4, )"
+            "version": "[1.2.230313.1, )"
           }
         },
         "imports": [

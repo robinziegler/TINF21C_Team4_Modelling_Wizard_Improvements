@@ -13,7 +13,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition x:Name="GenericData_Grid_Row_1"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition MinWidth="150"/>
@@ -43,12 +43,21 @@
                     />
 
 
-            <ListView Grid.Row="2">
-                <ListBox>
-                    <ListBoxItem>
-                        Test Data here. This is the name of the module. The backend will come soon, I hope. 
-                    </ListBoxItem>
-                </ListBox>
+            <ListView Grid.Row="2" 
+                      Loading="ListView_Loading" 
+                      SelectionChanged="ListView_AMLObjects_SelectionChanged"
+                      SelectionMode="Single"
+                      IsItemClickEnabled="False"
+                      x:Name="ListView_AMLObjects" >
+                <ListView.ItemTemplate>
+                    <!-- See "https://icons8.com/icon/57061/entfernen" for the ICON -->
+                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="local:AMLObjectTest">
+                        <StackPanel Orientation="Horizontal" Height="44" Padding="12" >
+                            <Image Source="C:\Users\Michi\source\repos\robinziegler\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Resources\Images\Delete_Trash_darkmode.png" Height="16" Width="16" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" Margin="12,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </Grid>
 
@@ -72,8 +81,8 @@
         <!-- Attributs -->
         <Grid Grid.Column="1" Margin="10,0,0,0">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0"  
@@ -87,33 +96,40 @@
                 VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                 HorizontalScrollBarVisibility="Visible"
                 VerticalScrollBarVisibility="Visible"
-                AlternatingRowBackground="Silver"
-                AlternatingRowForeground="Gray"
-                AreRowDetailsFrozen="False"
-                AreRowGroupHeadersFrozen="True"
+                AlternatingRowBackground="Gray"
+                AlternatingRowForeground="Silver"
                 AutoGenerateColumns="False"
-                CanUserSortColumns="True"
-                CanUserReorderColumns="True"
                 CanUserResizeColumns="True"
                 ColumnHeaderHeight="32"
-                MaxColumnWidth="400"
-                FrozenColumnCount="0"
                 GridLinesVisibility="Vertical"
                 HeadersVisibility="Column"
-                IsReadOnly="False"
-                RowDetailsVisibilityMode="Collapsed"
-                SelectionMode="Extended"
-                RowGroupHeaderPropertyNameAlternative="Range">  
+                RowEditEnded="DataGridAttributs_RowEditEnded">
                 <controls:DataGrid.Columns>
-                    <controls:DataGridTextColumn Header="Atrribute" Binding="{Binding Name}"  />
-                    <controls:DataGridTextColumn Header="Value" Binding="{Binding Value}" />
-                    <controls:DataGridTextColumn Header="Default" Binding="{Binding Default}" x:Name="DefaultGrid" />
-                    <controls:DataGridTextColumn Header="Units" Binding="{Binding Unit}"  x:Name="UnitsGrid" />
-                    <controls:DataGridTextColumn Header="DataType" Binding="{Binding DataType}"  x:Name="DataTypeGrid"/>
-                    <controls:DataGridTextColumn Header="Semantict" Binding="{Binding Semantic}" x:Name="SemanticGrid"/>
+                    <controls:DataGridTextColumn 
+                        Header="Atrribute" 
+                        Binding="{Binding Name}"  />
+                    <controls:DataGridTextColumn 
+                        Header="Value" 
+                        Binding="{Binding Value}" />
+                    <controls:DataGridTextColumn 
+                        Header="Default"
+                        Binding="{Binding Default}" 
+                        x:Name="DefaultGrid" />
+                    <controls:DataGridTextColumn 
+                        Header="Units" 
+                        Binding="{Binding Unit}"  
+                        x:Name="UnitsGrid" />
+                    <controls:DataGridTextColumn 
+                        Header="DataType" 
+                        IsReadOnly="True"
+                        Binding="{Binding DataType}" 
+                        x:Name="DataTypeGrid"/>
+                    <controls:DataGridComboBoxColumn 
+                        Header="Semantict" 
+                        Binding="{Binding Semantic}" 
+                        x:Name="SemanticGrid"/>
                 </controls:DataGrid.Columns>
             </controls:DataGrid>
-            
         </Grid>
     </Grid>
 </Page>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iChwkGmU7uJ1QaYOWyc6n/oarW41x4o/v+EppSBXf3X0SC5Yrolxj14xiCzPCO5/9xOx3uA30jumwCNLCGdd3g==",
+  "dgSpecHash": "p9kT4P/XgZnlqHxaRIbP6OmbzDTr6rmbLO/xJ/LAbNAx2aIhylBimmcsb3MA/JkcQJmZfIGI/vagpC9K4dP7cw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Michi\\Source\\Repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
+  "projectFilePath": "C:\\Users\\Michi\\source\\repos\\robinziegler\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Michi\\.nuget\\packages\\aml.editor.plugin.contract\\4.0.2\\aml.editor.plugin.contract.4.0.2.nupkg.sha512",
     "C:\\Users\\Michi\\.nuget\\packages\\aml.engine\\3.1.1\\aml.engine.3.1.1.nupkg.sha512",
@@ -16,8 +16,8 @@
     "C:\\Users\\Michi\\.nuget\\packages\\communitytoolkit.winui.ui.controls.datagrid\\7.1.2\\communitytoolkit.winui.ui.controls.datagrid.7.1.2.nupkg.sha512",
     "C:\\Users\\Michi\\.nuget\\packages\\communitytoolkit.winui.ui.controls.layout\\7.1.2\\communitytoolkit.winui.ui.controls.layout.7.1.2.nupkg.sha512",
     "C:\\Users\\Michi\\.nuget\\packages\\communitytoolkit.winui.ui.controls.primitives\\7.1.2\\communitytoolkit.winui.ui.controls.primitives.7.1.2.nupkg.sha512",
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22621.755\\microsoft.windows.sdk.buildtools.10.0.22621.755.nupkg.sha512",
-    "C:\\Users\\Michi\\.nuget\\packages\\microsoft.windowsappsdk\\1.2.230217.4\\microsoft.windowsappsdk.1.2.230217.4.nupkg.sha512",
+    "C:\\Users\\Michi\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
+    "C:\\Users\\Michi\\.nuget\\packages\\microsoft.windowsappsdk\\1.2.230313.1\\microsoft.windowsappsdk.1.2.230313.1.nupkg.sha512",
     "C:\\Users\\Michi\\.nuget\\packages\\system.io.packaging\\7.0.0\\system.io.packaging.7.0.0.nupkg.sha512",
     "C:\\Users\\Michi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Michi\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
