@@ -18,6 +18,7 @@
     <None Remove="UIs\ModalViews\Attachments\AddAttachment.xaml" />
     <None Remove="UIs\ModalViews\GenericData\AddRoleClass.xaml" />
     <None Remove="UIs\ModalViews\Help_Menu\ManualPage.xaml" />
+    <None Remove="UIs\ModalViews\Interfaces\AddInterface.xaml" />
     <None Remove="UIs\SubPages\Attachments.xaml" />
     <None Remove="UIs\SubPages\GenericData.xaml" />
     <None Remove="UIs\SubPages\Interfaces.xaml" />
@@ -89,7 +90,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UIs\ModalViews\Interfaces\" />
+    <Page Update="UIs\ModalViews\Interfaces\AddInterface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="UIs\ModalViews\Help_Menu\ManualPage.xaml">

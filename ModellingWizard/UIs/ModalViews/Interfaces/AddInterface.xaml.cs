@@ -8,7 +8,6 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
-using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,25 +19,25 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace ModellingWizard.UIs.ModalViews.GenericData
+namespace ModellingWizard.UIs.ModalViews.Interfaces
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AddRoleClass : Page
+    public sealed partial class AddInterface : Page
     {
-        public AddRoleClass()
+        public AddInterface()
         {
             this.InitializeComponent();
-            Objects.Instances.RoleClassLib.SubObjects.ForEach(x =>
+            Objects.Instances.InterfacesLib.SubObjects.ForEach(x =>
             {
                 TreeViewNode t = new() { Content = x.Name };
                 x.SubObjects.ForEach(y =>
                 {
                     t.Children.Add(CreateSubNodes(y));
                 });
-                
-                RoleClassTreeView.RootNodes.Add(t);
+
+                InterfaceTreeView.RootNodes.Add(t);
             });
         }
 

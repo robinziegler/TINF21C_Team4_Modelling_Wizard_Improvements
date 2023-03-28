@@ -224,7 +224,7 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[86];
+            _typeNameTable = new string[87];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -281,38 +281,39 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             _typeNameTable[53] = "Microsoft.Web.WebView2.Core.CoreWebView2";
             _typeNameTable[54] = "Windows.UI.Color";
             _typeNameTable[55] = "ModellingWizard.UIs.ModalViews.Help_Menu.ManualPage";
-            _typeNameTable[56] = "CommunityToolkit.WinUI.UI.Controls.DataGrid";
-            _typeNameTable[57] = "System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>";
-            _typeNameTable[58] = "System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>";
-            _typeNameTable[59] = "CommunityToolkit.WinUI.UI.Controls.DataGridColumn";
-            _typeNameTable[60] = "Microsoft.UI.Xaml.Data.Binding";
-            _typeNameTable[61] = "System.Nullable`1<CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>";
-            _typeNameTable[62] = "CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection";
-            _typeNameTable[63] = "Microsoft.UI.Xaml.Visibility";
-            _typeNameTable[64] = "CommunityToolkit.WinUI.UI.Controls.DataGridLength";
-            _typeNameTable[65] = "Microsoft.UI.Xaml.Media.Brush";
-            _typeNameTable[66] = "CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode";
-            _typeNameTable[67] = "CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility";
-            _typeNameTable[68] = "CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility";
-            _typeNameTable[69] = "Microsoft.UI.Xaml.Controls.ScrollBarVisibility";
-            _typeNameTable[70] = "Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger";
-            _typeNameTable[71] = "System.Collections.IEnumerable";
-            _typeNameTable[72] = "CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode";
-            _typeNameTable[73] = "CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode";
-            _typeNameTable[74] = "System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>";
-            _typeNameTable[75] = "System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>";
-            _typeNameTable[76] = "System.Collections.IList";
-            _typeNameTable[77] = "CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn";
-            _typeNameTable[78] = "CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn";
-            _typeNameTable[79] = "Microsoft.UI.Xaml.Media.FontFamily";
-            _typeNameTable[80] = "Windows.UI.Text.FontStyle";
-            _typeNameTable[81] = "Windows.UI.Text.FontWeight";
-            _typeNameTable[82] = "ModellingWizard.UIs.SubPages.Attachments";
-            _typeNameTable[83] = "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn";
-            _typeNameTable[84] = "ModellingWizard.UIs.SubPages.GenericData";
-            _typeNameTable[85] = "ModellingWizard.UIs.SubPages.Interfaces";
+            _typeNameTable[56] = "ModellingWizard.UIs.ModalViews.Interfaces.AddInterface";
+            _typeNameTable[57] = "CommunityToolkit.WinUI.UI.Controls.DataGrid";
+            _typeNameTable[58] = "System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>";
+            _typeNameTable[59] = "System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>";
+            _typeNameTable[60] = "CommunityToolkit.WinUI.UI.Controls.DataGridColumn";
+            _typeNameTable[61] = "Microsoft.UI.Xaml.Data.Binding";
+            _typeNameTable[62] = "System.Nullable`1<CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>";
+            _typeNameTable[63] = "CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection";
+            _typeNameTable[64] = "Microsoft.UI.Xaml.Visibility";
+            _typeNameTable[65] = "CommunityToolkit.WinUI.UI.Controls.DataGridLength";
+            _typeNameTable[66] = "Microsoft.UI.Xaml.Media.Brush";
+            _typeNameTable[67] = "CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode";
+            _typeNameTable[68] = "CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility";
+            _typeNameTable[69] = "CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility";
+            _typeNameTable[70] = "Microsoft.UI.Xaml.Controls.ScrollBarVisibility";
+            _typeNameTable[71] = "Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger";
+            _typeNameTable[72] = "System.Collections.IEnumerable";
+            _typeNameTable[73] = "CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode";
+            _typeNameTable[74] = "CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode";
+            _typeNameTable[75] = "System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>";
+            _typeNameTable[76] = "System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>";
+            _typeNameTable[77] = "System.Collections.IList";
+            _typeNameTable[78] = "CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn";
+            _typeNameTable[79] = "CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn";
+            _typeNameTable[80] = "Microsoft.UI.Xaml.Media.FontFamily";
+            _typeNameTable[81] = "Windows.UI.Text.FontStyle";
+            _typeNameTable[82] = "Windows.UI.Text.FontWeight";
+            _typeNameTable[83] = "ModellingWizard.UIs.SubPages.Attachments";
+            _typeNameTable[84] = "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn";
+            _typeNameTable[85] = "ModellingWizard.UIs.SubPages.GenericData";
+            _typeNameTable[86] = "ModellingWizard.UIs.SubPages.Interfaces";
 
-            _typeTable = new global::System.Type[86];
+            _typeTable = new global::System.Type[87];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -369,36 +370,37 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             _typeTable[53] = typeof(global::Microsoft.Web.WebView2.Core.CoreWebView2);
             _typeTable[54] = typeof(global::Windows.UI.Color);
             _typeTable[55] = typeof(global::ModellingWizard.UIs.ModalViews.Help_Menu.ManualPage);
-            _typeTable[56] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGrid);
-            _typeTable[57] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>);
-            _typeTable[58] = typeof(global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>);
-            _typeTable[59] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn);
-            _typeTable[60] = typeof(global::Microsoft.UI.Xaml.Data.Binding);
-            _typeTable[61] = typeof(global::System.Nullable<global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>);
-            _typeTable[62] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection);
-            _typeTable[63] = typeof(global::Microsoft.UI.Xaml.Visibility);
-            _typeTable[64] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridLength);
-            _typeTable[65] = typeof(global::Microsoft.UI.Xaml.Media.Brush);
-            _typeTable[66] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode);
-            _typeTable[67] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility);
-            _typeTable[68] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility);
-            _typeTable[69] = typeof(global::Microsoft.UI.Xaml.Controls.ScrollBarVisibility);
-            _typeTable[70] = typeof(global::Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger);
-            _typeTable[71] = typeof(global::System.Collections.IEnumerable);
-            _typeTable[72] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode);
-            _typeTable[73] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode);
-            _typeTable[74] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>);
-            _typeTable[75] = typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>);
-            _typeTable[76] = typeof(global::System.Collections.IList);
-            _typeTable[77] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn);
-            _typeTable[78] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn);
-            _typeTable[79] = typeof(global::Microsoft.UI.Xaml.Media.FontFamily);
-            _typeTable[80] = typeof(global::Windows.UI.Text.FontStyle);
-            _typeTable[81] = typeof(global::Windows.UI.Text.FontWeight);
-            _typeTable[82] = typeof(global::ModellingWizard.UIs.SubPages.Attachments);
-            _typeTable[83] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn);
-            _typeTable[84] = typeof(global::ModellingWizard.UIs.SubPages.GenericData);
-            _typeTable[85] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces);
+            _typeTable[56] = typeof(global::ModellingWizard.UIs.ModalViews.Interfaces.AddInterface);
+            _typeTable[57] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGrid);
+            _typeTable[58] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>);
+            _typeTable[59] = typeof(global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>);
+            _typeTable[60] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn);
+            _typeTable[61] = typeof(global::Microsoft.UI.Xaml.Data.Binding);
+            _typeTable[62] = typeof(global::System.Nullable<global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>);
+            _typeTable[63] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection);
+            _typeTable[64] = typeof(global::Microsoft.UI.Xaml.Visibility);
+            _typeTable[65] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridLength);
+            _typeTable[66] = typeof(global::Microsoft.UI.Xaml.Media.Brush);
+            _typeTable[67] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode);
+            _typeTable[68] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility);
+            _typeTable[69] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility);
+            _typeTable[70] = typeof(global::Microsoft.UI.Xaml.Controls.ScrollBarVisibility);
+            _typeTable[71] = typeof(global::Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger);
+            _typeTable[72] = typeof(global::System.Collections.IEnumerable);
+            _typeTable[73] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode);
+            _typeTable[74] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode);
+            _typeTable[75] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>);
+            _typeTable[76] = typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>);
+            _typeTable[77] = typeof(global::System.Collections.IList);
+            _typeTable[78] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn);
+            _typeTable[79] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn);
+            _typeTable[80] = typeof(global::Microsoft.UI.Xaml.Media.FontFamily);
+            _typeTable[81] = typeof(global::Windows.UI.Text.FontStyle);
+            _typeTable[82] = typeof(global::Windows.UI.Text.FontWeight);
+            _typeTable[83] = typeof(global::ModellingWizard.UIs.SubPages.Attachments);
+            _typeTable[84] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn);
+            _typeTable[85] = typeof(global::ModellingWizard.UIs.SubPages.GenericData);
+            _typeTable[86] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -449,16 +451,17 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
         private object Activate_49_AboutPage() { return new global::ModellingWizard.UIs.ModalViews.Help_Menu.AboutPage(); }
         private object Activate_50_WebView2() { return new global::Microsoft.UI.Xaml.Controls.WebView2(); }
         private object Activate_55_ManualPage() { return new global::ModellingWizard.UIs.ModalViews.Help_Menu.ManualPage(); }
-        private object Activate_56_DataGrid() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGrid(); }
-        private object Activate_57_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>(); }
-        private object Activate_58_Collection() { return new global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>(); }
-        private object Activate_74_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>(); }
-        private object Activate_75_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>(); }
-        private object Activate_77_DataGridTextColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn(); }
-        private object Activate_82_Attachments() { return new global::ModellingWizard.UIs.SubPages.Attachments(); }
-        private object Activate_83_DataGridComboBoxColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn(); }
-        private object Activate_84_GenericData() { return new global::ModellingWizard.UIs.SubPages.GenericData(); }
-        private object Activate_85_Interfaces() { return new global::ModellingWizard.UIs.SubPages.Interfaces(); }
+        private object Activate_56_AddInterface() { return new global::ModellingWizard.UIs.ModalViews.Interfaces.AddInterface(); }
+        private object Activate_57_DataGrid() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGrid(); }
+        private object Activate_58_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>(); }
+        private object Activate_59_Collection() { return new global::System.Collections.ObjectModel.Collection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>(); }
+        private object Activate_75_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.UI.Xaml.Style>(); }
+        private object Activate_76_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>(); }
+        private object Activate_78_DataGridTextColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn(); }
+        private object Activate_83_Attachments() { return new global::ModellingWizard.UIs.SubPages.Attachments(); }
+        private object Activate_84_DataGridComboBoxColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn(); }
+        private object Activate_85_GenericData() { return new global::ModellingWizard.UIs.SubPages.GenericData(); }
+        private object Activate_86_Interfaces() { return new global::ModellingWizard.UIs.SubPages.Interfaces(); }
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -490,25 +493,25 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_57_ObservableCollection(object instance, object item)
+        private void VectorAdd_58_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>)instance;
             var newItem = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_58_Collection(object instance, object item)
+        private void VectorAdd_59_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn>)instance;
             var newItem = (global::CommunityToolkit.WinUI.UI.Controls.DataGridColumn)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_74_ObservableCollection(object instance, object item)
+        private void VectorAdd_75_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Style>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Style)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_75_Collection(object instance, object item)
+        private void VectorAdd_76_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Style>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Style)item;
@@ -915,9 +918,16 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 56:   //  CommunityToolkit.WinUI.UI.Controls.DataGrid
+            case 56:   //  ModellingWizard.UIs.ModalViews.Interfaces.AddInterface
+                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_56_AddInterface;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 57:   //  CommunityToolkit.WinUI.UI.Controls.DataGrid
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_56_DataGrid;
+                userType.Activator = Activate_57_DataGrid;
                 userType.AddMemberName("Columns");
                 userType.AddMemberName("AlternatingRowBackground");
                 userType.AddMemberName("AlternatingRowForeground");
@@ -967,21 +977,21 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 57:   //  System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>
+            case 58:   //  System.Collections.ObjectModel.ObservableCollection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>"));
-                userType.CollectionAdd = VectorAdd_57_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_58_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 58:   //  System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>
+            case 59:   //  System.Collections.ObjectModel.Collection`1<CommunityToolkit.WinUI.UI.Controls.DataGridColumn>
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_58_Collection;
-                userType.CollectionAdd = VectorAdd_58_Collection;
+                userType.Activator = Activate_59_Collection;
+                userType.CollectionAdd = VectorAdd_59_Collection;
                 xamlType = userType;
                 break;
 
-            case 59:   //  CommunityToolkit.WinUI.UI.Controls.DataGridColumn
+            case 60:   //  CommunityToolkit.WinUI.UI.Controls.DataGridColumn
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
                 userType.AddMemberName("ActualWidth");
                 userType.AddMemberName("CanUserReorder");
@@ -1005,11 +1015,11 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 60:   //  Microsoft.UI.Xaml.Data.Binding
+            case 61:   //  Microsoft.UI.Xaml.Data.Binding
                 xamlType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 61:   //  System.Nullable`1<CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>
+            case 62:   //  System.Nullable`1<CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetBoxedType(GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection"));
                 userType.BoxInstance = userType.BoxType<global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection>;
@@ -1017,29 +1027,29 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 62:   //  CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection
+            case 63:   //  CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Ascending", global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection.Ascending);
                 userType.AddEnumValue("Descending", global::CommunityToolkit.WinUI.UI.Controls.DataGridSortDirection.Descending);
                 xamlType = userType;
                 break;
 
-            case 63:   //  Microsoft.UI.Xaml.Visibility
+            case 64:   //  Microsoft.UI.Xaml.Visibility
                 xamlType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 64:   //  CommunityToolkit.WinUI.UI.Controls.DataGridLength
+            case 65:   //  CommunityToolkit.WinUI.UI.Controls.DataGridLength
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.CreateFromStringMethod = x => (global::System.Object)global::CommunityToolkit.WinUI.UI.Controls.DataGridLength.ConvertFromString(x);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 65:   //  Microsoft.UI.Xaml.Media.Brush
+            case 66:   //  Microsoft.UI.Xaml.Media.Brush
                 xamlType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 66:   //  CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode
+            case 67:   //  CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode.None);
                 userType.AddEnumValue("ExcludeHeader", global::CommunityToolkit.WinUI.UI.Controls.DataGridClipboardCopyMode.ExcludeHeader);
@@ -1047,7 +1057,7 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 67:   //  CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility
+            case 68:   //  CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility.None);
                 userType.AddEnumValue("Horizontal", global::CommunityToolkit.WinUI.UI.Controls.DataGridGridLinesVisibility.Horizontal);
@@ -1056,7 +1066,7 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 68:   //  CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility
+            case 69:   //  CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility.None);
                 userType.AddEnumValue("Column", global::CommunityToolkit.WinUI.UI.Controls.DataGridHeadersVisibility.Column);
@@ -1065,21 +1075,21 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 69:   //  Microsoft.UI.Xaml.Controls.ScrollBarVisibility
+            case 70:   //  Microsoft.UI.Xaml.Controls.ScrollBarVisibility
                 xamlType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 70:   //  Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger
+            case 71:   //  Microsoft.UI.Xaml.Controls.IncrementalLoadingTrigger
                 xamlType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 71:   //  System.Collections.IEnumerable
+            case 72:   //  System.Collections.IEnumerable
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 72:   //  CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode
+            case 73:   //  CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("VisibleWhenSelected", global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected);
                 userType.AddEnumValue("Visible", global::CommunityToolkit.WinUI.UI.Controls.DataGridRowDetailsVisibilityMode.Visible);
@@ -1087,36 +1097,36 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 73:   //  CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode
+            case 74:   //  CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Extended", global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode.Extended);
                 userType.AddEnumValue("Single", global::CommunityToolkit.WinUI.UI.Controls.DataGridSelectionMode.Single);
                 xamlType = userType;
                 break;
 
-            case 74:   //  System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>
+            case 75:   //  System.Collections.ObjectModel.ObservableCollection`1<Microsoft.UI.Xaml.Style>
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>"));
-                userType.CollectionAdd = VectorAdd_74_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_75_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 75:   //  System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>
+            case 76:   //  System.Collections.ObjectModel.Collection`1<Microsoft.UI.Xaml.Style>
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_75_Collection;
-                userType.CollectionAdd = VectorAdd_75_Collection;
+                userType.Activator = Activate_76_Collection;
+                userType.CollectionAdd = VectorAdd_76_Collection;
                 xamlType = userType;
                 break;
 
-            case 76:   //  System.Collections.IList
+            case 77:   //  System.Collections.IList
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 77:   //  CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn
+            case 78:   //  CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn"));
-                userType.Activator = Activate_77_DataGridTextColumn;
+                userType.Activator = Activate_78_DataGridTextColumn;
                 userType.AddMemberName("FontFamily");
                 userType.AddMemberName("FontSize");
                 userType.AddMemberName("FontStyle");
@@ -1125,7 +1135,7 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 78:   //  CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn
+            case 79:   //  CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridColumn"));
                 userType.AddMemberName("Binding");
                 userType.AddMemberName("ClipboardContentBinding");
@@ -1134,11 +1144,11 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 79:   //  Microsoft.UI.Xaml.Media.FontFamily
+            case 80:   //  Microsoft.UI.Xaml.Media.FontFamily
                 xamlType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 80:   //  Windows.UI.Text.FontStyle
+            case 81:   //  Windows.UI.Text.FontStyle
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Normal", global::Windows.UI.Text.FontStyle.Normal);
                 userType.AddEnumValue("Oblique", global::Windows.UI.Text.FontStyle.Oblique);
@@ -1146,22 +1156,22 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 81:   //  Windows.UI.Text.FontWeight
+            case 82:   //  Windows.UI.Text.FontWeight
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 82:   //  ModellingWizard.UIs.SubPages.Attachments
+            case 83:   //  ModellingWizard.UIs.SubPages.Attachments
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_82_Attachments;
+                userType.Activator = Activate_83_Attachments;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 83:   //  CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn
+            case 84:   //  CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn"));
-                userType.Activator = Activate_83_DataGridComboBoxColumn;
+                userType.Activator = Activate_84_DataGridComboBoxColumn;
                 userType.AddMemberName("ItemsSource");
                 userType.AddMemberName("DisplayMemberPath");
                 userType.AddMemberName("FontFamily");
@@ -1172,16 +1182,16 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 84:   //  ModellingWizard.UIs.SubPages.GenericData
+            case 85:   //  ModellingWizard.UIs.SubPages.GenericData
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_84_GenericData;
+                userType.Activator = Activate_85_GenericData;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 85:   //  ModellingWizard.UIs.SubPages.Interfaces
+            case 86:   //  ModellingWizard.UIs.SubPages.Interfaces
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_85_Interfaces;
+                userType.Activator = Activate_86_Interfaces;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

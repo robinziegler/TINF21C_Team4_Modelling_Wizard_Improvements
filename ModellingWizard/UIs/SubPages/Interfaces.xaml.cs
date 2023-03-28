@@ -31,9 +31,26 @@ namespace ModellingWizard.UIs.SubPages
             this.InitializeComponent();
         }
 
-        private void AddInterfaceButton_Click(object sender, RoutedEventArgs e)
+        private async void AddInterfaceButton_Click(object sender, RoutedEventArgs e)
         {
+            var Win = new ModalViews.Interfaces.AddInterface();
+            ContentDialog dialog = new()
+            {
+                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+                XamlRoot = this.XamlRoot,
+                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                Title = "Add interface",
+                PrimaryButtonText = "Add",
+                CloseButtonText = "Cancel",
+                DefaultButton = ContentDialogButton.Primary,
+                Content = Win
+            };
 
+            ContentDialogResult result = await dialog.ShowAsync();
+            if (result == ContentDialogResult.Primary)
+            {
+                Win.InterfaceTreeView.SelectedItems.Count();
+            }
         }
     }
 }

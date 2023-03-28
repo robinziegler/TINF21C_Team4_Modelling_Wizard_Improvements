@@ -107,12 +107,12 @@ namespace ModellingWizard
         }
 
         /* Change libary options */
-        private void ChangeLibary_AutomationComponentLibrary_v1_0_0_Click(object sender, RoutedEventArgs e) { Objects.Instances.RoleClassLib = Processes.RoleClassLib.Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0, "AutomationComponentLibrary_v1_0_0"); }
-        private void ChangeLibary_AutomationComponentLibrary_v1_0_0_CAEX3_BETA_Click(object sender, RoutedEventArgs e) { Objects.Instances.RoleClassLib = Processes.RoleClassLib.Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0_CAEX3_BETA, "AutomationComponentLibrary_v1_0_0_CAEX3_BETA"); }
-        private void ChangeLibary_AutomationComponentLibrary_v1_0_0_Full_Click(object sender, RoutedEventArgs e) { Objects.Instances.RoleClassLib = Processes.RoleClassLib.Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0_Full, "AutomationComponentLibrary_v1_0_0_Full");  }
-        private void ChangeLibary_AutomationComponentLibrary_v1_0_0_Full_CAEX3_BETA_Click(object sender, RoutedEventArgs e) { Objects.Instances.RoleClassLib = Processes.RoleClassLib.Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0_Full_CAEX3_BETA, "AutomationComponentLibrary_v1_0_0_Full_CAEX3_Beta");  }
-        private void ChangeLibary_ElectricConnectorLibrary_v1_0_0_Click(object sender, RoutedEventArgs e) { Objects.Instances.RoleClassLib = Processes.RoleClassLib.Load.LoadLib(Properties.Resources.ElectricConnectorLibrary_v1_0_0, "ElectricConnectorLibrary_v1_0_0"); }
-        private void ChangeLibary_IndustrialSensorLibrary_v1_0_0_Click(object sender, RoutedEventArgs e) { Objects.Instances.RoleClassLib = Processes.RoleClassLib.Load.LoadLib(Properties.Resources.IndustrialSensorLibrary_v1_0_0, "IndustrialSensorLibrary_v1_0_0"); }
+        private void ChangeLibary_AutomationComponentLibrary_v1_0_0_Click(object sender, RoutedEventArgs e) { Processes.Libary.LoadStandardLibaries.Load(Objects.Libaries.LibaryTypes.AutomationComponentLibrary_v1_0_0); }
+        private void ChangeLibary_AutomationComponentLibrary_v1_0_0_CAEX3_BETA_Click(object sender, RoutedEventArgs e) { Processes.Libary.LoadStandardLibaries.Load(Objects.Libaries.LibaryTypes.AutomationComponentLibrary_v1_0_0_CAEX3_BETA); }
+        private void ChangeLibary_AutomationComponentLibrary_v1_0_0_Full_Click(object sender, RoutedEventArgs e) { Processes.Libary.LoadStandardLibaries.Load(Objects.Libaries.LibaryTypes.AutomationComponentLibrary_v1_0_0_Full);  }
+        private void ChangeLibary_AutomationComponentLibrary_v1_0_0_Full_CAEX3_BETA_Click(object sender, RoutedEventArgs e) { Processes.Libary.LoadStandardLibaries.Load(Objects.Libaries.LibaryTypes.AutomationComponentLibrary_v1_0_0_Full_CAEX3_BETA); }
+        private void ChangeLibary_ElectricConnectorLibrary_v1_0_0_Click(object sender, RoutedEventArgs e) { Processes.Libary.LoadStandardLibaries.Load(Objects.Libaries.LibaryTypes.ElectricConnectorLibrary_v1_0_0); }
+        private void ChangeLibary_IndustrialSensorLibrary_v1_0_0_Click(object sender, RoutedEventArgs e) { Processes.Libary.LoadStandardLibaries.Load(Objects.Libaries.LibaryTypes.IndustrialSensorLibrary_v1_0_0); }
 
         private async void ChangeLibary_AddLibary_Click(object sender, RoutedEventArgs e)
         {
@@ -130,7 +130,9 @@ namespace ModellingWizard
             var file = await openPicker.PickSingleFileAsync();
             if (file != null)
             {
-                Objects.Instances.RoleClassLib = Processes.RoleClassLib.Load.LoadLib(File.ReadAllBytes(file.Path), file.Name);
+                var result = Processes.Libary.Load.LoadLib(File.ReadAllBytes(file.Path), file.Name);
+                Objects.Instances.RoleClassLib = result.Item1;
+                Objects.Instances.InterfacesLib = result.Item2;
             }
         }
 

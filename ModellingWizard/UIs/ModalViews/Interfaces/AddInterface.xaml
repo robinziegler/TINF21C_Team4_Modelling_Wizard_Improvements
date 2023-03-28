@@ -2,15 +2,15 @@
 <!-- Licensed under the MIT License. -->
 
 <Page
-    x:Class="ModellingWizard.UIs.ModalViews.GenericData.AddRoleClass"
+    x:Class="ModellingWizard.UIs.ModalViews.Interfaces.AddInterface"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ModellingWizard.UIs.ModalViews.GenericData"
+    xmlns:local="using:ModellingWizard.UIs.ModalViews.Interfaces"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
     <Grid Height="500" Width="500">
-        <TreeView Name="RoleClassTreeView" SelectionMode="Multiple" CanDrag="False" x:FieldModifier="public"/>
+        <TreeView Name="InterfaceTreeView" SelectionMode="Multiple" CanDrag="False" x:FieldModifier="public"/>
     </Grid>
 </Page>

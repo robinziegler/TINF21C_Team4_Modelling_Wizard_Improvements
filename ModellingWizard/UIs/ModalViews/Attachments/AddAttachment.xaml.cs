@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows.Forms;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -29,6 +30,8 @@ namespace ModellingWizard.UIs.ModalViews.Attachments
         public AddAttachment()
         {
             this.InitializeComponent();
+            this.Height = 500;
+            this.Width = 500;
         }
 
         private async void OpenFileButton_Click(object sender, RoutedEventArgs e)

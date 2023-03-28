@@ -4,6 +4,7 @@ UIs\ModalViews\Attachments\AddAttachment.xbf
 UIs\ModalViews\GenericData\AddRoleClass.xbf
 UIs\ModalViews\Help_Menu\AboutPage.xbf
 UIs\ModalViews\Help_Menu\ManualPage.xbf
+UIs\ModalViews\Interfaces\AddInterface.xbf
 UIs\SubPages\Attachments.xbf
 UIs\SubPages\GenericData.xbf
 UIs\SubPages\Interfaces.xbf

@@ -20,6 +20,9 @@
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="UIs\ModalViews\Interfaces\AddInterface.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UIs\ModalViews\Help_Menu\ManualPage.xaml">
       <SubType>Designer</SubType>
     </Page>
