@@ -94,14 +94,27 @@ namespace ModellingWizard.UIs.SubPages
             DataGridAttributs.ItemsSource = attributs;
         }
 
-        private void DataGridAttributs_RowEditEnded(object sender, CommunityToolkit.WinUI.UI.Controls.DataGridRowEditEndedEventArgs e)
+        private void ListView_Loading(FrameworkElement sender, object args)
         {
-            Console.WriteLine("user changed data in datagrid");
+            ListView_AMLObjects.ItemsSource = TestObjekt;
+        }
+
+        private void ListView_AMLObjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                AMLObjectTest selectedAMLObject = e.AddedItems[0] as AMLObjectTest;
+                if (selectedAMLObject != null)
+                {
+                    List<AttributsTest> attributs = selectedAMLObject.Attributs;
+                    loadAttributs(attributs);
+                }
+            }
         }
 
 
 
-        
+
 
         public List<AMLObjectTest> TestObjekt = new List<AMLObjectTest>();
 
@@ -130,23 +143,6 @@ namespace ModellingWizard.UIs.SubPages
             }
         }
 
-        private void ListView_Loading(FrameworkElement sender, object args)
-        {
-            ListView_AMLObjects.ItemsSource = TestObjekt;
-        }
-
-        private void ListView_AMLObjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.AddedItems.Count > 0)      
-            {
-                AMLObjectTest selectedAMLObject = e.AddedItems[0] as AMLObjectTest;    
-                if (selectedAMLObject != null)                                          
-                {
-                    List<AttributsTest> attributs = selectedAMLObject.Attributs;                     
-                    loadAttributs(attributs);
-                }
-            }
-
-        }
+        
     }
 }

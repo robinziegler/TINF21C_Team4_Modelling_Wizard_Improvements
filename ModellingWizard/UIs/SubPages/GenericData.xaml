@@ -102,8 +102,7 @@
                 CanUserResizeColumns="True"
                 ColumnHeaderHeight="32"
                 GridLinesVisibility="Vertical"
-                HeadersVisibility="Column"
-                RowEditEnded="DataGridAttributs_RowEditEnded">
+                HeadersVisibility="Column">
                 <controls:DataGrid.Columns>
                     <controls:DataGridTextColumn 
                         Header="Atrribute" 
