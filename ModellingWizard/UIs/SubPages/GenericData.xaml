@@ -1,7 +1,5 @@
-<!-- Copyright (c) Microsoft Corporation and Contributors. -->
-<!-- Licensed under the MIT License. -->
-
-<Page
+<!-- Generic Data Page -->
+    <Page
     x:Class="ModellingWizard.UIs.SubPages.GenericData"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -14,33 +12,123 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="GenericData_Grid_Row_1"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition MinWidth="150"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        
+        <!-- Generic Informations -->
         <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" 
+                       Text="Generic Information"
+                       Margin="5,0,0,0"
+                       Style="{ThemeResource SubheaderTextBlockStyle}"/>
+            
+            <Button Grid.Row="1"
+                    Content="Add Role Class"
+                    Name="AddRoleClassButton"
+                    Click="AddRoleClassButton_Click"
+                    HorizontalAlignment="Right"
+                    Visibility="Visible"
+                    Margin="5,5,20,10"
+                    />
+
+
+            <ListView Grid.Row="2" 
+                      Loading="ListView_Loading" 
+                      SelectionChanged="ListView_AMLObjects_SelectionChanged"
+                      SelectionMode="Single"
+                      IsItemClickEnabled="False"
+                      x:Name="ListView_AMLObjects" >
+                <ListView.ItemTemplate>
+                    <!-- See "https://icons8.com/icon/57061/entfernen" for the ICON -->
+                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="local:AMLObjectTest">
+                        <StackPanel Orientation="Horizontal" Height="44" Padding="12" >
+                            <Image Source="C:\Users\Michi\source\repos\robinziegler\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Resources\Images\Delete_Trash_darkmode.png" Height="16" Width="16" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" Margin="12,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <!-- Grid Spliter  -->
+        <controls:GridSplitter
+            GripperCursor="Default"
+            HorizontalAlignment="Left"
+            Grid.Column="1"
+            ResizeDirection="Auto"
+            ResizeBehavior="BasedOnAlignment"
+            CursorBehavior="ChangeOnSplitterHover"
+            Width="10"
+            >
+            <controls:GridSplitter.RenderTransform>
+                <TranslateTransform X="-15" />
+            </controls:GridSplitter.RenderTransform>
+
+        </controls:GridSplitter>
+
+
+        <!-- Attributs -->
+        <Grid Grid.Column="1" Margin="10,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Grid Background="White">
-                <TextBlock Text="Added gernerics" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                <Button Content="Add Role Class" Name="AddRoleClassButton" Click="AddRoleClassButton_Click" HorizontalAlignment="Right" Visibility="Visible" Margin="0,0,10,0"/>
-            </Grid>
 
-            <ListView Grid.Row="1">
-                
-            </ListView>
+            <TextBlock Grid.Row="0"  
+                       Text="Attributs"
+                       Style="{ThemeResource SubheaderTextBlockStyle}"/>
+
+            <controls:DataGrid
+                x:Name="DataGridAttributs"
+                Grid.Row="1"    
+                Margin="12"
+                VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                HorizontalScrollBarVisibility="Visible"
+                VerticalScrollBarVisibility="Visible"
+                AlternatingRowBackground="Gray"
+                AlternatingRowForeground="Silver"
+                AutoGenerateColumns="False"
+                CanUserResizeColumns="True"
+                ColumnHeaderHeight="32"
+                GridLinesVisibility="Vertical"
+                HeadersVisibility="Column">
+                <controls:DataGrid.Columns>
+                    <controls:DataGridTextColumn 
+                        Header="Atrribute" 
+                        Binding="{Binding Name}"  />
+                    <controls:DataGridTextColumn 
+                        Header="Value" 
+                        Binding="{Binding Value}" />
+                    <controls:DataGridTextColumn 
+                        Header="Default"
+                        Binding="{Binding Default}" 
+                        x:Name="DefaultGrid" />
+                    <controls:DataGridTextColumn 
+                        Header="Units" 
+                        Binding="{Binding Unit}"  
+                        x:Name="UnitsGrid" />
+                    <controls:DataGridTextColumn 
+                        Header="DataType" 
+                        IsReadOnly="True"
+                        Binding="{Binding DataType}" 
+                        x:Name="DataTypeGrid"/>
+                    <controls:DataGridComboBoxColumn 
+                        Header="Semantict" 
+                        Binding="{Binding Semantic}" 
+                        x:Name="SemanticGrid"/>
+                </controls:DataGrid.Columns>
+            </controls:DataGrid>
         </Grid>
-        <controls:DataGrid Grid.Column="1">
-            <controls:DataGrid.Columns>
-                <controls:DataGridTextColumn Header="Atrribute"/>
-                <controls:DataGridTextColumn Header="Value"/>
-                <controls:DataGridTextColumn Header="Default" x:Name="DefaultGrid"/>
-                <controls:DataGridTextColumn Header="Units" x:Name="UnitsGrid"/>
-                <controls:DataGridTextColumn Header="DataType" x:Name="DataTypeGrid"/>
-                <controls:DataGridComboBoxColumn Header="Semantic" x:Name="SemanticGrid"/>
-            </controls:DataGrid.Columns>
-        </controls:DataGrid>
     </Grid>
 </Page>
