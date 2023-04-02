@@ -41,13 +41,18 @@ namespace ModellingWizard
             // Hide default title bar.
             ExtendsContentIntoTitleBar = true;
             // Set new title bar from xaml
-            string applicationName =   AppInfo.Current.DisplayInfo.DisplayName;
+            // the used informations can be changed in appxmanifest
+            string applicationName = AppInfo.Current.DisplayInfo.DisplayName;
             string applicationVersionMajor = AppInfo.Current.Package.Id.Version.Major.ToString();
             string applicationVersionMinor = AppInfo.Current.Package.Id.Version.Minor.ToString();
-            string applicationVersionRevision =   AppInfo.Current.Package.Id.Version.Revision.ToString();
+            string applicationVersionRevision = AppInfo.Current.Package.Id.Version.Revision.ToString();
             string applicationVersion = applicationVersionMajor + "." + applicationVersionMinor + "." + applicationVersionRevision;
-            string applicationInstallationnDate = AppInfo.Current.Package.InstalledDate.ToString();
-            AppTitleTextBlock.Text = applicationName + " Version: " + applicationVersion + " Installation Date: " + applicationInstallationnDate;
+            string applicationInstallationnDate = AppInfo.Current.Package.InstalledDate.ToString().Split(" ")[0];
+            TextBlock_AppTitle.Text = applicationName;
+            TextBlock_AppVersion.Text = "Version: " +  applicationVersion;
+            TextBlock_InstallationDate.Text = "Installation Date: " + applicationInstallationnDate;
+
+
             SetTitleBar(AppTitleBar);
         }
 
