@@ -8,8 +8,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid x:Name="Grid_Main">
         <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -19,25 +20,48 @@
         <!-- New Titelbar -->
         <Grid x:Name="AppTitleBar" Grid.Row="0">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid  Grid.Row="1">
+            <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="400"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Image  Source="/Assets/SmallTile.scale-100.png"
+            <Image  Source="/Assets/SmallTile.scale-400.png"
                     Grid.Column="0"/>
+            
             <StackPanel Grid.Column="1"
                         VerticalAlignment="Center">
                 <TextBlock x:Name="TextBlock_AppTitle"
-                           Style="{StaticResource CaptionTextBlockStyle}"
+                           Style="{ThemeResource CaptionTextBlockStyle}"
                            FontSize="16"/>
                 <TextBlock x:Name="TextBlock_AppVersion" />
                 <TextBlock x:Name="TextBlock_InstallationDate"/> 
             </StackPanel>
+
+            <StackPanel Grid.Column="2" 
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,10,10">
+                <Button
+                    x:Name="ThemeButton"
+                    Height="32"
+                    AutomationProperties.Name="Toggle theme"
+                    Click="ThemeButton_Click"
+                    ToolTipService.ToolTip="Toggle theme">
+                    <Button.Content>
+                        <FontIcon FontSize="14" Glyph="&#xE793;" />
+                    </Button.Content>
+                </Button>
+            </StackPanel>
         </Grid>
 
         <!-- Menu at the top -->
-        <MenuBar Grid.Row="1">
+        <MenuBar Grid.Row="2">
             <MenuBarItem Title="File">
                 <MenuFlyoutItem Name="File_New" Text="New" Click="File_New_Click"/>
                 <MenuFlyoutItem Name="File_Open" Text="Open" Click="File_Open_Click"/>
@@ -65,12 +89,13 @@
         </MenuBar>
 
         <!-- Subpages -->
-        <NavigationView Grid.Row="2" 
+        <NavigationView Grid.Row="3" 
                         x:Name="NavigationView" 
                         PaneDisplayMode="Top" 
                         IsSettingsVisible="False" 
                         IsBackButtonVisible="Collapsed" 
-                        SelectionChanged="NavigationView_SelectionChanged">
+                        SelectionChanged="NavigationView_SelectionChanged"
+                        Style="{ThemeResource NavigationViewHeaderMargin}">
             <NavigationView.MenuItems>
                 <NavigationViewItem  Content="Genereic Data" Tag="ModellingWizard.UIs.SubPages.GenericData" IsSelected="True" x:Name="MainPage_Navigation_GenericData" />
                 <NavigationViewItem  Content="Interfaces" Tag="ModellingWizard.UIs.SubPages.Interfaces" />

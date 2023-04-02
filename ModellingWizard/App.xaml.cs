@@ -18,6 +18,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -36,6 +37,15 @@ namespace ModellingWizard
         public App()
         {
             this.InitializeComponent();
+            // Get theme choice from LocalSettings.
+            object value = ApplicationData.Current.LocalSettings.Values["themeSetting"];
+
+            if (value != null)
+            {
+                // Apply theme choice.
+                App.Current.RequestedTheme = (ApplicationTheme)(int)value;
+                ApplicationData.Current.LocalSettings.Values["themeSetting"] = value;
+            }
         }
 
         /// <summary>

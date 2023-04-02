@@ -23,6 +23,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Drawing.Printing;
 using System.Xml.Linq;
 using Windows.ApplicationModel;
+using Windows.Storage;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -51,10 +52,11 @@ namespace ModellingWizard
             TextBlock_AppTitle.Text = applicationName;
             TextBlock_AppVersion.Text = "Version: " +  applicationVersion;
             TextBlock_InstallationDate.Text = "Installation Date: " + applicationInstallationnDate;
-
-
             SetTitleBar(AppTitleBar);
+            _currentTheme = (int)App.Current.RequestedTheme;
         }
+
+        private int _currentTheme { get; set; }
 
         /* Navigation stuff */
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
@@ -191,6 +193,21 @@ namespace ModellingWizard
                 Content = Win
             };
             ContentDialogResult result = await dialog.ShowAsync();
+        }
+
+        private void ThemeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(_currentTheme == (int)ApplicationTheme.Dark)
+            {
+                _currentTheme = 0;
+                Grid_Main.RequestedTheme = ElementTheme.Light;
+            } else if(_currentTheme == (int)ApplicationTheme.Light)
+            {
+                _currentTheme = 1;
+                Grid_Main.RequestedTheme = ElementTheme.Dark;
+            }
+            ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
+
         }
     }
 }
