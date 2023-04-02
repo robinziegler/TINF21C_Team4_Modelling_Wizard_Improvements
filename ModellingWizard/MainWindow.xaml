@@ -10,14 +10,33 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
+
+        <!-- New Titelbar -->
+        <Grid x:Name="AppTitleBar" Grid.Row="0">
+
+            <Image Source="/Assets/Square44x44Logo.scale-400.png"
+                    HorizontalAlignment="Left" 
+                   Height="100"
+                   Width="100"
+                    Margin="8,0"/>
+            <TextBlock x:Name="AppTitleTextBlock" Text="App title"
+               TextWrapping="NoWrap"
+               Style="{StaticResource CaptionTextBlockStyle}" 
+                FontSize="16"
+               VerticalAlignment="Center"
+               Margin="100,0,0,0"/>
+        </Grid>
+
         <!-- Menu at the top -->
-        <MenuBar>
+        <MenuBar Grid.Row="1">
             <MenuBarItem Title="File">
                 <MenuFlyoutItem Name="File_New" Text="New" Click="File_New_Click"/>
                 <MenuFlyoutItem Name="File_Open" Text="Open" Click="File_Open_Click"/>
@@ -43,9 +62,14 @@
                 <MenuFlyoutItem Name="Help_Manual" Text="Manual" Click="Help_Manual_Click"/>
             </MenuBarItem>
         </MenuBar>
-        
+
         <!-- Subpages -->
-        <NavigationView x:Name="NavigationView" Grid.Row="1" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" SelectionChanged="NavigationView_SelectionChanged">
+        <NavigationView Grid.Row="2" 
+                        x:Name="NavigationView" 
+                        PaneDisplayMode="Top" 
+                        IsSettingsVisible="False" 
+                        IsBackButtonVisible="Collapsed" 
+                        SelectionChanged="NavigationView_SelectionChanged">
             <NavigationView.MenuItems>
                 <NavigationViewItem  Content="Genereic Data" Tag="ModellingWizard.UIs.SubPages.GenericData" IsSelected="True" x:Name="MainPage_Navigation_GenericData" />
                 <NavigationViewItem  Content="Interfaces" Tag="ModellingWizard.UIs.SubPages.Interfaces" />
@@ -54,5 +78,7 @@
             <Frame x:Name="ContentFrame"/>
         </NavigationView>
     </Grid>
-   
+
 </Window>
+    
+

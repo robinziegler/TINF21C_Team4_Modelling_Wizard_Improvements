@@ -19,6 +19,10 @@ using CommunityToolkit.WinUI.UI.Controls;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using ModellingWizard.Objects;
+using static System.Net.Mime.MediaTypeNames;
+using System.Drawing.Printing;
+using System.Xml.Linq;
+using Windows.ApplicationModel;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -33,6 +37,18 @@ namespace ModellingWizard
         public MainWindow()
         {
             this.InitializeComponent();
+
+            // Hide default title bar.
+            ExtendsContentIntoTitleBar = true;
+            // Set new title bar from xaml
+            string applicationName =   AppInfo.Current.DisplayInfo.DisplayName;
+            string applicationVersionMajor = AppInfo.Current.Package.Id.Version.Major.ToString();
+            string applicationVersionMinor = AppInfo.Current.Package.Id.Version.Minor.ToString();
+            string applicationVersionRevision =   AppInfo.Current.Package.Id.Version.Revision.ToString();
+            string applicationVersion = applicationVersionMajor + "." + applicationVersionMinor + "." + applicationVersionRevision;
+            string applicationInstallationnDate = AppInfo.Current.Package.InstalledDate.ToString();
+            AppTitleTextBlock.Text = applicationName + " Version: " + applicationVersion + " Installation Date: " + applicationInstallationnDate;
+            SetTitleBar(AppTitleBar);
         }
 
         /* Navigation stuff */
@@ -150,7 +166,7 @@ namespace ModellingWizard
             ContentDialog dialog = new()
             {
                 XamlRoot = this.Content.XamlRoot,
-                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                 Title = "About",
                 CloseButtonText = "Close",
                 Content = Win
@@ -164,7 +180,7 @@ namespace ModellingWizard
             ContentDialog dialog = new()
             {
                 XamlRoot = this.Content.XamlRoot,
-                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                 Title = "Manual",
                 CloseButtonText = "Close",
                 Content = Win
