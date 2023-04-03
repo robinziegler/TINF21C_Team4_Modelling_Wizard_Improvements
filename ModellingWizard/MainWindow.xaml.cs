@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation and Contributors.
-// Licensed under the MIT License.
-
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -19,26 +16,23 @@ using CommunityToolkit.WinUI.UI.Controls;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using ModellingWizard.Objects;
-using static System.Net.Mime.MediaTypeNames;
-using System.Drawing.Printing;
-using System.Xml.Linq;
 using Windows.ApplicationModel;
 using Windows.Storage;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
+using Microsoft.UI;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace ModellingWizard
 {
     /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
+    /// Main Window of the Modelling Wizard
+    /// Here is the menubar defined and the navigation bar to change between the sub pages
     /// </summary>
     public sealed partial class MainWindow : Window
     {
         public MainWindow()
         {
             this.InitializeComponent();
-
             // Hide default title bar.
             ExtendsContentIntoTitleBar = true;
             // Set new title bar from xaml
@@ -50,7 +44,7 @@ namespace ModellingWizard
             string applicationVersion = applicationVersionMajor + "." + applicationVersionMinor + "." + applicationVersionRevision;
             string applicationInstallationnDate = AppInfo.Current.Package.InstalledDate.ToString().Split(" ")[0];
             TextBlock_AppTitle.Text = applicationName;
-            TextBlock_AppVersion.Text = "Version: " +  applicationVersion;
+            TextBlock_AppVersion.Text = "Version: " + applicationVersion;
             TextBlock_InstallationDate.Text = "Installation Date: " + applicationInstallationnDate;
             SetTitleBar(AppTitleBar);
             _currentTheme = (int)App.Current.RequestedTheme;
@@ -173,7 +167,7 @@ namespace ModellingWizard
             ContentDialog dialog = new()
             {
                 XamlRoot = this.Content.XamlRoot,
-                Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                 Title = "About",
                 CloseButtonText = "Close",
                 Content = Win
@@ -187,7 +181,7 @@ namespace ModellingWizard
             ContentDialog dialog = new()
             {
                 XamlRoot = this.Content.XamlRoot,
-                Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                 Title = "Manual",
                 CloseButtonText = "Close",
                 Content = Win
@@ -195,19 +189,27 @@ namespace ModellingWizard
             ContentDialogResult result = await dialog.ShowAsync();
         }
 
+
+        /// <summary>
+        /// Change the theme and safe the choice in local stoarage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ThemeButton_Click(object sender, RoutedEventArgs e)
-        {
-            if(_currentTheme == (int)ApplicationTheme.Dark)
+        {   
+
+            if (_currentTheme == (int)ApplicationTheme.Dark)
             {
                 _currentTheme = 0;
                 Grid_Main.RequestedTheme = ElementTheme.Light;
-            } else if(_currentTheme == (int)ApplicationTheme.Light)
+            }
+            else if (_currentTheme == (int)ApplicationTheme.Light)
             {
                 _currentTheme = 1;
                 Grid_Main.RequestedTheme = ElementTheme.Dark;
+
             }
             ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
-
         }
     }
 }

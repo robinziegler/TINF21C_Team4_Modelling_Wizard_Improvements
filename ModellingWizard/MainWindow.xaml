@@ -8,7 +8,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="Grid_Main">
+    <!-- Without Background="{ThemeResource ApplicationPageBackgroundThemeBrush} the change of theme is not working rigth -->
+    <Grid x:Name="Grid_Main" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="auto"/>
@@ -16,14 +17,13 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-
         <!-- New Titelbar -->
         <Grid x:Name="AppTitleBar" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
         </Grid>
-        <Grid  Grid.Row="1">
+        <Grid  Grid.Row="1" x:Name="Grid_Header">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="400"/>
@@ -32,14 +32,13 @@
 
             <Image  Source="/Assets/SmallTile.scale-400.png"
                     Grid.Column="0"/>
-            
+
             <StackPanel Grid.Column="1"
                         VerticalAlignment="Center">
                 <TextBlock x:Name="TextBlock_AppTitle"
-                           Style="{ThemeResource CaptionTextBlockStyle}"
                            FontSize="16"/>
                 <TextBlock x:Name="TextBlock_AppVersion" />
-                <TextBlock x:Name="TextBlock_InstallationDate"/> 
+                <TextBlock x:Name="TextBlock_InstallationDate"/>
             </StackPanel>
 
             <StackPanel Grid.Column="2" 
@@ -61,7 +60,7 @@
         </Grid>
 
         <!-- Menu at the top -->
-        <MenuBar Grid.Row="2">
+        <MenuBar Grid.Row="2" x:Name="MenuBar_Main">
             <MenuBarItem Title="File">
                 <MenuFlyoutItem Name="File_New" Text="New" Click="File_New_Click"/>
                 <MenuFlyoutItem Name="File_Open" Text="Open" Click="File_Open_Click"/>
@@ -89,13 +88,7 @@
         </MenuBar>
 
         <!-- Subpages -->
-        <NavigationView Grid.Row="3" 
-                        x:Name="NavigationView" 
-                        PaneDisplayMode="Top" 
-                        IsSettingsVisible="False" 
-                        IsBackButtonVisible="Collapsed" 
-                        SelectionChanged="NavigationView_SelectionChanged"
-                        Style="{ThemeResource NavigationViewHeaderMargin}">
+        <NavigationView x:Name="NavigationView" Grid.Row="3" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" SelectionChanged="NavigationView_SelectionChanged" >
             <NavigationView.MenuItems>
                 <NavigationViewItem  Content="Genereic Data" Tag="ModellingWizard.UIs.SubPages.GenericData" IsSelected="True" x:Name="MainPage_Navigation_GenericData" />
                 <NavigationViewItem  Content="Interfaces" Tag="ModellingWizard.UIs.SubPages.Interfaces" />
@@ -104,7 +97,4 @@
             <Frame x:Name="ContentFrame"/>
         </NavigationView>
     </Grid>
-
 </Window>
-    
-
