@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation and Contributors.
-// Licensed under the MIT License.
-
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -19,21 +16,41 @@ using CommunityToolkit.WinUI.UI.Controls;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using ModellingWizard.Objects;
+using Windows.ApplicationModel;
+using Windows.Storage;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
+using Microsoft.UI;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace ModellingWizard
 {
     /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
+    /// Main Window of the Modelling Wizard
+    /// Here is the menubar defined and the navigation bar to change between the sub pages
     /// </summary>
     public sealed partial class MainWindow : Window
     {
         public MainWindow()
         {
             this.InitializeComponent();
+            // Hide default title bar.
+            ExtendsContentIntoTitleBar = true;
+            // Set new title bar from xaml
+            // the used informations can be changed in appxmanifest
+            string applicationName = AppInfo.Current.DisplayInfo.DisplayName;
+            string applicationVersionMajor = AppInfo.Current.Package.Id.Version.Major.ToString();
+            string applicationVersionMinor = AppInfo.Current.Package.Id.Version.Minor.ToString();
+            string applicationVersionRevision = AppInfo.Current.Package.Id.Version.Revision.ToString();
+            string applicationVersion = applicationVersionMajor + "." + applicationVersionMinor + "." + applicationVersionRevision;
+            string applicationInstallationnDate = AppInfo.Current.Package.InstalledDate.ToString().Split(" ")[0];
+            TextBlock_AppTitle.Text = applicationName;
+            TextBlock_AppVersion.Text = "Version: " + applicationVersion;
+            TextBlock_InstallationDate.Text = "Installation Date: " + applicationInstallationnDate;
+            SetTitleBar(AppTitleBar);
+            _currentTheme = (int)App.Current.RequestedTheme;
         }
+
+        private int _currentTheme { get; set; }
 
         /* Navigation stuff */
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
@@ -170,6 +187,29 @@ namespace ModellingWizard
                 Content = Win
             };
             ContentDialogResult result = await dialog.ShowAsync();
+        }
+
+
+        /// <summary>
+        /// Change the theme and safe the choice in local stoarage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ThemeButton_Click(object sender, RoutedEventArgs e)
+        {   
+
+            if (_currentTheme == (int)ApplicationTheme.Dark)
+            {
+                _currentTheme = 0;
+                Grid_Main.RequestedTheme = ElementTheme.Light;
+            }
+            else if (_currentTheme == (int)ApplicationTheme.Light)
+            {
+                _currentTheme = 1;
+                Grid_Main.RequestedTheme = ElementTheme.Dark;
+
+            }
+            ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
         }
     }
 }
