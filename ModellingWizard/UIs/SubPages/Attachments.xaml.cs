@@ -17,6 +17,8 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Windows.Storage.Pickers;
 using Windows.ApplicationModel.Store;
+using CommunityToolkit.WinUI.Helpers;
+using ModellingWizard.Objects;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -31,11 +33,18 @@ namespace ModellingWizard.UIs.SubPages
         public Attachments()
         {
             this.InitializeComponent();
+            LoadItems();
+        }
+
+        private void LoadItems()
+        {
+            LoadedAttachments.ItemsSource = null;
+            LoadedAttachments.ItemsSource = Instances.Attachments;
         }
 
         private async void AddAttachmentButton_Click(object sender, RoutedEventArgs e)
         {
-            var Win = new ModalViews.Attachments.AddAttachment();
+            /*var Win = new ModalViews.Attachments.AddAttachment();
             ContentDialog dialog = new ContentDialog();
 
             // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
@@ -51,6 +60,30 @@ namespace ModellingWizard.UIs.SubPages
             if (result == ContentDialogResult.Primary)
             {
                 //Win.RoleClassTreeView.SelectedItems.Count();
+            }*/
+
+            var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+
+            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.m_window);
+
+            WinRT.Interop.InitializeWithWindow.Initialize(openPicker, hWnd);
+
+            openPicker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+            openPicker.SuggestedStartLocation =
+                Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            openPicker.FileTypeFilter.Add("*");
+
+            var file = await openPicker.PickSingleFileAsync();
+            if (file != null)
+            {
+                var contentOfFile = await file.ReadBytesAsync();
+                Objects.Instances.Attachments.Add(new() 
+                {
+                    Title = file.Name,
+                    Base64Content = System.Convert.ToBase64String(contentOfFile)
+                });
+                LoadItems();
+                
             }
         }
     }
