@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation and Contributors.
 // Licensed under the MIT License.
 
+using CommunityToolkit.WinUI.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -27,6 +28,8 @@ namespace ModellingWizard.UIs.ModalViews.Attachments
     /// </summary>
     public sealed partial class AddAttachment : Page
     {
+        public string Base64Content = "";
+        public string Title = "";
         public AddAttachment()
         {
             this.InitializeComponent();
@@ -43,12 +46,11 @@ namespace ModellingWizard.UIs.ModalViews.Attachments
 
             openPicker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
 
-            openPicker.FileTypeFilter.Add(".aml");
-
             var file = await openPicker.PickSingleFileAsync();
             if (file != null)
             {
-                //Objects.Instances.RoleClassLib = Processes.RoleClassLib.Load.LoadLib(File.ReadAllBytes(file.Path), file.Name);
+                Title = file.Name;
+                Base64Content = System.Convert.ToBase64String(file.ReadBytesAsync().Result);
             }
         }
     }

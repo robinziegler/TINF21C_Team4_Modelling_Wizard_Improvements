@@ -19,9 +19,12 @@
         <DropDownButton Content="Type" Grid.Row="1">
             <DropDownButton.Flyout>
                 <MenuFlyout Placement="Bottom">
-                    <MenuFlyoutItem Text="Type 1"/>
-                    <MenuFlyoutItem Text="Type 2"/>
-                    <MenuFlyoutItem Text="Type 3"/>
+                    <MenuFlyoutItem Text="BillOfMaterials"/>
+                    <MenuFlyoutItem Text="Certificate"/>
+                    <MenuFlyoutItem Text="ComponentIcon"/>
+                    <MenuFlyoutItem Text="ComponentPicture"/>
+                    <MenuFlyoutItem Text="ManufacturerIcon"/>
+                    <MenuFlyoutItem Text="ShortGuide"/>
                 </MenuFlyout>
             </DropDownButton.Flyout>
         </DropDownButton>

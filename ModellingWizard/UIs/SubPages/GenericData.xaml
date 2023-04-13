@@ -92,17 +92,7 @@
             <controls:DataGrid
                 x:Name="DataGridAttributs"
                 Grid.Row="1"    
-                Margin="12"
-                VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-                HorizontalScrollBarVisibility="Visible"
-                VerticalScrollBarVisibility="Visible"
-                AlternatingRowBackground="Gray"
-                AlternatingRowForeground="Silver"
-                AutoGenerateColumns="False"
-                CanUserResizeColumns="True"
-                ColumnHeaderHeight="32"
-                GridLinesVisibility="Vertical"
-                HeadersVisibility="Column">
+                >
                 <controls:DataGrid.Columns>
                     <controls:DataGridTextColumn 
                         Header="Atrribute" 

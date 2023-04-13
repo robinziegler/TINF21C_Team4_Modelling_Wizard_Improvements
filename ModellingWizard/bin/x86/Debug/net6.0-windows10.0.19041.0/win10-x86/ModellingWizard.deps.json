@@ -18,9 +18,10 @@
           "CommunityToolkit.WinUI": "7.1.2",
           "CommunityToolkit.WinUI.UI": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls.DataGrid": "7.1.2",
+          "CommunityToolkit.WinUI.UI.Controls.Layout": "7.1.2",
           "CommunityToolkit.WinUI.UI.Controls.Primitives": "7.1.2",
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
-          "Microsoft.WindowsAppSDK": "1.2.230217.4",
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756",
+          "Microsoft.WindowsAppSDK": "1.2.230313.1",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x86": "6.0.14",
           "runtimepack.Microsoft.WindowsDesktop.App.Runtime.win-x86": "6.0.14",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.19041.28"
@@ -1163,7 +1164,7 @@
       "CommunityToolkit.WinUI/7.1.2": {
         "dependencies": {
           "CommunityToolkit.Common": "8.1.0",
-          "Microsoft.WindowsAppSDK": "1.2.230217.4"
+          "Microsoft.WindowsAppSDK": "1.2.230313.1"
         },
         "runtime": {
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.dll": {
@@ -1175,7 +1176,7 @@
       "CommunityToolkit.WinUI.UI/7.1.2": {
         "dependencies": {
           "CommunityToolkit.WinUI": "7.1.2",
-          "Microsoft.WindowsAppSDK": "1.2.230217.4"
+          "Microsoft.WindowsAppSDK": "1.2.230313.1"
         },
         "runtime": {
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.dll": {
@@ -1186,7 +1187,7 @@
       },
       "CommunityToolkit.WinUI.UI.Controls.DataGrid/7.1.2": {
         "dependencies": {
-          "Microsoft.WindowsAppSDK": "1.2.230217.4"
+          "Microsoft.WindowsAppSDK": "1.2.230313.1"
         },
         "runtime": {
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.DataGrid.dll": {
@@ -1195,10 +1196,22 @@
           }
         }
       },
+      "CommunityToolkit.WinUI.UI.Controls.Layout/7.1.2": {
+        "dependencies": {
+          "CommunityToolkit.WinUI.UI": "7.1.2",
+          "Microsoft.WindowsAppSDK": "1.2.230313.1"
+        },
+        "runtime": {
+          "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Layout.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.2.1"
+          }
+        }
+      },
       "CommunityToolkit.WinUI.UI.Controls.Primitives/7.1.2": {
         "dependencies": {
           "CommunityToolkit.WinUI.UI": "7.1.2",
-          "Microsoft.WindowsAppSDK": "1.2.230217.4"
+          "Microsoft.WindowsAppSDK": "1.2.230313.1"
         },
         "runtime": {
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Primitives.dll": {
@@ -1207,19 +1220,19 @@
           }
         }
       },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22621.755": {},
-      "Microsoft.WindowsAppSDK/1.2.230217.4": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {},
+      "Microsoft.WindowsAppSDK/1.2.230313.1": {
         "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755"
+          "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756"
         },
         "runtime": {
           "lib/net6.0-windows10.0.18362.0/Microsoft.InteractiveExperiences.Projection.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.22622.1036"
+            "fileVersion": "10.0.22622.1039"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.WinUI.dll": {
             "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.2302"
+            "fileVersion": "3.0.0.2303"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.AppLifecycle.Projection.dll": {
             "assemblyVersion": "1.2.0.0",
@@ -1401,6 +1414,13 @@
       "path": "communitytoolkit.winui.ui.controls.datagrid/7.1.2",
       "hashPath": "communitytoolkit.winui.ui.controls.datagrid.7.1.2.nupkg.sha512"
     },
+    "CommunityToolkit.WinUI.UI.Controls.Layout/7.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FpKo2DdJgREAvttTYhOJTy1ru6ODRG41Da+vMrB7bcqavdbPgSTqYzolLcgvMl2InpIdt+fqn6U6mGQYoV+ksQ==",
+      "path": "communitytoolkit.winui.ui.controls.layout/7.1.2",
+      "hashPath": "communitytoolkit.winui.ui.controls.layout.7.1.2.nupkg.sha512"
+    },
     "CommunityToolkit.WinUI.UI.Controls.Primitives/7.1.2": {
       "type": "package",
       "serviceable": true,
@@ -1408,19 +1428,19 @@
       "path": "communitytoolkit.winui.ui.controls.primitives/7.1.2",
       "hashPath": "communitytoolkit.winui.ui.controls.primitives.7.1.2.nupkg.sha512"
     },
-    "Microsoft.Windows.SDK.BuildTools/10.0.22621.755": {
+    "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zGXDCZc2/slVjpNtopNETCjnOqH9KiEdo9dPCcjtNWwK5W+EmOcEn7X5Ftj3tOE9kLvroga1s7WwLh2a5jQEEg==",
-      "path": "microsoft.windows.sdk.buildtools/10.0.22621.755",
-      "hashPath": "microsoft.windows.sdk.buildtools.10.0.22621.755.nupkg.sha512"
+      "sha512": "sha512-7ZL2sFSioYm1Ry067Kw1hg0SCcW5kuVezC2SwjGbcPE61Nn+gTbH86T73G3LcEOVj0S3IZzNuE/29gZvOLS7VA==",
+      "path": "microsoft.windows.sdk.buildtools/10.0.22621.756",
+      "hashPath": "microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512"
     },
-    "Microsoft.WindowsAppSDK/1.2.230217.4": {
+    "Microsoft.WindowsAppSDK/1.2.230313.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mGFBn5UKpH569iYAUZq7dS2ALG9vzxe25n/xGRBK3sdfm96BgyIiL1GZ/vb3M8BFwMj65GbcgFxseNZeajJXOg==",
-      "path": "microsoft.windowsappsdk/1.2.230217.4",
-      "hashPath": "microsoft.windowsappsdk.1.2.230217.4.nupkg.sha512"
+      "sha512": "sha512-7to3P0Qui25KAWRVRw+WmmHs3s96hN18/bKOZebPuKkbHlr3p0kk/AkcdUJqsjQaGF3D8r3Rvw5r0qODGOUBjQ==",
+      "path": "microsoft.windowsappsdk/1.2.230313.1",
+      "hashPath": "microsoft.windowsappsdk.1.2.230313.1.nupkg.sha512"
     },
     "System.IO.Packaging/7.0.0": {
       "type": "package",

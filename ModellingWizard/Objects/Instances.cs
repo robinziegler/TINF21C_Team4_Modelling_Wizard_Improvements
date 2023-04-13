@@ -18,5 +18,6 @@ namespace ModellingWizard.Objects
         /* File Data */
         public static Objects.Libaries.Libary Loaded_RoleClass_Data { get; set; }
         public static Objects.Libaries.Libary Loaded_Interfaces_Data { get; set; }
+        public static List<Objects.Attachments.AttachmentObject> Attachments { get; set; } = new();
     }
 }
