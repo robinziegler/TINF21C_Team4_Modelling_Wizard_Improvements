@@ -97,11 +97,12 @@ namespace ModellingWizard
             openPicker.SuggestedStartLocation =
                 Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
             openPicker.FileTypeFilter.Add(".aml");
+            openPicker.FileTypeFilter.Add(".amlx");
 
             var file = await openPicker.PickSingleFileAsync();
             if (file != null)
             {
-                //file.Path
+                var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
             }
         }
 
@@ -211,5 +212,7 @@ namespace ModellingWizard
             }
             ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
         }
+
+
     }
 }
