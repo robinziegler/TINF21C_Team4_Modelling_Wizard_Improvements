@@ -52,7 +52,7 @@ namespace ModellingWizard.Processes.Libary
             return (RoleClassLib, InterfacesLib);
         }
 
-        private static Objects.Libaries.Libary LoadRoleClassSubLibs(RoleFamilyType input)
+        public static Objects.Libaries.Libary LoadRoleClassSubLibs(RoleFamilyType input)
         {
             Objects.Libaries.Libary SubLib = new()
             {
@@ -67,7 +67,7 @@ namespace ModellingWizard.Processes.Libary
             return SubLib;
         }
 
-        private static Objects.Libaries.Libary LoadInterfaceSubLibs(InterfaceFamilyType input)
+        public static Objects.Libaries.Libary LoadInterfaceSubLibs(InterfaceFamilyType input)
         {
             Objects.Libaries.Libary SubLib = new()
             {

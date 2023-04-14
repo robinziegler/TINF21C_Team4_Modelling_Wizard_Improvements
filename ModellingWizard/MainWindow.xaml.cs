@@ -99,11 +99,12 @@ namespace ModellingWizard
             openPicker.SuggestedStartLocation =
                 Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
             openPicker.FileTypeFilter.Add(".aml");
+            openPicker.FileTypeFilter.Add(".amlx");
 
             var file = await openPicker.PickSingleFileAsync();
             if (file != null)
             {
-                //file.Path
+                var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
             }
         }
 
@@ -209,5 +210,30 @@ namespace ModellingWizard
             };
             ContentDialogResult result = await dialog.ShowAsync();
         }
+
+
+        /// <summary>
+        /// Change the theme and safe the choice in local stoarage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ThemeButton_Click(object sender, RoutedEventArgs e)
+        {   
+
+            if (_currentTheme == (int)ApplicationTheme.Dark)
+            {
+                _currentTheme = 0;
+                Grid_Main.RequestedTheme = ElementTheme.Light;
+            }
+            else if (_currentTheme == (int)ApplicationTheme.Light)
+            {
+                _currentTheme = 1;
+                Grid_Main.RequestedTheme = ElementTheme.Dark;
+
+            }
+            ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
+        }
+
+
     }
 }
