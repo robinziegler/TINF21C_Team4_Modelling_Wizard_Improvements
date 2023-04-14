@@ -168,7 +168,7 @@ namespace ModellingWizard
             {
                 XamlRoot = this.Content.XamlRoot,
                 Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
-                Title = "About",
+                Title = "About the Modelling Wizard for Devices Application",
                 CloseButtonText = "Close",
                 Content = Win
             };
