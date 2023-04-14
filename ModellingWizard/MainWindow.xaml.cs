@@ -43,11 +43,12 @@ namespace ModellingWizard
             string applicationVersionRevision = AppInfo.Current.Package.Id.Version.Revision.ToString();
             string applicationVersion = applicationVersionMajor + "." + applicationVersionMinor + "." + applicationVersionRevision;
             string applicationInstallationnDate = AppInfo.Current.Package.InstalledDate.ToString().Split(" ")[0];
-            TextBlock_AppTitle.Text = applicationName;
-            TextBlock_AppVersion.Text = "Version: " + applicationVersion;
-            TextBlock_InstallationDate.Text = "Installation Date: " + applicationInstallationnDate;
+
+            AppbarTitle.Text = applicationName + " - " + applicationVersion;
             SetTitleBar(AppTitleBar);
             _currentTheme = (int)App.Current.RequestedTheme;
+
+            ThemeButton.Text = _currentTheme == (int)ApplicationTheme.Dark ? "Lightmode" : "Darkmode";
         }
 
         private int _currentTheme { get; set; }
@@ -160,6 +161,25 @@ namespace ModellingWizard
             AppMode.Text = Instances.ExpertMode ? "Easy Mode" : "Expert Mode";
         }
 
+        private void ThemeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (_currentTheme == (int)ApplicationTheme.Dark)
+            {
+                _currentTheme = 0;
+                Grid_Main.RequestedTheme = ElementTheme.Light;
+                ThemeButton.Text = "Darkmode";
+            }
+            else if (_currentTheme == (int)ApplicationTheme.Light)
+            {
+                _currentTheme = 1;
+                Grid_Main.RequestedTheme = ElementTheme.Dark;
+                ThemeButton.Text = "Lightmode";
+
+            }
+            ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
+        }
+
         /* Help Options */
         private async void Help_About_Click(object sender, RoutedEventArgs e)
         {
@@ -187,29 +207,6 @@ namespace ModellingWizard
                 Content = Win
             };
             ContentDialogResult result = await dialog.ShowAsync();
-        }
-
-
-        /// <summary>
-        /// Change the theme and safe the choice in local stoarage
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ThemeButton_Click(object sender, RoutedEventArgs e)
-        {   
-
-            if (_currentTheme == (int)ApplicationTheme.Dark)
-            {
-                _currentTheme = 0;
-                Grid_Main.RequestedTheme = ElementTheme.Light;
-            }
-            else if (_currentTheme == (int)ApplicationTheme.Light)
-            {
-                _currentTheme = 1;
-                Grid_Main.RequestedTheme = ElementTheme.Dark;
-
-            }
-            ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
         }
     }
 }
