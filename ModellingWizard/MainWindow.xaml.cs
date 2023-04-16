@@ -49,6 +49,7 @@ namespace ModellingWizard
             _currentTheme = (int)App.Current.RequestedTheme;
 
             ThemeButton.Text = _currentTheme == (int)ApplicationTheme.Dark ? "Lightmode" : "Darkmode";
+            Instances.ExpertMode = false;
         }
 
         private int _currentTheme { get; set; }
@@ -158,7 +159,7 @@ namespace ModellingWizard
         private void AppMode_Click(object sender, RoutedEventArgs e)
         {
             Instances.ExpertMode = !Instances.ExpertMode;
-            AppMode.Text = Instances.ExpertMode ? "Easy Mode" : "Expert Mode";
+            AppMode.Text = Instances.ExpertMode ? "Easy Mode" : "Advanced Mode";
         }
 
         private void ThemeButton_Click(object sender, RoutedEventArgs e)
