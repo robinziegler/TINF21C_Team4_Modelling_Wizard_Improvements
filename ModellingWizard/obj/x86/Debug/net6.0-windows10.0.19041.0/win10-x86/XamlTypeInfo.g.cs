@@ -224,7 +224,7 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[92];
+            _typeNameTable = new string[89];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -309,16 +309,13 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             _typeNameTable[81] = "Windows.UI.Text.FontStyle";
             _typeNameTable[82] = "Windows.UI.Text.FontWeight";
             _typeNameTable[83] = "ModellingWizard.UIs.SubPages.Attachments";
-            _typeNameTable[84] = "CommunityToolkit.WinUI.UI.Controls.GridSplitter";
-            _typeNameTable[85] = "CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType";
-            _typeNameTable[86] = "CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeDirection";
-            _typeNameTable[87] = "CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeBehavior";
-            _typeNameTable[88] = "CommunityToolkit.WinUI.UI.Controls.GridSplitter.SplitterCursorBehavior";
-            _typeNameTable[89] = "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn";
-            _typeNameTable[90] = "ModellingWizard.UIs.SubPages.GenericData";
-            _typeNameTable[91] = "ModellingWizard.UIs.SubPages.Interfaces";
+            _typeNameTable[84] = "ModellingWizard.UIs.SubPages.GenericData";
+            _typeNameTable[85] = "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn";
+            _typeNameTable[86] = "ModellingWizard.UIs.SubPages.GenericData_Detail";
+            _typeNameTable[87] = "ModellingWizard.UIs.SubPages.Interfaces";
+            _typeNameTable[88] = "ModellingWizard.UIs.SubPages.Interfaces_Detail";
 
-            _typeTable = new global::System.Type[92];
+            _typeTable = new global::System.Type[89];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -403,14 +400,11 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             _typeTable[81] = typeof(global::Windows.UI.Text.FontStyle);
             _typeTable[82] = typeof(global::Windows.UI.Text.FontWeight);
             _typeTable[83] = typeof(global::ModellingWizard.UIs.SubPages.Attachments);
-            _typeTable[84] = typeof(global::CommunityToolkit.WinUI.UI.Controls.GridSplitter);
-            _typeTable[85] = typeof(global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType);
-            _typeTable[86] = typeof(global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeDirection);
-            _typeTable[87] = typeof(global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeBehavior);
-            _typeTable[88] = typeof(global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.SplitterCursorBehavior);
-            _typeTable[89] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn);
-            _typeTable[90] = typeof(global::ModellingWizard.UIs.SubPages.GenericData);
-            _typeTable[91] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces);
+            _typeTable[84] = typeof(global::ModellingWizard.UIs.SubPages.GenericData);
+            _typeTable[85] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn);
+            _typeTable[86] = typeof(global::ModellingWizard.UIs.SubPages.GenericData_Detail);
+            _typeTable[87] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces);
+            _typeTable[88] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces_Detail);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -469,10 +463,11 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
         private object Activate_76_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.UI.Xaml.Style>(); }
         private object Activate_78_DataGridTextColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn(); }
         private object Activate_83_Attachments() { return new global::ModellingWizard.UIs.SubPages.Attachments(); }
-        private object Activate_84_GridSplitter() { return new global::CommunityToolkit.WinUI.UI.Controls.GridSplitter(); }
-        private object Activate_89_DataGridComboBoxColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn(); }
-        private object Activate_90_GenericData() { return new global::ModellingWizard.UIs.SubPages.GenericData(); }
-        private object Activate_91_Interfaces() { return new global::ModellingWizard.UIs.SubPages.Interfaces(); }
+        private object Activate_84_GenericData() { return new global::ModellingWizard.UIs.SubPages.GenericData(); }
+        private object Activate_85_DataGridComboBoxColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn(); }
+        private object Activate_86_GenericData_Detail() { return new global::ModellingWizard.UIs.SubPages.GenericData_Detail(); }
+        private object Activate_87_Interfaces() { return new global::ModellingWizard.UIs.SubPages.Interfaces(); }
+        private object Activate_88_Interfaces_Detail() { return new global::ModellingWizard.UIs.SubPages.Interfaces_Detail(); }
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -1180,67 +1175,16 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 84:   //  CommunityToolkit.WinUI.UI.Controls.GridSplitter
-                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_84_GridSplitter;
-                userType.AddMemberName("GripperCursor");
-                userType.AddMemberName("ResizeDirection");
-                userType.AddMemberName("ResizeBehavior");
-                userType.AddMemberName("CursorBehavior");
-                userType.AddMemberName("Element");
-                userType.AddMemberName("GripperForeground");
-                userType.AddMemberName("ParentLevel");
-                userType.AddMemberName("GripperCustomCursorResource");
+            case 84:   //  ModellingWizard.UIs.SubPages.GenericData
+                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_84_GenericData;
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 85:   //  CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType
-                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("Default", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.Default);
-                userType.AddEnumValue("Arrow", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.Arrow);
-                userType.AddEnumValue("Cross", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.Cross);
-                userType.AddEnumValue("Custom", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.Custom);
-                userType.AddEnumValue("Hand", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.Hand);
-                userType.AddEnumValue("Help", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.Help);
-                userType.AddEnumValue("IBeam", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.IBeam);
-                userType.AddEnumValue("SizeAll", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.SizeAll);
-                userType.AddEnumValue("SizeNortheastSouthwest", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.SizeNortheastSouthwest);
-                userType.AddEnumValue("SizeNorthSouth", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.SizeNorthSouth);
-                userType.AddEnumValue("SizeNorthwestSoutheast", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.SizeNorthwestSoutheast);
-                userType.AddEnumValue("SizeWestEast", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.SizeWestEast);
-                userType.AddEnumValue("UniversalNo", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.UniversalNo);
-                userType.AddEnumValue("UpArrow", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.UpArrow);
-                userType.AddEnumValue("Wait", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType.Wait);
-                xamlType = userType;
-                break;
-
-            case 86:   //  CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeDirection
-                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("Auto", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeDirection.Auto);
-                userType.AddEnumValue("Columns", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeDirection.Columns);
-                userType.AddEnumValue("Rows", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeDirection.Rows);
-                xamlType = userType;
-                break;
-
-            case 87:   //  CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeBehavior
-                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("BasedOnAlignment", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeBehavior.BasedOnAlignment);
-                userType.AddEnumValue("CurrentAndNext", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeBehavior.CurrentAndNext);
-                userType.AddEnumValue("PreviousAndCurrent", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeBehavior.PreviousAndCurrent);
-                userType.AddEnumValue("PreviousAndNext", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeBehavior.PreviousAndNext);
-                xamlType = userType;
-                break;
-
-            case 88:   //  CommunityToolkit.WinUI.UI.Controls.GridSplitter.SplitterCursorBehavior
-                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("ChangeOnSplitterHover", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.SplitterCursorBehavior.ChangeOnSplitterHover);
-                userType.AddEnumValue("ChangeOnGripperHover", global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.SplitterCursorBehavior.ChangeOnGripperHover);
-                xamlType = userType;
-                break;
-
-            case 89:   //  CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn
+            case 85:   //  CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn"));
-                userType.Activator = Activate_89_DataGridComboBoxColumn;
+                userType.Activator = Activate_85_DataGridComboBoxColumn;
                 userType.AddMemberName("ItemsSource");
                 userType.AddMemberName("DisplayMemberPath");
                 userType.AddMemberName("FontFamily");
@@ -1251,16 +1195,23 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 90:   //  ModellingWizard.UIs.SubPages.GenericData
+            case 86:   //  ModellingWizard.UIs.SubPages.GenericData_Detail
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_90_GenericData;
+                userType.Activator = Activate_86_GenericData_Detail;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 91:   //  ModellingWizard.UIs.SubPages.Interfaces
+            case 87:   //  ModellingWizard.UIs.SubPages.Interfaces
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_91_Interfaces;
+                userType.Activator = Activate_87_Interfaces;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 88:   //  ModellingWizard.UIs.SubPages.Interfaces_Detail
+                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_88_Interfaces_Detail;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -2717,152 +2668,72 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn)instance;
             that.ElementStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_151_GridSplitter_GripperCursor(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            return that.GripperCursor;
-        }
-        private void set_151_GridSplitter_GripperCursor(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            that.GripperCursor = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType)Value;
-        }
-        private object get_152_GridSplitter_ResizeDirection(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            return that.ResizeDirection;
-        }
-        private void set_152_GridSplitter_ResizeDirection(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            that.ResizeDirection = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeDirection)Value;
-        }
-        private object get_153_GridSplitter_ResizeBehavior(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            return that.ResizeBehavior;
-        }
-        private void set_153_GridSplitter_ResizeBehavior(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            that.ResizeBehavior = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeBehavior)Value;
-        }
-        private object get_154_GridSplitter_CursorBehavior(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            return that.CursorBehavior;
-        }
-        private void set_154_GridSplitter_CursorBehavior(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            that.CursorBehavior = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter.SplitterCursorBehavior)Value;
-        }
-        private object get_155_GridSplitter_Element(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            return that.Element;
-        }
-        private void set_155_GridSplitter_Element(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            that.Element = (global::Microsoft.UI.Xaml.UIElement)Value;
-        }
-        private object get_156_GridSplitter_GripperForeground(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            return that.GripperForeground;
-        }
-        private void set_156_GridSplitter_GripperForeground(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            that.GripperForeground = (global::Microsoft.UI.Xaml.Media.Brush)Value;
-        }
-        private object get_157_GridSplitter_ParentLevel(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            return that.ParentLevel;
-        }
-        private void set_157_GridSplitter_ParentLevel(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            that.ParentLevel = (global::System.Int32)Value;
-        }
-        private object get_158_GridSplitter_GripperCustomCursorResource(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            return that.GripperCustomCursorResource;
-        }
-        private void set_158_GridSplitter_GripperCustomCursorResource(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.GridSplitter)instance;
-            that.GripperCustomCursorResource = (global::System.Int32)Value;
-        }
-        private object get_159_DataGridComboBoxColumn_ItemsSource(object instance)
+        private object get_151_DataGridComboBoxColumn_ItemsSource(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             return that.ItemsSource;
         }
-        private void set_159_DataGridComboBoxColumn_ItemsSource(object instance, object Value)
+        private void set_151_DataGridComboBoxColumn_ItemsSource(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             that.ItemsSource = (global::System.Collections.IEnumerable)Value;
         }
-        private object get_160_DataGridComboBoxColumn_DisplayMemberPath(object instance)
+        private object get_152_DataGridComboBoxColumn_DisplayMemberPath(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             return that.DisplayMemberPath;
         }
-        private void set_160_DataGridComboBoxColumn_DisplayMemberPath(object instance, object Value)
+        private void set_152_DataGridComboBoxColumn_DisplayMemberPath(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             that.DisplayMemberPath = (global::System.String)Value;
         }
-        private object get_161_DataGridComboBoxColumn_FontFamily(object instance)
+        private object get_153_DataGridComboBoxColumn_FontFamily(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             return that.FontFamily;
         }
-        private void set_161_DataGridComboBoxColumn_FontFamily(object instance, object Value)
+        private void set_153_DataGridComboBoxColumn_FontFamily(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             that.FontFamily = (global::Microsoft.UI.Xaml.Media.FontFamily)Value;
         }
-        private object get_162_DataGridComboBoxColumn_FontSize(object instance)
+        private object get_154_DataGridComboBoxColumn_FontSize(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             return that.FontSize;
         }
-        private void set_162_DataGridComboBoxColumn_FontSize(object instance, object Value)
+        private void set_154_DataGridComboBoxColumn_FontSize(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             that.FontSize = (global::System.Double)Value;
         }
-        private object get_163_DataGridComboBoxColumn_FontStyle(object instance)
+        private object get_155_DataGridComboBoxColumn_FontStyle(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             return that.FontStyle;
         }
-        private void set_163_DataGridComboBoxColumn_FontStyle(object instance, object Value)
+        private void set_155_DataGridComboBoxColumn_FontStyle(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             that.FontStyle = (global::Windows.UI.Text.FontStyle)Value;
         }
-        private object get_164_DataGridComboBoxColumn_FontWeight(object instance)
+        private object get_156_DataGridComboBoxColumn_FontWeight(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             return that.FontWeight;
         }
-        private void set_164_DataGridComboBoxColumn_FontWeight(object instance, object Value)
+        private void set_156_DataGridComboBoxColumn_FontWeight(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             that.FontWeight = (global::Windows.UI.Text.FontWeight)Value;
         }
-        private object get_165_DataGridComboBoxColumn_Foreground(object instance)
+        private object get_157_DataGridComboBoxColumn_Foreground(object instance)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             return that.Foreground;
         }
-        private void set_165_DataGridComboBoxColumn_Foreground(object instance, object Value)
+        private void set_157_DataGridComboBoxColumn_Foreground(object instance, object Value)
         {
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
             that.Foreground = (global::Microsoft.UI.Xaml.Media.Brush)Value;
@@ -3892,106 +3763,50 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlMember.Getter = get_150_DataGridBoundColumn_ElementStyle;
                 xamlMember.Setter = set_150_DataGridBoundColumn_ElementStyle;
                 break;
-            case "CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursor":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.GridSplitter");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "GripperCursor", "CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCursorType");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_151_GridSplitter_GripperCursor;
-                xamlMember.Setter = set_151_GridSplitter_GripperCursor;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.GridSplitter.ResizeDirection":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.GridSplitter");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "ResizeDirection", "CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeDirection");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_152_GridSplitter_ResizeDirection;
-                xamlMember.Setter = set_152_GridSplitter_ResizeDirection;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.GridSplitter.ResizeBehavior":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.GridSplitter");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "ResizeBehavior", "CommunityToolkit.WinUI.UI.Controls.GridSplitter.GridResizeBehavior");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_153_GridSplitter_ResizeBehavior;
-                xamlMember.Setter = set_153_GridSplitter_ResizeBehavior;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.GridSplitter.CursorBehavior":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.GridSplitter");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "CursorBehavior", "CommunityToolkit.WinUI.UI.Controls.GridSplitter.SplitterCursorBehavior");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_154_GridSplitter_CursorBehavior;
-                xamlMember.Setter = set_154_GridSplitter_CursorBehavior;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.GridSplitter.Element":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.GridSplitter");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "Element", "Microsoft.UI.Xaml.UIElement");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_155_GridSplitter_Element;
-                xamlMember.Setter = set_155_GridSplitter_Element;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperForeground":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.GridSplitter");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "GripperForeground", "Microsoft.UI.Xaml.Media.Brush");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_156_GridSplitter_GripperForeground;
-                xamlMember.Setter = set_156_GridSplitter_GripperForeground;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.GridSplitter.ParentLevel":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.GridSplitter");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "ParentLevel", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_157_GridSplitter_ParentLevel;
-                xamlMember.Setter = set_157_GridSplitter_ParentLevel;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.GridSplitter.GripperCustomCursorResource":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.GridSplitter");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "GripperCustomCursorResource", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_158_GridSplitter_GripperCustomCursorResource;
-                xamlMember.Setter = set_158_GridSplitter_GripperCustomCursorResource;
-                break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.ItemsSource":
                 userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
                 xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "ItemsSource", "System.Collections.IEnumerable");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_159_DataGridComboBoxColumn_ItemsSource;
-                xamlMember.Setter = set_159_DataGridComboBoxColumn_ItemsSource;
+                xamlMember.Getter = get_151_DataGridComboBoxColumn_ItemsSource;
+                xamlMember.Setter = set_151_DataGridComboBoxColumn_ItemsSource;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.DisplayMemberPath":
                 userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
                 xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "DisplayMemberPath", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_160_DataGridComboBoxColumn_DisplayMemberPath;
-                xamlMember.Setter = set_160_DataGridComboBoxColumn_DisplayMemberPath;
+                xamlMember.Getter = get_152_DataGridComboBoxColumn_DisplayMemberPath;
+                xamlMember.Setter = set_152_DataGridComboBoxColumn_DisplayMemberPath;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.FontFamily":
                 userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
                 xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "FontFamily", "Microsoft.UI.Xaml.Media.FontFamily");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_161_DataGridComboBoxColumn_FontFamily;
-                xamlMember.Setter = set_161_DataGridComboBoxColumn_FontFamily;
+                xamlMember.Getter = get_153_DataGridComboBoxColumn_FontFamily;
+                xamlMember.Setter = set_153_DataGridComboBoxColumn_FontFamily;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.FontSize":
                 userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
                 xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "FontSize", "Double");
-                xamlMember.Getter = get_162_DataGridComboBoxColumn_FontSize;
-                xamlMember.Setter = set_162_DataGridComboBoxColumn_FontSize;
+                xamlMember.Getter = get_154_DataGridComboBoxColumn_FontSize;
+                xamlMember.Setter = set_154_DataGridComboBoxColumn_FontSize;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.FontStyle":
                 userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
                 xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "FontStyle", "Windows.UI.Text.FontStyle");
-                xamlMember.Getter = get_163_DataGridComboBoxColumn_FontStyle;
-                xamlMember.Setter = set_163_DataGridComboBoxColumn_FontStyle;
+                xamlMember.Getter = get_155_DataGridComboBoxColumn_FontStyle;
+                xamlMember.Setter = set_155_DataGridComboBoxColumn_FontStyle;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.FontWeight":
                 userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
                 xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "FontWeight", "Windows.UI.Text.FontWeight");
-                xamlMember.Getter = get_164_DataGridComboBoxColumn_FontWeight;
-                xamlMember.Setter = set_164_DataGridComboBoxColumn_FontWeight;
+                xamlMember.Getter = get_156_DataGridComboBoxColumn_FontWeight;
+                xamlMember.Setter = set_156_DataGridComboBoxColumn_FontWeight;
                 break;
             case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.Foreground":
                 userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
                 xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "Foreground", "Microsoft.UI.Xaml.Media.Brush");
-                xamlMember.Getter = get_165_DataGridComboBoxColumn_Foreground;
-                xamlMember.Setter = set_165_DataGridComboBoxColumn_Foreground;
+                xamlMember.Getter = get_157_DataGridComboBoxColumn_Foreground;
+                xamlMember.Setter = set_157_DataGridComboBoxColumn_Foreground;
                 break;
             }
             return xamlMember;

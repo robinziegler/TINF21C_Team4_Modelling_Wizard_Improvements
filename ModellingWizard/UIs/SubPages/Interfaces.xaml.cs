@@ -52,5 +52,28 @@ namespace ModellingWizard.UIs.SubPages
                 Win.InterfaceTreeView.SelectedItems.Count();
             }
         }
+
+        /* Navigation stuff */
+        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            var item = args.SelectedItemContainer as NavigationViewItem;
+
+            if (item == null)
+            {
+                return;
+            }
+            if (item.Tag == null)
+            {
+                return;
+            }
+            if (item.Content == null)
+            {
+                return;
+            }
+            ContentFrame.Navigate(Type.GetType(item.Tag.ToString()), item.Content);
+            //NavigationView.Header = item.Content;
+            NavigationView.Header = null;
+            NavigationView.SelectedItem = item;
+        }
     }
 }
