@@ -1,0 +1,47 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<Page
+    x:Class="ModellingWizard.UIs.SubPages.GenericData_Detail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ModellingWizard.UIs.SubPages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls = "using:CommunityToolkit.WinUI.UI.Controls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <controls:DataGrid
+                x:Name="DataGridAttributs"
+                Grid.Row="1"    
+                >
+            <controls:DataGrid.Columns>
+                <controls:DataGridTextColumn 
+                        Header="Atrribute" 
+                        Binding="{Binding Name}"  />
+                <controls:DataGridTextColumn 
+                        Header="Value" 
+                        Binding="{Binding Value}" />
+                <controls:DataGridTextColumn 
+                        Header="Default"
+                        Binding="{Binding Default}" 
+                        x:Name="DefaultGrid" />
+                <controls:DataGridTextColumn 
+                        Header="Units" 
+                        Binding="{Binding Unit}"  
+                        x:Name="UnitsGrid" />
+                <controls:DataGridTextColumn 
+                        Header="DataType" 
+                        IsReadOnly="True"
+                        Binding="{Binding DataType}" 
+                        x:Name="DataTypeGrid"/>
+                <controls:DataGridComboBoxColumn 
+                        Header="Semantict" 
+                        Binding="{Binding Semantic}" 
+                        x:Name="SemanticGrid"/>
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
+    </Grid>
+</Page>

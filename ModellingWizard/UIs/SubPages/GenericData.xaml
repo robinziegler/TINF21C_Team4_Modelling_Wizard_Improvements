@@ -12,119 +12,20 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition x:Name="GenericData_Grid_Row_1"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="150"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        
-        <!-- Generic Informations -->
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            
-            <Button Grid.Row="0"
-                    Content="Add Role Class"
-                    Name="AddRoleClassButton"
-                    Click="AddRoleClassButton_Click"
-                    HorizontalAlignment="Right"
-                    Visibility="Visible"
-                    Margin="5,5,20,10"
-                    />
-
-
-            <NavigationView x:Name="nvSample8" Grid.Row="1" Height="460"
+        <NavigationView x:Name="NavigationView" Grid.Row="1" Height="460"
                         PaneDisplayMode="Left"
                         IsTabStop="False"
-                        SelectionChanged="NavigationView_SelectionChanged8">
-                <NavigationView.MenuItems>
-                    <NavigationViewItem Content="Home" Icon="Home" ToolTipService.ToolTip="Home" Tag="SamplePage1"/>
-                    <NavigationViewItem Content="Account" Icon="Contact" ToolTipService.ToolTip="Account" Tag="SamplePage2">
-                        <NavigationViewItem.MenuItems>
-                            <NavigationViewItem Content="Mail" Icon="Mail" ToolTipService.ToolTip="Mail" Tag="SamplePage3"/>
-                            <NavigationViewItem Content="Calendar" Icon="Calendar" ToolTipService.ToolTip="Calendar" Tag="SamplePage4"/>
-                        </NavigationViewItem.MenuItems>
-                    </NavigationViewItem>
-                    <NavigationViewItem Content="Document options" Icon="Page2" ToolTipService.ToolTip="Document options" SelectsOnInvoked="False">
-                        <NavigationViewItem.MenuItems>
-                            <NavigationViewItem Content="Create new" Icon="NewFolder" ToolTipService.ToolTip="Create new" Tag="SamplePage5"/>
-                            <NavigationViewItem Content="Upload file" Icon="OpenLocal" ToolTipService.ToolTip="Upload file" Tag="SamplePage6"/>
-                        </NavigationViewItem.MenuItems>
-                    </NavigationViewItem>
-                </NavigationView.MenuItems>
-                <Frame x:Name="contentFrame8" />
-            </NavigationView>
-        </Grid>
-
-        <!-- Grid Spliter  -->
-        <controls:GridSplitter
-            GripperCursor="Default"
-            HorizontalAlignment="Left"
-            Grid.Column="1"
-            ResizeDirection="Auto"
-            ResizeBehavior="BasedOnAlignment"
-            CursorBehavior="ChangeOnSplitterHover"
-            Width="10"
-            >
-            <controls:GridSplitter.RenderTransform>
-                <TranslateTransform X="-15" />
-            </controls:GridSplitter.RenderTransform>
-
-        </controls:GridSplitter>
-
-
-        <!-- Attributs -->
-        <Grid Grid.Column="1" Margin="10,0,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-            </Grid.RowDefinitions>
-
-            <controls:DataGrid
-                x:Name="DataGridAttributs"
-                Grid.Row="0" 
-                Margin="12"
-                VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-                HorizontalScrollBarVisibility="Visible"
-                VerticalScrollBarVisibility="Visible"
-                AlternatingRowBackground="Gray"
-                AlternatingRowForeground="Silver"
-                AutoGenerateColumns="False"
-                CanUserResizeColumns="True"
-                ColumnHeaderHeight="32"
-                GridLinesVisibility="Vertical"
-                HeadersVisibility="Column">
-                <controls:DataGrid.Columns>
-                    <controls:DataGridTextColumn 
-                        Header="Atrribute" 
-                        Binding="{Binding Name}"  />
-                    <controls:DataGridTextColumn 
-                        Header="Value" 
-                        Binding="{Binding Value}" />
-                    <controls:DataGridTextColumn 
-                        Header="Default"
-                        Binding="{Binding Default}" 
-                        x:Name="DefaultGrid" />
-                    <controls:DataGridTextColumn 
-                        Header="Units" 
-                        Binding="{Binding Unit}"  
-                        x:Name="UnitsGrid" />
-                    <controls:DataGridTextColumn 
-                        Header="DataType" 
-                        IsReadOnly="True"
-                        Binding="{Binding DataType}" 
-                        x:Name="DataTypeGrid"/>
-                    <controls:DataGridComboBoxColumn 
-                        Header="Semantict" 
-                        Binding="{Binding Semantic}" 
-                        x:Name="SemanticGrid"/>
-                </controls:DataGrid.Columns>
-            </controls:DataGrid>
-        </Grid>
+                        SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home" Icon="Home" ToolTipService.ToolTip="Home" Tag="ModellingWizard.UIs.SubPages.GenericData_Detail"/>
+                <NavigationViewItem Content="Account" Icon="Contact" ToolTipService.ToolTip="Account" Tag="SamplePage2">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Content="Mail" Icon="Mail" ToolTipService.ToolTip="Mail" Tag="SamplePage3"/>
+                        <NavigationViewItem Content="Calendar" Icon="Calendar" ToolTipService.ToolTip="Calendar" Tag="SamplePage4"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame" />
+        </NavigationView>
     </Grid>
 </Page>

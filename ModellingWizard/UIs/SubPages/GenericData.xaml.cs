@@ -49,7 +49,7 @@ namespace ModellingWizard.UIs.SubPages
             loadTestObject();
 
             // set height of the Grid (should be set to the maximum place that can be used)
-            GenericData_Grid_Row_1.Height = new Microsoft.UI.Xaml.GridLength(600, GridUnitType.Pixel); 
+            //GenericData_Grid_Row_1.Height = new Microsoft.UI.Xaml.GridLength(600, GridUnitType.Pixel); 
         }
         
         private async void AddRoleClassButton_Click(object sender, RoutedEventArgs e)
@@ -78,25 +78,12 @@ namespace ModellingWizard.UIs.SubPages
             Visibility visibility = Expert ? Visibility.Visible : Visibility.Collapsed;
             /* Settings */
             //AddRoleClassButton.Visibility = visibility;
-
-            /* Table */
-            DefaultGrid.Visibility = visibility;
-            UnitsGrid.Visibility = visibility;
-            DataTypeGrid.Visibility = visibility;
-            SemanticGrid.Visibility = visibility;
-
         }
         
         
-
-        public void loadAttributs(List<AttributsTest> attributs)
-        {
-            DataGridAttributs.ItemsSource = attributs;
-        }
-
         private void ListView_Loading(FrameworkElement sender, object args)
         {
-            ListView_AMLObjects.ItemsSource = TestObjekt;
+            //ListView_AMLObjects.ItemsSource = TestObjekt;
         }
 
         private void ListView_AMLObjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -107,14 +94,10 @@ namespace ModellingWizard.UIs.SubPages
                 if (selectedAMLObject != null)
                 {
                     List<AttributsTest> attributs = selectedAMLObject.Attributs;
-                    loadAttributs(attributs);
+                    //loadAttributs(attributs);
                 }
             }
         }
-
-
-
-
 
         public List<AMLObjectTest> TestObjekt = new List<AMLObjectTest>();
 
@@ -143,6 +126,28 @@ namespace ModellingWizard.UIs.SubPages
             }
         }
 
-        
+        /* Navigation stuff */
+        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            var item = args.SelectedItemContainer as NavigationViewItem;
+
+            if (item == null)
+            {
+                return;
+            }
+            if (item.Tag == null)
+            {
+                return;
+            }
+            if (item.Content == null)
+            {
+                return;
+            }
+            ContentFrame.Navigate(Type.GetType(item.Tag.ToString()), item.Content);
+            //NavigationView.Header = item.Content;
+            NavigationView.Header = null;
+            NavigationView.SelectedItem = item;
+        }
+
     }
 }

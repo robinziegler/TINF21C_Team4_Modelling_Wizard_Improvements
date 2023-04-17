@@ -7,4 +7,6 @@ UIs\ModalViews\Help_Menu\ManualPage.xbf
 UIs\ModalViews\Interfaces\AddInterface.xbf
 UIs\SubPages\Attachments.xbf
 UIs\SubPages\GenericData.xbf
+UIs\SubPages\GenericData_Detail.xbf
 UIs\SubPages\Interfaces.xbf
+UIs\SubPages\Interfaces_Detail.xbf
