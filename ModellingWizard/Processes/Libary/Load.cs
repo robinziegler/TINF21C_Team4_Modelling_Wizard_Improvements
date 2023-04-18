@@ -103,7 +103,8 @@ namespace ModellingWizard.Processes.Libary
                     ReferencedClassName = classType.ReferencedClassName,
                     RefBaseClassPath = classType.RefBaseClassPath,
                     ID = classType.ID,
-                    SupportesRoleClassType = classType.CAEXPath()
+                    SupportesRoleClassType = classType.CAEXPath(),
+                    SubAttrebutes = CheckForsubAttributes(attribute.getAttributeField())
                 });
             }
             return libAttributes;
@@ -128,7 +129,31 @@ namespace ModellingWizard.Processes.Libary
                     ReferencedClassName = classType.ReferencedClassName,
                     RefBaseClassPath = classType.RefBaseClassPath,
                     ID = classType.ID,
-                    SupportesRoleClassType = classType.CAEXPath()
+                    SupportesRoleClassType = classType.CAEXPath(),
+                    SubAttrebutes = CheckForsubAttributes(attribute.getAttributeField())
+                });
+            }
+            return libAttributes;
+        }
+        private static List<Objects.Libaries.LibaryObject> CheckForsubAttributes(IEnumerable<AttributeType> atrr)
+        {
+            List<Objects.Libaries.LibaryObject> libAttributes = new();
+            foreach (var attribute in atrr)
+            {
+                libAttributes.Add(new()
+                {
+                    Name = attribute.Name,
+                    Value = attribute.Value,
+                    Default = attribute.DefaultValue,
+                    Unit = attribute.Unit,
+                    DataType = attribute.AttributeDataType,
+                    Description = attribute.Description,
+                    CopyRight = attribute.Copyright,
+                    AttributePath = attribute.AttributePath,
+                    RefSemanticList = attribute.RefSemantic,
+                    ID = attribute.ID,
+                    SupportesRoleClassType = attribute.CAEXPath(),
+                    SubAttrebutes = CheckForsubAttributes(attribute.getAttributeField())
                 });
             }
             return libAttributes;
