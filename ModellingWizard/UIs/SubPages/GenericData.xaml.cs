@@ -142,7 +142,7 @@ namespace ModellingWizard.UIs.SubPages
             {
                 return;
             }
-            ContentFrame.Navigate(Type.GetType(item.Tag.ToString()), item.Content);
+            ContentFrame.Navigate(Type.GetType(item.Tag.ToString()), item.Name);
             //NavigationView.Header = item.Content;
             NavigationView.Header = null;
             NavigationView.SelectedItem = item;
@@ -160,7 +160,7 @@ namespace ModellingWizard.UIs.SubPages
                     {
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
-                        Name = sublib.Name,
+                        Name = sublib.myGuid,
                     });
                     LoadDepth++;
                     loadTestObject(sublib);
@@ -171,7 +171,7 @@ namespace ModellingWizard.UIs.SubPages
                     {
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
-                        Name = sublib.Name,
+                        Name = sublib.myGuid,
                     });
                 }
             }
@@ -184,7 +184,7 @@ namespace ModellingWizard.UIs.SubPages
                     {
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
-                        Name = sublib.Name,
+                        Name = sublib.myGuid,
                     });
                     LoadDepth++;
                     loadTestObject(sublib);
@@ -195,7 +195,7 @@ namespace ModellingWizard.UIs.SubPages
                     {
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
-                        Name = sublib.Name,
+                        Name = sublib.myGuid,
                     });
                 }
             }
