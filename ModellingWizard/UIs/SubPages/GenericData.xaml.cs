@@ -14,9 +14,14 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System.Threading.Tasks;
 using ModellingWizard.Objects;
+using ModellingWizard.Processes.Libary;
+using System.CodeDom.Compiler;
 
 namespace ModellingWizard.UIs.SubPages
 {
+
+
+    
     // Test Objekt
     // Only tests 
     public class AMLObjectTest
@@ -41,17 +46,19 @@ namespace ModellingWizard.UIs.SubPages
     /// </summary>
     public sealed partial class GenericData : Page
     {
+        private int LoadDepth = 0;
+        private NavigationViewItem currentItem;
         public GenericData()
         {
             this.InitializeComponent();
 
             //load test data (should be removed later)
-            loadTestObject();
+            loadTestObject(Instances.Loaded_RoleClass_Data);
 
             // set height of the Grid (should be set to the maximum place that can be used)
             //GenericData_Grid_Row_1.Height = new Microsoft.UI.Xaml.GridLength(600, GridUnitType.Pixel); 
         }
-        
+
         private async void AddRoleClassButton_Click(object sender, RoutedEventArgs e)
         {
             var Win = new ModalViews.GenericData.AddRoleClass();
@@ -79,8 +86,8 @@ namespace ModellingWizard.UIs.SubPages
             /* Settings */
             //AddRoleClassButton.Visibility = visibility;
         }
-        
-        
+
+
         private void ListView_Loading(FrameworkElement sender, object args)
         {
             //ListView_AMLObjects.ItemsSource = TestObjekt;
@@ -101,28 +108,20 @@ namespace ModellingWizard.UIs.SubPages
 
         public List<AMLObjectTest> TestObjekt = new List<AMLObjectTest>();
 
-
-        private void loadTestObject()
+        /// <summary>method <c>loadTestObject</c> lads the currently loaded Roll clases fron instances into a Navigation view</summary>
+        private void loadTestObject(Objects.Libaries.Libary lib)
         {
-            List<string> AMLNames = new List<string> {"First Object", "Second Object", "Third Object" };
-            List<string> AttributsNames = new List<string> {"Manufactor", "ID", "Name", "Date", "Costs" };
-            foreach (var name in AMLNames)
+            if (lib != null)
             {
-                AMLObjectTest newObject = new AMLObjectTest();
-                newObject.Name = name;
-                newObject.Attributs = new List<AttributsTest> ();
-                foreach (var AttributName in AttributsNames)
+
+                foreach (Objects.Libaries.Libary sublib in lib.SubObjects)
                 {
-                    AttributsTest attribut = new AttributsTest();
-                    attribut.Name = AttributName;
-                    attribut.Value = "Test";
-                    attribut.Default = "Test";
-                    attribut.Unit = "Test";
-                    attribut.Semantic = "Test";
-                    attribut.DataType = "xs:string";
-                    newObject.Attributs.Add(attribut);
+                    if (sublib != null)
+                    {
+                        GenerateNavigationMenueItems(sublib);
+                    }
                 }
-                TestObjekt.Add(newObject);
+                LoadDepth--;
             }
         }
 
@@ -149,5 +148,58 @@ namespace ModellingWizard.UIs.SubPages
             NavigationView.SelectedItem = item;
         }
 
+
+        /// <summary>method <c>GenerateNavigationMenueItems</c> Generates the Navigation view items depending on the depth in the Libraty tree</summary>
+        private void GenerateNavigationMenueItems(Objects.Libaries.Libary sublib)
+        {
+            if (LoadDepth == 0)
+            {
+                if (sublib.SubObjects.Count != 0)
+                {
+                    NavigationView.MenuItems.Add(currentItem = new NavigationViewItem
+                    {
+                        Content = sublib.Name,
+                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
+                        Name = sublib.Name,
+                    });
+                    LoadDepth++;
+                    loadTestObject(sublib);
+                }
+                else
+                {
+                    NavigationView.MenuItems.Add(new NavigationViewItem
+                    {
+                        Content = sublib.Name,
+                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
+                        Name = sublib.Name,
+                    });
+                }
+            }
+            else
+            {
+                // Loads every other layer
+                if (sublib.SubObjects.Count != 0)
+                {
+                    currentItem.MenuItems.Add(currentItem = new NavigationViewItem
+                    {
+                        Content = sublib.Name,
+                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
+                        Name = sublib.Name,
+                    });
+                    LoadDepth++;
+                    loadTestObject(sublib);
+                }
+                else
+                {
+                    currentItem.MenuItems.Add(new NavigationViewItem
+                    {
+                        Content = sublib.Name,
+                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
+                        Name = sublib.Name,
+                    });
+                }
+            }
+
+        }
     }
 }
