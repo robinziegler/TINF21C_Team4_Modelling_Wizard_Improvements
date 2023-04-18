@@ -39,7 +39,9 @@ namespace ModellingWizard.Processes.Libary
             {
                 Objects.Libaries.Libary SubLib = new()
                 {
-                    Name = classLibType.Name
+                    Name = classLibType.Name,
+
+                    
                 };
 
                 foreach(var classLib in classLibType.InterfaceClass)

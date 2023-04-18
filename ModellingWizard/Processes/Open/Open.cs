@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Aml.Engine.AmlObjects;
 using Aml.Engine.CAEX;
+using ModellingWizard.Objects;
 using ModellingWizard.Objects.Attachments;
 using ModellingWizard.Processes.Libary;
 
@@ -70,6 +71,9 @@ namespace ModellingWizard.Processes.Open
                         InterfacesLib.SubObjects.Add(SubLib);
                     }
 
+                    Instances.Loaded_RoleClass_Data = RoleClassLib;
+                    Instances.Loaded_Interfaces_Data = InterfacesLib;
+                    
                     return (RoleClassLib, InterfacesLib);
                 }
                 return (null, null);
