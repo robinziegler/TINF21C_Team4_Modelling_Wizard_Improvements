@@ -30,5 +30,24 @@ namespace ModellingWizard.UIs.SubPages
         {
             this.InitializeComponent();
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            string parameter = e.Parameter as string;
+            if (parameter == null)
+            {
+                //Navigate to emty Atrebutes page
+            }else {
+                Objects.Libaries.Libary lib = Processes.GeneralFunctions.SeartchforGuid.SeartchLibrary(parameter, Objects.Instances.Loaded_RoleClass_Data);
+                if (lib.Attributes != null)
+                {
+                    DataGridAttributs.ItemsSource = lib.Attributes;
+                }
+                
+            }
+
+        }
     }
 }

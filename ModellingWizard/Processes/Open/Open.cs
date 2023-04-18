@@ -79,7 +79,13 @@ namespace ModellingWizard.Processes.Open
                 return (null, null);
             }
             else
-                return Libary.Load.LoadLib(binary, name);
+            {
+                (Objects.Libaries.Libary RoleClassLib, Objects.Libaries.Libary InterfacesLib) = Libary.Load.LoadLib(binary, name);
+                Instances.Loaded_RoleClass_Data = RoleClassLib;
+                Instances.Loaded_Interfaces_Data = InterfacesLib;
+                return (RoleClassLib, InterfacesLib);
+            }
+                
         }
         /*
         public static Objects.Attachments.AttachmentObject LoadAttatchments(AttachmentObject input)
