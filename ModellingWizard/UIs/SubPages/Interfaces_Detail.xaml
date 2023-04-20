@@ -12,16 +12,6 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <controls:DataGrid Grid.Column="1">
-            <controls:DataGrid.Columns>
-                <controls:DataGridTextColumn Header="Atrribute"/>
-                <controls:DataGridTextColumn Header="Value"/>
-                <controls:DataGridTextColumn Header="Default" x:Name="DefaultGrid"/>
-                <controls:DataGridTextColumn Header="Units" x:Name="UnitsGrid"/>
-                <controls:DataGridTextColumn Header="DataType" x:Name="DataTypeGrid"/>
-                <controls:DataGridComboBoxColumn Header="Semantic" x:Name="SemanticGrid"/>
-            </controls:DataGrid.Columns>
-        </controls:DataGrid>
-    </Grid>
+    <ListView x:Name="DetailContent">
+    </ListView>
 </Page>

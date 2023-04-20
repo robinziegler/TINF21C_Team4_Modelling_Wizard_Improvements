@@ -20,7 +20,8 @@ using Windows.ApplicationModel;
 using Windows.Storage;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 using Microsoft.UI;
-
+using System.ComponentModel.Design.Serialization;
+using ModellingWizard.UIs.SubPages;
 
 namespace ModellingWizard
 {
@@ -104,6 +105,9 @@ namespace ModellingWizard
             {
                 var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
             }
+            NavigationView.SelectedItem = MainPage_Navigation_Interfaces;
+            NavigationView.SelectedItem = MainPage_Navigation_GenericData;
+
         }
 
         private async void File_Save_Click(object sender, RoutedEventArgs e)

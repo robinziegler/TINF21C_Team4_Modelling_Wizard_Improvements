@@ -17,6 +17,7 @@ using ModellingWizard.Objects;
 using ModellingWizard.Processes.Libary;
 using System.CodeDom.Compiler;
 using Microsoft.UI.Xaml.Documents;
+using System.Drawing;
 
 namespace ModellingWizard.UIs.SubPages
 {
