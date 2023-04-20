@@ -310,9 +310,9 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             _typeNameTable[82] = "Windows.UI.Text.FontWeight";
             _typeNameTable[83] = "ModellingWizard.UIs.SubPages.Attachments";
             _typeNameTable[84] = "ModellingWizard.UIs.SubPages.GenericData";
-            _typeNameTable[85] = "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn";
-            _typeNameTable[86] = "ModellingWizard.UIs.SubPages.GenericData_Detail";
-            _typeNameTable[87] = "ModellingWizard.UIs.SubPages.Interfaces";
+            _typeNameTable[85] = "ModellingWizard.UIs.SubPages.GenericData_Detail";
+            _typeNameTable[86] = "ModellingWizard.UIs.SubPages.Interfaces";
+            _typeNameTable[87] = "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn";
             _typeNameTable[88] = "ModellingWizard.UIs.SubPages.Interfaces_Detail";
 
             _typeTable = new global::System.Type[89];
@@ -401,9 +401,9 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             _typeTable[82] = typeof(global::Windows.UI.Text.FontWeight);
             _typeTable[83] = typeof(global::ModellingWizard.UIs.SubPages.Attachments);
             _typeTable[84] = typeof(global::ModellingWizard.UIs.SubPages.GenericData);
-            _typeTable[85] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn);
-            _typeTable[86] = typeof(global::ModellingWizard.UIs.SubPages.GenericData_Detail);
-            _typeTable[87] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces);
+            _typeTable[85] = typeof(global::ModellingWizard.UIs.SubPages.GenericData_Detail);
+            _typeTable[86] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces);
+            _typeTable[87] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn);
             _typeTable[88] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces_Detail);
         }
 
@@ -464,9 +464,9 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
         private object Activate_78_DataGridTextColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridTextColumn(); }
         private object Activate_83_Attachments() { return new global::ModellingWizard.UIs.SubPages.Attachments(); }
         private object Activate_84_GenericData() { return new global::ModellingWizard.UIs.SubPages.GenericData(); }
-        private object Activate_85_DataGridComboBoxColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn(); }
-        private object Activate_86_GenericData_Detail() { return new global::ModellingWizard.UIs.SubPages.GenericData_Detail(); }
-        private object Activate_87_Interfaces() { return new global::ModellingWizard.UIs.SubPages.Interfaces(); }
+        private object Activate_85_GenericData_Detail() { return new global::ModellingWizard.UIs.SubPages.GenericData_Detail(); }
+        private object Activate_86_Interfaces() { return new global::ModellingWizard.UIs.SubPages.Interfaces(); }
+        private object Activate_87_DataGridComboBoxColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn(); }
         private object Activate_88_Interfaces_Detail() { return new global::ModellingWizard.UIs.SubPages.Interfaces_Detail(); }
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
@@ -1182,9 +1182,23 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 85:   //  CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn
+            case 85:   //  ModellingWizard.UIs.SubPages.GenericData_Detail
+                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_85_GenericData_Detail;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 86:   //  ModellingWizard.UIs.SubPages.Interfaces
+                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_86_Interfaces;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 87:   //  CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn"));
-                userType.Activator = Activate_85_DataGridComboBoxColumn;
+                userType.Activator = Activate_87_DataGridComboBoxColumn;
                 userType.AddMemberName("ItemsSource");
                 userType.AddMemberName("DisplayMemberPath");
                 userType.AddMemberName("FontFamily");
@@ -1192,20 +1206,6 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 userType.AddMemberName("FontStyle");
                 userType.AddMemberName("FontWeight");
                 userType.AddMemberName("Foreground");
-                xamlType = userType;
-                break;
-
-            case 86:   //  ModellingWizard.UIs.SubPages.GenericData_Detail
-                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_86_GenericData_Detail;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 87:   //  ModellingWizard.UIs.SubPages.Interfaces
-                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_87_Interfaces;
-                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 

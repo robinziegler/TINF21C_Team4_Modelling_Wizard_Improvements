@@ -12,36 +12,6 @@
     xmlns:controls = "using:CommunityToolkit.WinUI.UI.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:Name="DetailContent">
-        <controls:DataGrid
-                x:Name="DataGridAttributs"
-                Grid.Row="1"    
-                >
-            <controls:DataGrid.Columns>
-                <controls:DataGridTextColumn 
-                        Header="Atrribute" 
-                        Binding="{Binding Name}"  />
-                <controls:DataGridTextColumn 
-                        Header="Value" 
-                        Binding="{Binding Value}" />
-                <controls:DataGridTextColumn 
-                        Header="Default"
-                        Binding="{Binding Default}" 
-                        x:Name="DefaultGrid" />
-                <controls:DataGridTextColumn 
-                        Header="Units" 
-                        Binding="{Binding Unit}"  
-                        x:Name="UnitsGrid" />
-                <controls:DataGridTextColumn 
-                        Header="DataType" 
-                        IsReadOnly="True"
-                        Binding="{Binding DataType}" 
-                        x:Name="DataTypeGrid"/>
-                <controls:DataGridComboBoxColumn 
-                        Header="Semantict" 
-                        Binding="{Binding Semantic}" 
-                        x:Name="SemanticGrid"/>
-            </controls:DataGrid.Columns>
-        </controls:DataGrid>
-    </Grid>
+    <ListView x:Name="DetailContent">
+    </ListView>
 </Page>

@@ -44,49 +44,61 @@ namespace ModellingWizard.UIs.SubPages
                 //Navigate to emty Atrebutes page
             }else {
                 Objects.Libaries.Libary lib = Processes.GeneralFunctions.SeartchforGuid.SeartchLibrary(parameter, Objects.Instances.Loaded_RoleClass_Data);
-                if (lib.Attributes != null)
+                if (lib.Attributes.Count > 0)
                 {
                     /* Main Expandern */
-                    CommunityToolkit.WinUI.UI.Controls.Expander mainExpander = new()
+                    if (lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0).Count > 0)
                     {
-                        IsExpanded = true,
-                        ExpandDirection = CommunityToolkit.WinUI.UI.Controls.ExpandDirection.Down,
-                        VerticalAlignment = VerticalAlignment.Top,
-                        Header = "Main Attributes"
-                    };
-
-                    DataGrid mainDataGrid = new() 
-                    { 
-                        
-                    };
-                    mainDataGrid.ItemsSource = lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0);
-                    mainExpander.Content = mainDataGrid;
-                    DetailContent.Children.Add(mainExpander);
-
-                    /* Sub Expanders for each Header */
-                    lib.Attributes.FindAll(x => x.SubAttrebutes.Count > 0).ForEach(attr =>
-                    {
-                        /* Main Expandern */
-                        CommunityToolkit.WinUI.UI.Controls.Expander subExpander = new()
+                        CommunityToolkit.WinUI.UI.Controls.Expander mainExpander = new()
                         {
                             IsExpanded = true,
                             ExpandDirection = CommunityToolkit.WinUI.UI.Controls.ExpandDirection.Down,
                             VerticalAlignment = VerticalAlignment.Top,
-                            Header = attr.Name
+                            Header = "Main Attributes"
                         };
 
-                        DataGrid subDataGrid = new()
+                        CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new()
                         {
 
                         };
-                        subDataGrid.ItemsSource = attr.SubAttrebutes;
-                        subExpander.Content = subDataGrid;
-                        DetailContent.Children.Add(subExpander);
+                        mainDataGrid.ItemsSource = lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0);
+                        mainExpander.Content = mainDataGrid;
+                        DetailContent.Items.Add(mainExpander);
+                    }
+                    lib.Attributes.ForEach(x =>
+                    {
+                        SubObjects(x);
                     });
-
-                    DataGridAttributs.ItemsSource = lib.Attributes;
                 }
             }
+        }
+
+        public void SubObjects(Objects.Libaries.LibaryObject lib)
+        {
+            /* Main Expandern */
+            if (lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count == 0).Count > 0)
+            {
+                CommunityToolkit.WinUI.UI.Controls.Expander mainExpander = new()
+                {
+                    IsExpanded = false,
+                    ExpandDirection = CommunityToolkit.WinUI.UI.Controls.ExpandDirection.Down,
+                    VerticalAlignment = VerticalAlignment.Top,
+                    Header = lib.Name
+                };
+
+                CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new()
+                {
+
+                };
+                mainDataGrid.ItemsSource = lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count == 0);
+                mainExpander.Content = mainDataGrid;
+                DetailContent.Items.Add(mainExpander);
+            }
+            /* Sub Expanders for each Header */
+            lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count > 0).ForEach(attr =>
+            {
+                SubObjects(attr);
+            });
         }
     }
 }
