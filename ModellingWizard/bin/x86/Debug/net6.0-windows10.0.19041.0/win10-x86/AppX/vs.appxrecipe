@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-04-20T07:34:47.818</Modified>
+      <Modified>2023-04-20T07:51:34.517</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-04-20T07:32:57.224</Modified>
+      <Modified>2023-04-20T07:51:34.033</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.runtimeconfig.json">
       <PackagePath>ModellingWizard.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.dll">
       <PackagePath>ModellingWizard.dll</PackagePath>
-      <Modified>2023-04-20T07:34:47.271</Modified>
+      <Modified>2023-04-20T07:51:33.924</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\apphost.exe">
       <PackagePath>ModellingWizard.exe</PackagePath>
-      <Modified>2023-04-20T07:34:47.297</Modified>
+      <Modified>2023-04-20T07:51:33.949</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.deps.json">
       <PackagePath>ModellingWizard.deps.json</PackagePath>

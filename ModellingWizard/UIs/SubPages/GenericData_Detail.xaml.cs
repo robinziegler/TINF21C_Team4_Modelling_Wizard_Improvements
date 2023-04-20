@@ -18,6 +18,7 @@ using Microsoft.UI.Xaml.Navigation;
 using WinRT;
 using System.Windows.Controls;
 using Page = Microsoft.UI.Xaml.Controls.Page;
+using ListView = Microsoft.UI.Xaml.Controls.ListView;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -49,56 +50,48 @@ namespace ModellingWizard.UIs.SubPages
                     /* Main Expandern */
                     if (lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0).Count > 0)
                     {
-                        CommunityToolkit.WinUI.UI.Controls.Expander mainExpander = new()
-                        {
-                            IsExpanded = true,
-                            ExpandDirection = CommunityToolkit.WinUI.UI.Controls.ExpandDirection.Down,
-                            VerticalAlignment = VerticalAlignment.Top,
-                            Header = "Main Attributes"
-                        };
-
                         CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new()
                         {
 
                         };
                         mainDataGrid.ItemsSource = lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0);
-                        mainExpander.Content = mainDataGrid;
-                        DetailContent.Items.Add(mainExpander);
+                        DetailContent.Items.Add(mainDataGrid);
                     }
-                    lib.Attributes.ForEach(x =>
+                    lib.Attributes.FindAll(x => x.SubAttrebutes.Count > 0).ForEach(subAttr =>
                     {
-                        SubObjects(x);
+                        DetailContent.Items.Add(SubObjects(subAttr));
                     });
                 }
             }
         }
 
-        public void SubObjects(Objects.Libaries.LibaryObject lib)
+        public CommunityToolkit.WinUI.UI.Controls.Expander SubObjects(Objects.Libaries.LibaryObject lib)
         {
             /* Main Expandern */
-            if (lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count == 0).Count > 0)
+            CommunityToolkit.WinUI.UI.Controls.Expander mainExpander = new()
             {
-                CommunityToolkit.WinUI.UI.Controls.Expander mainExpander = new()
-                {
-                    IsExpanded = false,
-                    ExpandDirection = CommunityToolkit.WinUI.UI.Controls.ExpandDirection.Down,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Header = lib.Name
-                };
+                IsExpanded = false,
+                ExpandDirection = CommunityToolkit.WinUI.UI.Controls.ExpandDirection.Down,
+                VerticalAlignment = VerticalAlignment.Top,
+                Header = lib.Name
+            };
 
-                CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new()
-                {
+            CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new()
+            {
 
-                };
-                mainDataGrid.ItemsSource = lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count == 0);
-                mainExpander.Content = mainDataGrid;
-                DetailContent.Items.Add(mainExpander);
-            }
+            };
+            mainDataGrid.ItemsSource = lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count == 0);
+
+            /* Create ListView */
+            ListView listView = new ListView();
+            listView.Items.Add(mainDataGrid);
+            mainExpander.Content = listView;
             /* Sub Expanders for each Header */
             lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count > 0).ForEach(attr =>
             {
-                SubObjects(attr);
+                listView.Items.Add(SubObjects(attr));
             });
+            return mainExpander;
         }
     }
 }
