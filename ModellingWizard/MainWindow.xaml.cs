@@ -44,13 +44,9 @@ namespace ModellingWizard
             string applicationVersionRevision = AppInfo.Current.Package.Id.Version.Revision.ToString();
             string applicationVersion = applicationVersionMajor + "." + applicationVersionMinor + "." + applicationVersionRevision;
             string applicationInstallationnDate = AppInfo.Current.Package.InstalledDate.ToString().Split(" ")[0];
-
-            AppbarTitle.Text = applicationName + " - " + applicationVersion;
+            AppbarTitle.Text = applicationName;
             SetTitleBar(AppTitleBar);
             _currentTheme = (int)App.Current.RequestedTheme;
-
-            ThemeButton.Text = _currentTheme == (int)ApplicationTheme.Dark ? "Lightmode" : "Darkmode";
-            Instances.ExpertMode = false;
         }
 
         private int _currentTheme { get; set; }
@@ -164,26 +160,7 @@ namespace ModellingWizard
         private void AppMode_Click(object sender, RoutedEventArgs e)
         {
             Instances.ExpertMode = !Instances.ExpertMode;
-            AppMode.Text = Instances.ExpertMode ? "Easy Mode" : "Advanced Mode";
-        }
-
-        private void ThemeButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (_currentTheme == (int)ApplicationTheme.Dark)
-            {
-                _currentTheme = 0;
-                Grid_Main.RequestedTheme = ElementTheme.Light;
-                ThemeButton.Text = "Darkmode";
-            }
-            else if (_currentTheme == (int)ApplicationTheme.Light)
-            {
-                _currentTheme = 1;
-                Grid_Main.RequestedTheme = ElementTheme.Dark;
-                ThemeButton.Text = "Lightmode";
-
-            }
-            ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
+            AppMode.Text = Instances.ExpertMode ? "Easy Mode" : "Expert Mode";
         }
 
         /* Help Options */
@@ -194,7 +171,7 @@ namespace ModellingWizard
             {
                 XamlRoot = this.Content.XamlRoot,
                 Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
-                Title = "About the Modelling Wizard for Devices Application",
+                Title = "About",
                 CloseButtonText = "Close",
                 Content = Win
             };
