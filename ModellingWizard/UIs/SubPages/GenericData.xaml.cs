@@ -76,7 +76,10 @@ namespace ModellingWizard.UIs.SubPages
             ContentDialogResult result = await dialog.ShowAsync();
             if (result == ContentDialogResult.Primary)
             {
-                Win.RoleClassTreeView.SelectedItems.Count();
+                if (Win.RoleClassTreeView.SelectedItems != null && Win.RoleClassTreeView.SelectedItems.Count > 0)
+                {
+
+                }
             }
         }
 

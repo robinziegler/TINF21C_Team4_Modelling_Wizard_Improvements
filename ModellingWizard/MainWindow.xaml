@@ -15,7 +15,6 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <!-- New Titelbar -->
         <Grid x:Name="AppTitleBar" Grid.Row="0">
@@ -88,7 +87,7 @@
         </MenuBar>
 
         <!-- Subpages -->
-        <NavigationView x:Name="NavigationView" Grid.Row="3" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" SelectionChanged="NavigationView_SelectionChanged" >
+        <NavigationView x:Name="NavigationView" Grid.Row="3" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" SelectionChanged="NavigationView_SelectionChanged" HorizontalAlignment="Stretch">
             <NavigationView.MenuItems>
                 <NavigationViewItem  Content="Genereic Data" Tag="ModellingWizard.UIs.SubPages.GenericData" IsSelected="True" x:Name="MainPage_Navigation_GenericData" />
                 <NavigationViewItem  Content="Interfaces" Tag="ModellingWizard.UIs.SubPages.Interfaces" />
