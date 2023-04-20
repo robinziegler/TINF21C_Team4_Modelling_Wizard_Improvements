@@ -61,26 +61,7 @@ namespace ModellingWizard.UIs.SubPages
 
         private async void AddRoleClassButton_Click(object sender, RoutedEventArgs e)
         {
-            var Win = new ModalViews.GenericData.AddRoleClass();
-            ContentDialog dialog = new ContentDialog();
-
-            // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
-            dialog.XamlRoot = this.XamlRoot;
-            dialog.Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style;
-            dialog.Title = "Add role class";
-            dialog.PrimaryButtonText = "Add";
-            dialog.CloseButtonText = "Cancel";
-            dialog.DefaultButton = ContentDialogButton.Primary;
-            dialog.Content = Win;
-
-            ContentDialogResult result = await dialog.ShowAsync();
-            if (result == ContentDialogResult.Primary)
-            {
-                if (Win.RoleClassTreeView.SelectedItems != null && Win.RoleClassTreeView.SelectedItems.Count > 0)
-                {
-
-                }
-            }
+            
         }
 
         public void SetMode(bool Expert)
@@ -129,7 +110,7 @@ namespace ModellingWizard.UIs.SubPages
         }
 
         /* Navigation stuff */
-        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        private async void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             var item = args.SelectedItemContainer as NavigationViewItem;
 
@@ -145,10 +126,40 @@ namespace ModellingWizard.UIs.SubPages
             {
                 return;
             }
-            ContentFrame.Navigate(Type.GetType(item.Tag.ToString()), item.Name);
-            //NavigationView.Header = item.Content;
-            NavigationView.Header = null;
-            NavigationView.SelectedItem = item;
+            if(item.Tag.ToString() != "SystemAdd")
+            {
+                ContentFrame.Navigate(Type.GetType(item.Tag.ToString()), item.Name);
+                //NavigationView.Header = item.Content;
+                NavigationView.Header = null;
+                NavigationView.SelectedItem = item;
+            }
+            else
+            {
+                var Win = new ModalViews.GenericData.AddRoleClass();
+                ContentDialog dialog = new();
+
+                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+                dialog.XamlRoot = this.XamlRoot;
+                dialog.Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+                dialog.Title = "Add role class";
+                dialog.PrimaryButtonText = "Add";
+                dialog.CloseButtonText = "Cancel";
+                dialog.DefaultButton = ContentDialogButton.Primary;
+                dialog.Content = Win;
+
+                ContentDialogResult result = await dialog.ShowAsync();
+                if (result == ContentDialogResult.Primary)
+                {
+                    if (Win.RoleClassTreeView.SelectedItems != null && Win.RoleClassTreeView.SelectedItems.Count > 0)
+                    {
+                        Win.RoleClassTreeView.SelectedItems.ToList().ForEach(item =>
+                        {
+                            Instances.Loaded_RoleClass_Data ??= new();
+                            Instances.Loaded_RoleClass_Data.SubObjects.Append(item as Objects.Libaries.Libary);
+                        });
+                    }
+                }
+            }
         }
 
 
