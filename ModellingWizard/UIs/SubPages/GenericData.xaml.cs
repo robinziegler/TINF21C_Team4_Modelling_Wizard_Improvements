@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using ModellingWizard.Objects;
 using ModellingWizard.Processes.Libary;
 using System.CodeDom.Compiler;
+using Microsoft.UI.Xaml.Documents;
 
 namespace ModellingWizard.UIs.SubPages
 {
@@ -152,10 +153,21 @@ namespace ModellingWizard.UIs.SubPages
                 {
                     if (Win.RoleClassTreeView.SelectedItems != null && Win.RoleClassTreeView.SelectedItems.Count > 0)
                     {
+                        List<Objects.Libaries.Libary> libstoadd = new();
                         Win.RoleClassTreeView.SelectedItems.ToList().ForEach(item =>
                         {
-                            Instances.Loaded_RoleClass_Data ??= new();
-                            Instances.Loaded_RoleClass_Data.SubObjects.Append(item as Objects.Libaries.Libary);
+                        var x = item as Objects.MyTreNode;
+                        x.lib.SubObjects.Clear();
+                            if (x.Depth == 0)
+                            {
+                                Instances.Loaded_RoleClass_Data ??= new();
+                                libstoadd.Add(x.lib);
+                            }
+                            else
+                            {
+                            }
+                            
+
                         });
                     }
                 }

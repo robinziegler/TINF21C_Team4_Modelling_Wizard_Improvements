@@ -30,7 +30,7 @@
                 </NavigationViewItem>
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>
-                <NavigationViewItem Content="Add Role Class" Icon="Add" Tag="SystemAdd" ToolTipService.ToolTip="Add Role Class"/>
+                <NavigationViewItem Content="Add Role Class" Icon="Add" Tag="SystemAdd" ToolTipService.ToolTip="Add Role Class" Visibility="Collapsed"/>
             </NavigationView.FooterMenuItems>
             <Frame x:Name="ContentFrame" />
         </NavigationView>

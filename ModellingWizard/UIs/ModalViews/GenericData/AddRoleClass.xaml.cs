@@ -9,6 +9,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Microsoft.VisualBasic;
+using ModellingWizard.Objects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,7 +33,8 @@ namespace ModellingWizard.UIs.ModalViews.GenericData
             this.InitializeComponent();
             Objects.Instances.RoleClassLib.SubObjects.ForEach(x =>
             {
-                TreeViewNode t = new() { Content = x.Name };
+                MyTreNode t = new() { Content = x.Name };
+                t.lib = x;
                 x.SubObjects.ForEach(y =>
                 {
                     t.Children.Add(CreateSubNodes(y));
@@ -44,7 +46,8 @@ namespace ModellingWizard.UIs.ModalViews.GenericData
 
         private TreeViewNode CreateSubNodes(Objects.Libaries.Libary libFile)
         {
-            TreeViewNode node = new() { Content = libFile.Name };
+            MyTreNode node = new() { Content = libFile.Name };
+            node.lib = libFile;
             libFile.SubObjects.ForEach(x =>
             {
                 node.Children.Add(CreateSubNodes(x));
