@@ -15,6 +15,9 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using WinRT;
+using System.Windows.Controls;
+using Page = Microsoft.UI.Xaml.Controls.Page;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -43,11 +46,47 @@ namespace ModellingWizard.UIs.SubPages
                 Objects.Libaries.Libary lib = Processes.GeneralFunctions.SeartchforGuid.SeartchLibrary(parameter, Objects.Instances.Loaded_RoleClass_Data);
                 if (lib.Attributes != null)
                 {
+                    /* Main Expandern */
+                    CommunityToolkit.WinUI.UI.Controls.Expander mainExpander = new()
+                    {
+                        IsExpanded = true,
+                        ExpandDirection = CommunityToolkit.WinUI.UI.Controls.ExpandDirection.Down,
+                        VerticalAlignment = VerticalAlignment.Top,
+                        Header = "Main Attributes"
+                    };
+
+                    DataGrid mainDataGrid = new() 
+                    { 
+                        
+                    };
+                    mainDataGrid.ItemsSource = lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0);
+                    mainExpander.Content = mainDataGrid;
+                    DetailContent.Children.Add(mainExpander);
+
+                    /* Sub Expanders for each Header */
+                    lib.Attributes.FindAll(x => x.SubAttrebutes.Count > 0).ForEach(attr =>
+                    {
+                        /* Main Expandern */
+                        CommunityToolkit.WinUI.UI.Controls.Expander subExpander = new()
+                        {
+                            IsExpanded = true,
+                            ExpandDirection = CommunityToolkit.WinUI.UI.Controls.ExpandDirection.Down,
+                            VerticalAlignment = VerticalAlignment.Top,
+                            Header = attr.Name
+                        };
+
+                        DataGrid subDataGrid = new()
+                        {
+
+                        };
+                        subDataGrid.ItemsSource = attr.SubAttrebutes;
+                        subExpander.Content = subDataGrid;
+                        DetailContent.Children.Add(subExpander);
+                    });
+
                     DataGridAttributs.ItemsSource = lib.Attributes;
                 }
-                
             }
-
         }
     }
 }

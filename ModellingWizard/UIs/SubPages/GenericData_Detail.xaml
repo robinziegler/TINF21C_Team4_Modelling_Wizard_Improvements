@@ -12,7 +12,7 @@
     xmlns:controls = "using:CommunityToolkit.WinUI.UI.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid x:Name="DetailContent">
         <controls:DataGrid
                 x:Name="DataGridAttributs"
                 Grid.Row="1"    
