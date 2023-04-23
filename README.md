@@ -4,6 +4,8 @@ A device model can be created via a GUI. The addition of device interfaces (e.g.
 The creation of a model can be done manually or by importing existing descriptions in different file formats (AMLX, AML, EDZ, IODD, GSD).
 The primary goal of this project is to improve the GUI after a thorough test phase and usability analysis as well as identifing and correcting errors.
 
+# Installation Guide
+The installation guide could be found [here](https://github.com/robinziegler/TINF21C_Team4_Modelling_Wizard_Improvements/wiki/Instruction).
 
 # Collaborators
 - [Dana Frey](https://github.com/DanaFrey)
