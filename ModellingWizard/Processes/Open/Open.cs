@@ -10,7 +10,9 @@ using Aml.Engine.AmlObjects;
 using Aml.Engine.CAEX;
 using ModellingWizard.Objects;
 using ModellingWizard.Objects.Attachments;
+using ModellingWizard.Objects.Libaries;
 using ModellingWizard.Processes.Libary;
+using ModellingWizard.UIs.SubPages;
 
 namespace ModellingWizard.Processes.Open
 {
@@ -73,7 +75,12 @@ namespace ModellingWizard.Processes.Open
 
                     Instances.Loaded_RoleClass_Data = RoleClassLib;
                     Instances.Loaded_Interfaces_Data = InterfacesLib;
-                    
+
+                    foreach(SystemUnitClassLibType lib in doc.CAEXFile.SystemUnitClassLib)
+                    {
+                        Instances.Loaded_System_Unit_Libs.Add(lib);
+                    }
+
                     return (RoleClassLib, InterfacesLib);
                 }
                 return (null, null);
