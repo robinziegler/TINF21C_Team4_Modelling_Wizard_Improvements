@@ -20,7 +20,8 @@ using Windows.ApplicationModel;
 using Windows.Storage;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 using Microsoft.UI;
-
+using System.ComponentModel.Design.Serialization;
+using ModellingWizard.UIs.SubPages;
 
 namespace ModellingWizard
 {
@@ -43,13 +44,9 @@ namespace ModellingWizard
             string applicationVersionRevision = AppInfo.Current.Package.Id.Version.Revision.ToString();
             string applicationVersion = applicationVersionMajor + "." + applicationVersionMinor + "." + applicationVersionRevision;
             string applicationInstallationnDate = AppInfo.Current.Package.InstalledDate.ToString().Split(" ")[0];
-
-            AppbarTitle.Text = applicationName + " - " + applicationVersion;
+            AppbarTitle.Text = applicationName;
             SetTitleBar(AppTitleBar);
             _currentTheme = (int)App.Current.RequestedTheme;
-
-            ThemeButton.Text = _currentTheme == (int)ApplicationTheme.Dark ? "Lightmode" : "Darkmode";
-            Instances.ExpertMode = false;
         }
 
         private int _currentTheme { get; set; }
@@ -99,12 +96,16 @@ namespace ModellingWizard
             openPicker.SuggestedStartLocation =
                 Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
             openPicker.FileTypeFilter.Add(".aml");
+            openPicker.FileTypeFilter.Add(".amlx");
 
             var file = await openPicker.PickSingleFileAsync();
             if (file != null)
             {
-                //file.Path
+                var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
             }
+            NavigationView.SelectedItem = MainPage_Navigation_Interfaces;
+            NavigationView.SelectedItem = MainPage_Navigation_GenericData;
+
         }
 
         private async void File_Save_Click(object sender, RoutedEventArgs e)
@@ -159,26 +160,7 @@ namespace ModellingWizard
         private void AppMode_Click(object sender, RoutedEventArgs e)
         {
             Instances.ExpertMode = !Instances.ExpertMode;
-            AppMode.Text = Instances.ExpertMode ? "Easy Mode" : "Advanced Mode";
-        }
-
-        private void ThemeButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (_currentTheme == (int)ApplicationTheme.Dark)
-            {
-                _currentTheme = 0;
-                Grid_Main.RequestedTheme = ElementTheme.Light;
-                ThemeButton.Text = "Darkmode";
-            }
-            else if (_currentTheme == (int)ApplicationTheme.Light)
-            {
-                _currentTheme = 1;
-                Grid_Main.RequestedTheme = ElementTheme.Dark;
-                ThemeButton.Text = "Lightmode";
-
-            }
-            ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
+            AppMode.Text = Instances.ExpertMode ? "Easy Mode" : "Expert Mode";
         }
 
         /* Help Options */
@@ -189,7 +171,7 @@ namespace ModellingWizard
             {
                 XamlRoot = this.Content.XamlRoot,
                 Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
-                Title = "About the Modelling Wizard for Devices Application",
+                Title = "About",
                 CloseButtonText = "Close",
                 Content = Win
             };
@@ -209,5 +191,30 @@ namespace ModellingWizard
             };
             ContentDialogResult result = await dialog.ShowAsync();
         }
+
+
+        /// <summary>
+        /// Change the theme and safe the choice in local stoarage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ThemeButton_Click(object sender, RoutedEventArgs e)
+        {   
+
+            if (_currentTheme == (int)ApplicationTheme.Dark)
+            {
+                _currentTheme = 0;
+                Grid_Main.RequestedTheme = ElementTheme.Light;
+            }
+            else if (_currentTheme == (int)ApplicationTheme.Light)
+            {
+                _currentTheme = 1;
+                Grid_Main.RequestedTheme = ElementTheme.Dark;
+
+            }
+            ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
+        }
+
+
     }
 }

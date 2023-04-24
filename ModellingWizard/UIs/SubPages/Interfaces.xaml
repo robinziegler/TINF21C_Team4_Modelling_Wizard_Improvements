@@ -13,33 +13,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <Grid>
-                <TextBlock Text="Added interfaces" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                <Button Content="Add interfaces" Name="AddInterfaceButton" Click="AddInterfaceButton_Click" HorizontalAlignment="Right" Visibility="Visible" Margin="0,0,10,0"/>
-            </Grid>
-
-            <ListView Grid.Row="1">
-
-            </ListView>
-        </Grid>
-        <controls:DataGrid Grid.Column="1">
-            <controls:DataGrid.Columns>
-                <controls:DataGridTextColumn Header="Atrribute"/>
-                <controls:DataGridTextColumn Header="Value"/>
-                <controls:DataGridTextColumn Header="Default" x:Name="DefaultGrid"/>
-                <controls:DataGridTextColumn Header="Units" x:Name="UnitsGrid"/>
-                <controls:DataGridTextColumn Header="DataType" x:Name="DataTypeGrid"/>
-                <controls:DataGridComboBoxColumn Header="Semantic" x:Name="SemanticGrid"/>
-            </controls:DataGrid.Columns>
-        </controls:DataGrid>
+        <NavigationView x:Name="NavigationView" Grid.Row="1" Height="460"
+                        PaneDisplayMode="Left"
+                        IsTabStop="False"
+                        SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
+            <NavigationView.MenuItems>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame" />
+        </NavigationView>
     </Grid>
 </Page>

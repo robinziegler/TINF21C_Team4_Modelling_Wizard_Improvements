@@ -9,6 +9,7 @@ namespace ModellingWizard.Objects.Libaries
 {
     public class Libary
     {
+        public string myGuid { get; set; }    
         public string Name { get; set; }
         public List<LibaryObject> Attributes { get; set; }
         public List<Libary> SubObjects { get; set; }
@@ -17,6 +18,7 @@ namespace ModellingWizard.Objects.Libaries
         {
             Attributes = new();
             SubObjects = new();
+            myGuid = Guid.NewGuid().ToString();
         } 
     }
 
@@ -37,5 +39,6 @@ namespace ModellingWizard.Objects.Libaries
         public CAEXSequence<RefSemanticType> RefSemanticList { get; set; }
         public string SupportesRoleClassType { get; set; }
         public string DataType { get; set; }
+        public List<LibaryObject> SubAttrebutes { get; set; }
     }
 }

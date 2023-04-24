@@ -11,115 +11,21 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid VerticalAlignment="Stretch" Name="MainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="GenericData_Grid_Row_1"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="150"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        
-        <!-- Generic Informations -->
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            
-            <Button Grid.Row="0"
-                    Content="Add Role Class"
-                    Name="AddRoleClassButton"
-                    Click="AddRoleClassButton_Click"
-                    HorizontalAlignment="Right"
-                    Visibility="Visible"
-                    Margin="5,5,20,10"
-                    />
-
-
-            <ListView Grid.Row="1" 
-                      Loading="ListView_Loading" 
-                      SelectionChanged="ListView_AMLObjects_SelectionChanged"
-                      SelectionMode="Single"
-                      IsItemClickEnabled="False"
-                      x:Name="ListView_AMLObjects" >
-                <ListView.ItemTemplate>
-                    <!-- See "https://icons8.com/icon/57061/entfernen" for the ICON -->
-                    <DataTemplate x:Name="SingleLineDataTemplate" x:DataType="local:AMLObjectTest">
-                        <StackPanel Orientation="Horizontal" Height="44" Padding="12" >
-                            <Image Source="C:\Users\Michi\source\repos\robinziegler\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Resources\Images\Delete_Trash_darkmode.png" Height="16" Width="16" VerticalAlignment="Center"/>
-                            <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" Margin="12,0,0,0"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
-
-        <!-- Grid Spliter  -->
-        <controls:GridSplitter
-            GripperCursor="Default"
-            HorizontalAlignment="Left"
-            Grid.Column="1"
-            ResizeDirection="Auto"
-            ResizeBehavior="BasedOnAlignment"
-            CursorBehavior="ChangeOnSplitterHover"
-            Width="10"
-            >
-            <controls:GridSplitter.RenderTransform>
-                <TranslateTransform X="-15" />
-            </controls:GridSplitter.RenderTransform>
-
-        </controls:GridSplitter>
-
-
-        <!-- Attributs -->
-        <Grid Grid.Column="1" Margin="10,0,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-            </Grid.RowDefinitions>
-
-            <controls:DataGrid
-                x:Name="DataGridAttributs"
-                Grid.Row="0" 
-                Margin="12"
-                VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-                HorizontalScrollBarVisibility="Visible"
-                VerticalScrollBarVisibility="Visible"
-                AlternatingRowBackground="Gray"
-                AlternatingRowForeground="Silver"
-                AutoGenerateColumns="False"
-                CanUserResizeColumns="True"
-                ColumnHeaderHeight="32"
-                GridLinesVisibility="Vertical"
-                HeadersVisibility="Column">
-                <controls:DataGrid.Columns>
-                    <controls:DataGridTextColumn 
-                        Header="Atrribute" 
-                        Binding="{Binding Name}"  />
-                    <controls:DataGridTextColumn 
-                        Header="Value" 
-                        Binding="{Binding Value}" />
-                    <controls:DataGridTextColumn 
-                        Header="Default"
-                        Binding="{Binding Default}" 
-                        x:Name="DefaultGrid" />
-                    <controls:DataGridTextColumn 
-                        Header="Units" 
-                        Binding="{Binding Unit}"  
-                        x:Name="UnitsGrid" />
-                    <controls:DataGridTextColumn 
-                        Header="DataType" 
-                        IsReadOnly="True"
-                        Binding="{Binding DataType}" 
-                        x:Name="DataTypeGrid"/>
-                    <controls:DataGridComboBoxColumn 
-                        Header="Semantict" 
-                        Binding="{Binding Semantic}" 
-                        x:Name="SemanticGrid"/>
-                </controls:DataGrid.Columns>
-            </controls:DataGrid>
-        </Grid>
+        <NavigationView x:Name="NavigationView" Grid.Row="1" Height="{Binding ActualHeight, ElementName=MainGrid}" VerticalAlignment="Stretch" 
+                        PaneDisplayMode="Left"
+                        IsTabStop="False"
+                        SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="false">
+            <NavigationView.MenuItems>
+            </NavigationView.MenuItems>
+            <NavigationView.FooterMenuItems>
+                <NavigationViewItem Content="Add Role Class" Icon="Add" Tag="SystemAdd" ToolTipService.ToolTip="Add Role Class" Visibility="Collapsed"/>
+            </NavigationView.FooterMenuItems>
+            <Frame x:Name="ContentFrame" />
+        </NavigationView>
     </Grid>
 </Page>
