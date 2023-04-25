@@ -62,7 +62,7 @@
         <!-- Subpages -->
         <NavigationView x:Name="NavigationView" Grid.Row="3" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" SelectionChanged="NavigationView_SelectionChanged" HorizontalAlignment="Stretch">
             <NavigationView.MenuItems>
-                <NavigationViewItem  Content="Genereic Data" Tag="ModellingWizard.UIs.SubPages.GenericData" IsSelected="True" x:Name="MainPage_Navigation_GenericData" />
+                <NavigationViewItem  Content="Roleclasses" Tag="ModellingWizard.UIs.SubPages.GenericData" IsSelected="True" x:Name="MainPage_Navigation_GenericData" />
                 <NavigationViewItem  Content="Interfaces" Tag="ModellingWizard.UIs.SubPages.Interfaces"  />
                 <NavigationViewItem  Content="Attachments" Tag="ModellingWizard.UIs.SubPages.Attachments" />
                 <NavigationViewItem  Content="Interfaces" Tag="ModellingWizard.UIs.SubPages.Interfaces" x:Name  ="MainPage_Navigation_Interfaces" Visibility="Collapsed"/> <!-- only to reload the Generic Data Table -->

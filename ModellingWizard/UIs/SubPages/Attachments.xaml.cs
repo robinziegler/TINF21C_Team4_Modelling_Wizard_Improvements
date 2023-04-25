@@ -86,5 +86,11 @@ namespace ModellingWizard.UIs.SubPages
                 
             }
         }
+
+        private void LoadedAttachments_RowEditEnded(object sender, CommunityToolkit.WinUI.UI.Controls.DataGridRowEditEndedEventArgs e)
+        {
+            var x = (MainWindow)App.m_window;
+            x.SomethingChanged(true);
+        }
     }
 }

@@ -18,7 +18,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Button Name="AddAttachmentButton" Content="Add Attachment" Click="AddAttachmentButton_Click"/>
-        <controls:DataGrid Grid.Row="1" Name="LoadedAttachments" AutoGenerateColumns="False">
+        <controls:DataGrid Grid.Row="1" Name="LoadedAttachments" AutoGenerateColumns="False" RowEditEnded="LoadedAttachments_RowEditEnded">
             <controls:DataGrid.Columns>
                 <controls:DataGridTextColumn Header="Title" Binding="{Binding Title}" />
                 <!--<controls:DataGridTextColumn Header=""/>-->

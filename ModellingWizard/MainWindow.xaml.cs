@@ -262,7 +262,7 @@ namespace ModellingWizard
                 XamlRoot = this.Content.XamlRoot,
                 Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                 Title = "Modelling Wizard",
-                Content = "",
+                Content = "Do you want to open or create a new file?",
                 PrimaryButtonText = "Open File",
                 SecondaryButtonText = "Create new File"
             };
