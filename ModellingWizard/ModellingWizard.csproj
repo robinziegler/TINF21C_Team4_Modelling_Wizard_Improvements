@@ -24,6 +24,8 @@
     <None Remove="UIs\SubPages\GenericData_Detail.xaml" />
     <None Remove="UIs\SubPages\Interfaces.xaml" />
     <None Remove="UIs\SubPages\Interfaces_Detail.xaml" />
+    <None Remove="UIs\SubPages\SystemClass _Details.xaml" />
+    <None Remove="UIs\SubPages\SystemClass.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -124,6 +126,14 @@
   <ItemGroup>
     <Page Update="UIs\ModalViews\GenericData\AddRoleClass.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="UIs\SubPages\SystemClass _Details.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Page>
+    <Page Update="UIs\SubPages\SystemClass.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Page>
   </ItemGroup>
 

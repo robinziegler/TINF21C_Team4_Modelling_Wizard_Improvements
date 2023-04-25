@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Aml.Engine;
 using Aml.Engine.CAEX;
+using System.ComponentModel.Design;
 
 namespace ModellingWizard.Objects
 {
@@ -22,6 +23,6 @@ namespace ModellingWizard.Objects
         public static Objects.Libaries.Libary Loaded_RoleClass_Data { get; set; }
         public static Objects.Libaries.Libary Loaded_Interfaces_Data { get; set; }
         public static List<Objects.Attachments.AttachmentObject> Attachments { get; set; } = new();
-        public static List<SystemUnitClassLibType> Loaded_System_Unit_Libs { get; set; } = new();
+        public static Objects.Libaries.Libary Loaded_System_Unit_Libs { get; set; }
     }
 }
