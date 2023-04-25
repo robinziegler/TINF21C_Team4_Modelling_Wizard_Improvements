@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="ModellingWizard.UIs.SubPages.SystemClass"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ModellingWizard.UIs.SubPages"
+    xmlns:controls = "using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:converters="using:CommunityToolkit.WinUI.UI.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid VerticalAlignment="Stretch" Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <NavigationView x:Name="NavigationView" Grid.Row="1" Height="{Binding ActualHeight, ElementName=MainGrid}" VerticalAlignment="Stretch" 
+                        PaneDisplayMode="Left"
+                        IsTabStop="False"
+                        SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="false">
+            <NavigationView.MenuItems>
+            </NavigationView.MenuItems>
+            <NavigationView.FooterMenuItems>
+                <NavigationViewItem Content="Add Role Class" Icon="Add" Tag="SystemAdd" ToolTipService.ToolTip="Add Role Class" Visibility="Collapsed"/>
+            </NavigationView.FooterMenuItems>
+            <Frame x:Name="ContentFrame" />
+        </NavigationView>
+    </Grid>
+</Page>
+
