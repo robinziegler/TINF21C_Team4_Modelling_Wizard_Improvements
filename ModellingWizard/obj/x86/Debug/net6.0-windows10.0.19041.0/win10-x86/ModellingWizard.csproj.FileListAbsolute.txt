@@ -1197,3 +1197,13 @@ D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\
 D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\GenericData_Detail.xbf
 D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\Interfaces_Detail.xbf
 D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\mscordaccore_x86_x86_6.0.1623.17311.dll
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\SystemClass _Details.g.i.cs
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\SystemClass _Details.g.cs
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\SystemClass.g.i.cs
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\SystemClass.g.cs
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\SystemClass _Details.xaml
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\SystemClass.xaml
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\SystemClass _Details.xbf
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\SystemClass.xbf
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\SystemClass _Details.xbf
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\SystemClass.xbf

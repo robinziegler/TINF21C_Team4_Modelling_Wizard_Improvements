@@ -29,29 +29,29 @@
     <AppXManifest Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-04-20T08:12:04.187</Modified>
+      <Modified>2023-04-25T13:12:43.776</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-04-20T08:06:46.511</Modified>
+      <Modified>2023-04-25T13:12:43.310</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.runtimeconfig.json">
       <PackagePath>ModellingWizard.runtimeconfig.json</PackagePath>
-      <Modified>2023-04-19T22:27:51.542</Modified>
+      <Modified>2023-04-25T13:05:48.910</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.dll">
       <PackagePath>ModellingWizard.dll</PackagePath>
-      <Modified>2023-04-20T08:12:03.625</Modified>
+      <Modified>2023-04-25T13:12:43.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\apphost.exe">
       <PackagePath>ModellingWizard.exe</PackagePath>
-      <Modified>2023-04-20T08:12:03.638</Modified>
+      <Modified>2023-04-25T13:12:43.230</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\ModellingWizard.deps.json">
       <PackagePath>ModellingWizard.deps.json</PackagePath>
-      <Modified>2023-04-19T22:27:51.455</Modified>
+      <Modified>2023-04-25T13:05:48.833</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m.trumpp\.nuget\packages\microsoft.netcore.app.runtime.win-x86\6.0.16\runtimes\win-x86\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>

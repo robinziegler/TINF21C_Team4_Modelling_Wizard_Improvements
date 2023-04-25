@@ -224,7 +224,7 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[89];
+            _typeNameTable = new string[90];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -312,10 +312,11 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             _typeNameTable[84] = "ModellingWizard.UIs.SubPages.GenericData";
             _typeNameTable[85] = "ModellingWizard.UIs.SubPages.GenericData_Detail";
             _typeNameTable[86] = "ModellingWizard.UIs.SubPages.Interfaces";
-            _typeNameTable[87] = "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn";
-            _typeNameTable[88] = "ModellingWizard.UIs.SubPages.Interfaces_Detail";
+            _typeNameTable[87] = "ModellingWizard.UIs.SubPages.Interfaces_Detail";
+            _typeNameTable[88] = "ModellingWizard.UIs.SubPages.SystemClass_Details";
+            _typeNameTable[89] = "ModellingWizard.UIs.SubPages.SystemClass";
 
-            _typeTable = new global::System.Type[89];
+            _typeTable = new global::System.Type[90];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -403,8 +404,9 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             _typeTable[84] = typeof(global::ModellingWizard.UIs.SubPages.GenericData);
             _typeTable[85] = typeof(global::ModellingWizard.UIs.SubPages.GenericData_Detail);
             _typeTable[86] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces);
-            _typeTable[87] = typeof(global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn);
-            _typeTable[88] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces_Detail);
+            _typeTable[87] = typeof(global::ModellingWizard.UIs.SubPages.Interfaces_Detail);
+            _typeTable[88] = typeof(global::ModellingWizard.UIs.SubPages.SystemClass_Details);
+            _typeTable[89] = typeof(global::ModellingWizard.UIs.SubPages.SystemClass);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -466,8 +468,9 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
         private object Activate_84_GenericData() { return new global::ModellingWizard.UIs.SubPages.GenericData(); }
         private object Activate_85_GenericData_Detail() { return new global::ModellingWizard.UIs.SubPages.GenericData_Detail(); }
         private object Activate_86_Interfaces() { return new global::ModellingWizard.UIs.SubPages.Interfaces(); }
-        private object Activate_87_DataGridComboBoxColumn() { return new global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn(); }
-        private object Activate_88_Interfaces_Detail() { return new global::ModellingWizard.UIs.SubPages.Interfaces_Detail(); }
+        private object Activate_87_Interfaces_Detail() { return new global::ModellingWizard.UIs.SubPages.Interfaces_Detail(); }
+        private object Activate_88_SystemClass_Details() { return new global::ModellingWizard.UIs.SubPages.SystemClass_Details(); }
+        private object Activate_89_SystemClass() { return new global::ModellingWizard.UIs.SubPages.SystemClass(); }
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -1196,22 +1199,23 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 87:   //  CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn
-                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn"));
-                userType.Activator = Activate_87_DataGridComboBoxColumn;
-                userType.AddMemberName("ItemsSource");
-                userType.AddMemberName("DisplayMemberPath");
-                userType.AddMemberName("FontFamily");
-                userType.AddMemberName("FontSize");
-                userType.AddMemberName("FontStyle");
-                userType.AddMemberName("FontWeight");
-                userType.AddMemberName("Foreground");
+            case 87:   //  ModellingWizard.UIs.SubPages.Interfaces_Detail
+                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_87_Interfaces_Detail;
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 88:   //  ModellingWizard.UIs.SubPages.Interfaces_Detail
+            case 88:   //  ModellingWizard.UIs.SubPages.SystemClass_Details
                 userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_88_Interfaces_Detail;
+                userType.Activator = Activate_88_SystemClass_Details;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 89:   //  ModellingWizard.UIs.SubPages.SystemClass
+                userType = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_89_SystemClass;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -2668,76 +2672,6 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
             var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridBoundColumn)instance;
             that.ElementStyle = (global::Microsoft.UI.Xaml.Style)Value;
         }
-        private object get_151_DataGridComboBoxColumn_ItemsSource(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            return that.ItemsSource;
-        }
-        private void set_151_DataGridComboBoxColumn_ItemsSource(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            that.ItemsSource = (global::System.Collections.IEnumerable)Value;
-        }
-        private object get_152_DataGridComboBoxColumn_DisplayMemberPath(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            return that.DisplayMemberPath;
-        }
-        private void set_152_DataGridComboBoxColumn_DisplayMemberPath(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            that.DisplayMemberPath = (global::System.String)Value;
-        }
-        private object get_153_DataGridComboBoxColumn_FontFamily(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            return that.FontFamily;
-        }
-        private void set_153_DataGridComboBoxColumn_FontFamily(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            that.FontFamily = (global::Microsoft.UI.Xaml.Media.FontFamily)Value;
-        }
-        private object get_154_DataGridComboBoxColumn_FontSize(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            return that.FontSize;
-        }
-        private void set_154_DataGridComboBoxColumn_FontSize(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            that.FontSize = (global::System.Double)Value;
-        }
-        private object get_155_DataGridComboBoxColumn_FontStyle(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            return that.FontStyle;
-        }
-        private void set_155_DataGridComboBoxColumn_FontStyle(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            that.FontStyle = (global::Windows.UI.Text.FontStyle)Value;
-        }
-        private object get_156_DataGridComboBoxColumn_FontWeight(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            return that.FontWeight;
-        }
-        private void set_156_DataGridComboBoxColumn_FontWeight(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            that.FontWeight = (global::Windows.UI.Text.FontWeight)Value;
-        }
-        private object get_157_DataGridComboBoxColumn_Foreground(object instance)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            return that.Foreground;
-        }
-        private void set_157_DataGridComboBoxColumn_Foreground(object instance, object Value)
-        {
-            var that = (global::CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn)instance;
-            that.Foreground = (global::Microsoft.UI.Xaml.Media.Brush)Value;
-        }
 
         private global::Microsoft.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -3762,51 +3696,6 @@ namespace ModellingWizard.ModellingWizard_XamlTypeInfo
                 xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "ElementStyle", "Microsoft.UI.Xaml.Style");
                 xamlMember.Getter = get_150_DataGridBoundColumn_ElementStyle;
                 xamlMember.Setter = set_150_DataGridBoundColumn_ElementStyle;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.ItemsSource":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "ItemsSource", "System.Collections.IEnumerable");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_151_DataGridComboBoxColumn_ItemsSource;
-                xamlMember.Setter = set_151_DataGridComboBoxColumn_ItemsSource;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.DisplayMemberPath":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "DisplayMemberPath", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_152_DataGridComboBoxColumn_DisplayMemberPath;
-                xamlMember.Setter = set_152_DataGridComboBoxColumn_DisplayMemberPath;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.FontFamily":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "FontFamily", "Microsoft.UI.Xaml.Media.FontFamily");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_153_DataGridComboBoxColumn_FontFamily;
-                xamlMember.Setter = set_153_DataGridComboBoxColumn_FontFamily;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.FontSize":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "FontSize", "Double");
-                xamlMember.Getter = get_154_DataGridComboBoxColumn_FontSize;
-                xamlMember.Setter = set_154_DataGridComboBoxColumn_FontSize;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.FontStyle":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "FontStyle", "Windows.UI.Text.FontStyle");
-                xamlMember.Getter = get_155_DataGridComboBoxColumn_FontStyle;
-                xamlMember.Setter = set_155_DataGridComboBoxColumn_FontStyle;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.FontWeight":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "FontWeight", "Windows.UI.Text.FontWeight");
-                xamlMember.Getter = get_156_DataGridComboBoxColumn_FontWeight;
-                xamlMember.Setter = set_156_DataGridComboBoxColumn_FontWeight;
-                break;
-            case "CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn.Foreground":
-                userType = (global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommunityToolkit.WinUI.UI.Controls.DataGridComboBoxColumn");
-                xamlMember = new global::ModellingWizard.ModellingWizard_XamlTypeInfo.XamlMember(this, "Foreground", "Microsoft.UI.Xaml.Media.Brush");
-                xamlMember.Getter = get_157_DataGridComboBoxColumn_Foreground;
-                xamlMember.Setter = set_157_DataGridComboBoxColumn_Foreground;
                 break;
             }
             return xamlMember;
