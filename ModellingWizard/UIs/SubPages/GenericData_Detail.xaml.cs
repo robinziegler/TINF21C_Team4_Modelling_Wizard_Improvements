@@ -52,7 +52,7 @@ namespace ModellingWizard.UIs.SubPages
                     {
                         CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new()
                         {
-
+                            
                         };
                         mainDataGrid.ItemsSource = lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0);
                         DetailContent.Items.Add(mainDataGrid);
