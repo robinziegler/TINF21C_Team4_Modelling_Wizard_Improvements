@@ -19,6 +19,7 @@ namespace ModellingWizard.Objects
         public static Objects.Libaries.Libary InterfacesLib { get; set; } = Processes.Libary.Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0_Full, "AutomationComponentLibrary_v1_0_0_Full").Item2;
 
         /* File Data */
+        public static string FileName { get; set; } = "New.amlx";
         public static Objects.Libaries.Libary Loaded_RoleClass_Data { get; set; }
         public static Objects.Libaries.Libary Loaded_Interfaces_Data { get; set; }
         public static List<Objects.Attachments.AttachmentObject> Attachments { get; set; } = new();

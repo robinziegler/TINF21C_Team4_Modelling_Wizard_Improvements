@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <!-- Without Background="{ThemeResource ApplicationPageBackgroundThemeBrush} the change of theme is not working rigth -->
-    <Grid x:Name="Grid_Main" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid x:Name="Grid_Main" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Grid_Main_Loaded">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="auto"/>
@@ -20,12 +20,16 @@
         <Grid x:Name="AppTitleBar" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="45px"/>
-                <ColumnDefinition />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Image  Source="/Assets/SmallTile.scale-400.png"
                     Grid.Column="0" Width="50px"/>
             <TextBlock x:Name="AppbarTitle" Grid.Column="1" VerticalAlignment="Center"/>
-    </Grid>
+            <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center">
+                <TextBlock x:Name="SavedInformation" />
+                <TextBlock x:Name="OpenedFileName"/>
+            </StackPanel>
+        </Grid>
 
     <!-- Menu at the top -->
         <MenuBar Grid.Row="2" x:Name="MenuBar_Main">

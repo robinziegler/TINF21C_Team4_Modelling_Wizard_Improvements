@@ -19,6 +19,7 @@
     <None Remove="UIs\ModalViews\GenericData\AddRoleClass.xaml" />
     <None Remove="UIs\ModalViews\Help_Menu\ManualPage.xaml" />
     <None Remove="UIs\ModalViews\Interfaces\AddInterface.xaml" />
+    <None Remove="UIs\ModalViews\Main\StartUpDialog.xaml" />
     <None Remove="UIs\SubPages\Attachments.xaml" />
     <None Remove="UIs\SubPages\GenericData.xaml" />
     <None Remove="UIs\SubPages\GenericData_Detail.xaml" />
@@ -123,6 +124,11 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="UIs\ModalViews\GenericData\AddRoleClass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="UIs\ModalViews\Main\StartUpDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

@@ -47,9 +47,23 @@ namespace ModellingWizard
             AppbarTitle.Text = applicationName;
             SetTitleBar(AppTitleBar);
             _currentTheme = (int)App.Current.RequestedTheme;
+
+            /* Informations about opend file */
+            OpenedFileName.Text = Instances.FileName;
+            SavedInformation.Text = "[unloaded]";
         }
 
         private int _currentTheme { get; set; }
+
+        /* Infos if opend file is saved or not */
+        private bool unsavedInformations = false;
+
+        public void SomethingChanged(bool changed)
+        {
+            unsavedInformations = changed;
+            SavedInformation.Text = changed ? "[Unsaved]" : "[Saved]";
+        }
+
 
         /* Navigation stuff */
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
@@ -81,31 +95,55 @@ namespace ModellingWizard
         /* File options */
         private void File_New_Click(object sender, RoutedEventArgs e)
         {
-
+            Instances.Loaded_System_Unit_Libs = new();
+            Instances.Loaded_RoleClass_Data = new();
+            Instances.Loaded_Interfaces_Data = new();
+            Instances.Attachments = new();
         }
 
-        private async void File_Open_Click(object sender, RoutedEventArgs e)
+        private void File_Open_Click(object sender, RoutedEventArgs e)
         {
-            var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+            OpenFile();
+        }
 
-            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
-
-            WinRT.Interop.InitializeWithWindow.Initialize(openPicker, hWnd);
-
-            openPicker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation =
-                Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
-            openPicker.FileTypeFilter.Add(".aml");
-            openPicker.FileTypeFilter.Add(".amlx");
-
-            var file = await openPicker.PickSingleFileAsync();
-            if (file != null)
+        private async void OpenFile()
+        {
+            try
             {
-                var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
-            }
-            NavigationView.SelectedItem = MainPage_Navigation_Interfaces;
-            NavigationView.SelectedItem = MainPage_Navigation_GenericData;
+                var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
 
+                var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+                WinRT.Interop.InitializeWithWindow.Initialize(openPicker, hWnd);
+
+                openPicker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+                openPicker.SuggestedStartLocation =
+                    Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+                openPicker.FileTypeFilter.Add(".aml");
+                openPicker.FileTypeFilter.Add(".amlx");
+
+                var file = await openPicker.PickSingleFileAsync();
+                if (file != null)
+                {
+                    var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
+                    OpenedFileName.Text = file.DisplayName;
+                }
+                NavigationView.SelectedItem = MainPage_Navigation_Interfaces;
+                NavigationView.SelectedItem = MainPage_Navigation_GenericData;
+            }
+            catch 
+            {
+                ContentDialog dialog = new()
+                {
+                    XamlRoot = this.Content.XamlRoot,
+                    Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                    Title = "Error while opening file",
+                    Content = "Please check your file!",
+                    PrimaryButtonText = "Ok"
+                };
+                ContentDialogResult result = await dialog.ShowAsync();
+            }
+            
         }
 
         private async void File_Save_Click(object sender, RoutedEventArgs e)
@@ -123,6 +161,7 @@ namespace ModellingWizard
             if (file != null)
             {
 
+                SavedInformation.Text = "[Saved]";
             }
         }
 
@@ -215,6 +254,28 @@ namespace ModellingWizard
             ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
         }
 
-
+        private async void Grid_Main_Loaded(object sender, RoutedEventArgs e)
+        {
+            var Win = new UIs.ModalViews.Help_Menu.ManualPage();
+            ContentDialog dialog = new()
+            {
+                XamlRoot = this.Content.XamlRoot,
+                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                Title = "Modelling Wizard",
+                Content = "",
+                PrimaryButtonText = "Open File",
+                SecondaryButtonText = "Create new File"
+            };
+            ContentDialogResult result = await dialog.ShowAsync();
+            if(result == ContentDialogResult.Primary)
+            {
+                OpenFile();
+                SavedInformation.Text = "[Saved]";
+            }
+            else if(result == ContentDialogResult.Secondary)
+            {
+                
+            }
+        }
     }
 }

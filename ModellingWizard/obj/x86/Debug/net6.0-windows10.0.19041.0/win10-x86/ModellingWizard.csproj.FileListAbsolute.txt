@@ -1197,3 +1197,8 @@ D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\
 D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\GenericData_Detail.xbf
 D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\SubPages\Interfaces_Detail.xbf
 D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\mscordaccore_x86_x86_6.0.1623.17311.dll
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\ModalViews\Main\StartUpDialog.xbf
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\ModalViews\Main\StartUpDialog.g.i.cs
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\ModalViews\Main\StartUpDialog.g.cs
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\ModalViews\Main\StartUpDialog.xaml
+D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\obj\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\UIs\ModalViews\Main\StartUpDialog.xbf

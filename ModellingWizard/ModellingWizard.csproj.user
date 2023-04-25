@@ -9,6 +9,11 @@
     <AppIconSource>C:\Users\Michi\OneDrive\Arbeit_Studium\Theoriephasen\2.2\SWE\Bilder GUI\logo.png</AppIconSource>
     <SplashScreenSource>C:\Users\Michi\OneDrive\Arbeit_Studium\Theoriephasen\2.2\SWE\Bilder GUI\logo.png</SplashScreenSource>
     <PackageLogoSource>C:\Users\Michi\OneDrive\Arbeit_Studium\Theoriephasen\2.2\SWE\Bilder GUI\logo.png</PackageLogoSource>
+    <_LastSelectedProfileId>D:\DHBW\SWE\TINF21C_Team4_Modelling_Wizard_Improvements\ModellingWizard\Properties\PublishProfiles\ClickOnceProfile.pubxml</_LastSelectedProfileId>
+    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86|x64</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
   </PropertyGroup>
   <ItemGroup>
     <None Update="App.xaml">
@@ -20,6 +25,9 @@
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="UIs\ModalViews\Main\StartUpDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UIs\SubPages\GenericData_Detail.xaml">
       <SubType>Designer</SubType>
     </Page>
