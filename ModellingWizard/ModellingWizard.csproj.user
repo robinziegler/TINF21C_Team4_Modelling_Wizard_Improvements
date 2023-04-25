@@ -16,6 +16,14 @@
     <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
   </PropertyGroup>
   <ItemGroup>
+    <Page Update="UIs\SubPages\SystemClass _Details.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UIs\SubPages\SystemClass.xaml">
+      <SubType>Component</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
     <None Update="App.xaml">
       <SubType>Designer</SubType>
     </None>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using Aml.Engine.Adapter;
 using Aml.Engine.AmlObjects;
 using Aml.Engine.CAEX;
 using ModellingWizard.Objects;
@@ -58,6 +59,7 @@ namespace ModellingWizard.Processes.Open
 
                     /* Load interfaces from libary */
                     Objects.Libaries.Libary InterfacesLib = new();
+
                     InterfacesLib.Name = name;
                     foreach (var classLibType in doc.CAEXFile.InterfaceClassLib)
                     {
@@ -72,15 +74,25 @@ namespace ModellingWizard.Processes.Open
                         }
                         InterfacesLib.SubObjects.Add(SubLib);
                     }
+                    Objects.Libaries.Libary SystemLib = new();
+                    foreach (var classLibType in doc.CAEXFile.SystemUnitClassLib)
+                    {
+                        Objects.Libaries.Libary SubLib = new()
+                        {
+                            Name = classLibType.Name
+                        };
+
+                        foreach (var classLib in classLibType.SystemUnitClass)
+                        {
+                            SubLib.SubObjects.Add(LoadSystemUnitSublibs(classLib));
+                        }
+                        SystemLib.SubObjects.Add(SubLib);
+                    }
+
 
                     Instances.Loaded_RoleClass_Data = RoleClassLib;
                     Instances.Loaded_Interfaces_Data = InterfacesLib;
-
-                    foreach(SystemUnitClassLibType lib in doc.CAEXFile.SystemUnitClassLib)
-                    {
-                        Instances.Loaded_System_Unit_Libs.Add(lib);
-                    }
-
+                    Instances.Loaded_System_Unit_Libs = SystemLib;
                     return (RoleClassLib, InterfacesLib);
                 }
                 return (null, null);
@@ -93,6 +105,68 @@ namespace ModellingWizard.Processes.Open
                 return (RoleClassLib, InterfacesLib);
             }
                 
+        }
+        public static Objects.Libaries.Libary LoadSystemUnitSublibs(SystemUnitFamilyType input)
+        {
+            Objects.Libaries.Libary SubLib = new()
+            {
+                Name = input.Name,
+                Attributes = CheckForSystemUnitAttributes(input)
+            };
+            foreach (var classLib in input.SystemUnitClass)
+            {
+                SubLib.SubObjects.Add(LoadSystemUnitSublibs(classLib));
+            }
+
+            return SubLib;
+        }
+        private static List<Objects.Libaries.LibaryObject> CheckForSystemUnitAttributes(SystemUnitFamilyType classType)
+        {
+            List<Objects.Libaries.LibaryObject> libAttributes = new();
+            foreach (var attribute in classType.Attribute)
+            {
+                libAttributes.Add(new()
+                {
+                    Name = attribute.Name,
+                    Value = attribute.Value,
+                    Default = attribute.DefaultValue,
+                    Unit = attribute.Unit,
+                    DataType = attribute.AttributeDataType,
+                    Description = attribute.Description,
+                    CopyRight = attribute.Copyright,
+                    AttributePath = attribute.AttributePath,
+                    RefSemanticList = attribute.RefSemantic,
+                    ReferencedClassName = classType.ReferencedClassName,
+                    RefBaseClassPath = classType.RefBaseClassPath,
+                    ID = classType.ID,
+                    SupportesRoleClassType = classType.CAEXPath(),
+                    SubAttrebutes = CheckForsubAttributes(attribute.getAttributeField())
+                });
+            }
+            return libAttributes;
+        }
+        private static List<Objects.Libaries.LibaryObject> CheckForsubAttributes(IEnumerable<AttributeType> atrr)
+        {
+            List<Objects.Libaries.LibaryObject> libAttributes = new();
+            foreach (var attribute in atrr)
+            {
+                libAttributes.Add(new()
+                {
+                    Name = attribute.Name,
+                    Value = attribute.Value,
+                    Default = attribute.DefaultValue,
+                    Unit = attribute.Unit,
+                    DataType = attribute.AttributeDataType,
+                    Description = attribute.Description,
+                    CopyRight = attribute.Copyright,
+                    AttributePath = attribute.AttributePath,
+                    RefSemanticList = attribute.RefSemantic,
+                    ID = attribute.ID,
+                    SupportesRoleClassType = attribute.CAEXPath(),
+                    SubAttrebutes = CheckForsubAttributes(attribute.getAttributeField())
+                });
+            }
+            return libAttributes;
         }
         /*
         public static Objects.Attachments.AttachmentObject LoadAttatchments(AttachmentObject input)
