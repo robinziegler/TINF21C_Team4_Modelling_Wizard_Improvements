@@ -277,5 +277,13 @@ namespace ModellingWizard
                 
             }
         }
+
+        private void Grid_Main_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            var currentSelected = NavigationView.SelectedItem;
+            NavigationView.SelectedItem = MainPage_Navigation_Interfaces;
+            NavigationView.SelectedItem = MainPage_Navigation_GenericData;
+            NavigationView.SelectedItem = currentSelected;
+        }
     }
 }
