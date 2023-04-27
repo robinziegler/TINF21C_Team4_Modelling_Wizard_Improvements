@@ -12,18 +12,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid VerticalAlignment="Stretch" Name="MainGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <NavigationView x:Name="NavigationView" Grid.Row="1" Height="{Binding ActualHeight, ElementName=MainGrid}" VerticalAlignment="Stretch" 
+        <NavigationView x:Name="NavigationView" Height="{Binding ActualHeight, ElementName=MainGrid}" VerticalAlignment="Stretch" 
                         PaneDisplayMode="Left"
                         IsTabStop="False"
                         SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="false">
             <NavigationView.MenuItems>
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>
-                <NavigationViewItem Content="Add Role Class" Icon="Add" Tag="SystemAdd" ToolTipService.ToolTip="Add Role Class" Visibility="Collapsed"/>
+                <NavigationViewItem Content="Add Role Class" Icon="Add" Tag="SystemAdd" ToolTipService.ToolTip="Add Role Class"/>
             </NavigationView.FooterMenuItems>
             <Frame x:Name="ContentFrame" />
         </NavigationView>

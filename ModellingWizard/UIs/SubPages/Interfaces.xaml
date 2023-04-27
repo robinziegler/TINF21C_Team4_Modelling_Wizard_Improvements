@@ -13,7 +13,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <NavigationView x:Name="NavigationView" Grid.Row="1" Height="460"
+        <NavigationView x:Name="NavigationView" Grid.Row="1"
                         PaneDisplayMode="Left"
                         IsTabStop="False"
                         SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
