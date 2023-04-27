@@ -22,6 +22,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 using Microsoft.UI;
 using System.ComponentModel.Design.Serialization;
 using ModellingWizard.UIs.SubPages;
+using Windows.Storage.Pickers;
+using ModellingWizard.Processes.Save;
 
 namespace ModellingWizard
 {
@@ -127,6 +129,7 @@ namespace ModellingWizard
                 {
                     var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
                     OpenedFileName.Text = file.DisplayName;
+                    Instances.CurrentFile = new(file.Path);
                 }
                 NavigationView.SelectedItem = MainPage_Navigation_Interfaces;
                 NavigationView.SelectedItem = MainPage_Navigation_GenericData;
@@ -148,20 +151,37 @@ namespace ModellingWizard
 
         private async void File_Save_Click(object sender, RoutedEventArgs e)
         {
-            var savePicker = new Windows.Storage.Pickers.FileSavePicker();
-            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
-
-            WinRT.Interop.InitializeWithWindow.Initialize(savePicker, hWnd);
-            savePicker.SuggestedStartLocation =
-                Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
-            savePicker.FileTypeChoices.Add("AML", new List<string>() { ".aml" });
-            savePicker.SuggestedFileName = "New Document";
-
-            var file = await savePicker.PickSaveFileAsync();
-            if (file != null)
+            try
             {
+                var savePicker = new Windows.Storage.Pickers.FileSavePicker();
+                var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
 
-                SavedInformation.Text = "[Saved]";
+                WinRT.Interop.InitializeWithWindow.Initialize(savePicker, hWnd);
+                savePicker.SuggestedStartLocation =
+                    Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+                savePicker.FileTypeChoices.Add("AML", new List<string>() { ".aml" });
+                savePicker.FileTypeChoices.Add("AMLX", new List<string>() { ".amlx" });
+                savePicker.SuggestedFileName = ((MainWindow)App.m_window).OpenedFileName.Text;
+
+                // Open the picker for the user to pick a file
+                StorageFile file = await savePicker.PickSaveFileAsync();
+                if (file != null)
+                {
+                    Save.SaveFile(file.Path, file.Name, file.FileType);
+                    SavedInformation.Text = "[Saved]";
+                }
+            }
+            catch (Exception ex)
+            {
+                ContentDialog dialog = new()
+                {
+                    XamlRoot = this.Content.XamlRoot,
+                    Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                    Title = "Error while saving the file",
+                    Content = "Please check your inserted data! " + ex.ToString(),
+                    PrimaryButtonText = "Ok"
+                };
+                ContentDialogResult result = await dialog.ShowAsync();
             }
         }
 
