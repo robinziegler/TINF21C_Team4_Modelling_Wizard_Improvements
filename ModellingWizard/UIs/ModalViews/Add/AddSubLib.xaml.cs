@@ -21,17 +21,18 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace ModellingWizard.UIs.ModalViews.GenericData
+namespace ModellingWizard.UIs.ModalViews.Add
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AddRoleClass : Page
+    public sealed partial class AddSubLib : Page
     {
-        public AddRoleClass()
+        public AddSubLib(Objects.Enums.LibType libType)
         {
             this.InitializeComponent();
-            Objects.Instances.RoleClassLib.SubObjects.ForEach(x =>
+            
+            GetLib(libType).SubObjects.ForEach(x =>
             {
                 MyTreNode t = new() { Content = x.Name };
                 t.lib = x;
@@ -39,12 +40,27 @@ namespace ModellingWizard.UIs.ModalViews.GenericData
                 {
                     t.Children.Add(CreateSubNodes(y));
                 });
-                
-                RoleClassTreeView.RootNodes.Add(t);
+
+                LibTreeView.RootNodes.Add(t);
             });
         }
 
-        private TreeViewNode CreateSubNodes(Objects.Libaries.Libary libFile)
+        private Objects.Libaries.Libary GetLib(Objects.Enums.LibType libType)
+        {
+            switch (libType)
+            {
+                case Objects.Enums.LibType.RoleClass:
+                    return Objects.Instances.RoleClassLib;
+                case Objects.Enums.LibType.SystemUnitClass:
+                    return Objects.Instances.System_Unit_Libs;
+                case Objects.Enums.LibType.Interfaces:
+                    return Objects.Instances.InterfacesLib;
+                default: 
+                    return null;
+            }
+        }
+
+        private MyTreNode CreateSubNodes(Objects.Libaries.Libary libFile)
         {
             MyTreNode node = new() { Content = libFile.Name };
             node.lib = libFile;

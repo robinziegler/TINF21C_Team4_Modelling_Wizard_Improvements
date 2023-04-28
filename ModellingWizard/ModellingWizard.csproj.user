@@ -42,16 +42,10 @@
     <Page Update="UIs\SubPages\Interfaces_Detail.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UIs\ModalViews\Interfaces\AddInterface.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="UIs\ModalViews\Help_Menu\ManualPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UIs\ModalViews\Attachments\AddAttachment.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UIs\ModalViews\GenericData\AddRoleClass.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UIs\SubPages\GenericData.xaml">

@@ -19,6 +19,9 @@
                         SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
             <NavigationView.MenuItems>
             </NavigationView.MenuItems>
+            <NavigationView.FooterMenuItems>
+                <NavigationViewItem Content="Add Interface" Icon="Add" Tag="SystemAdd" ToolTipService.ToolTip="Add Interface"/>
+            </NavigationView.FooterMenuItems>
             <Frame x:Name="ContentFrame" />
         </NavigationView>
     </Grid>

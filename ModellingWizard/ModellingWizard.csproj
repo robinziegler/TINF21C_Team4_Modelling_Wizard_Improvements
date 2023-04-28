@@ -14,11 +14,10 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Resources\Libaries\AutomationComponentLibrary_v1_0_0.aml" />
+    <None Remove="UIs\ModalViews\Add\AddSubLib.xaml" />
     <None Remove="UIs\ModalViews\Help_Menu\AboutPage.xaml" />
     <None Remove="UIs\ModalViews\Attachments\AddAttachment.xaml" />
-    <None Remove="UIs\ModalViews\GenericData\AddRoleClass.xaml" />
     <None Remove="UIs\ModalViews\Help_Menu\ManualPage.xaml" />
-    <None Remove="UIs\ModalViews\Interfaces\AddInterface.xaml" />
     <None Remove="UIs\ModalViews\Main\StartUpDialog.xaml" />
     <None Remove="UIs\SubPages\Attachments.xaml" />
     <None Remove="UIs\SubPages\GenericData.xaml" />
@@ -105,11 +104,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="UIs\ModalViews\Interfaces\AddInterface.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <Page Update="UIs\ModalViews\Help_Menu\ManualPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,7 +119,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="UIs\ModalViews\GenericData\AddRoleClass.xaml">
+    <Page Update="UIs\ModalViews\GenericData\AddSubLib.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Update="UIs\SubPages\SystemClass _Details.xaml">

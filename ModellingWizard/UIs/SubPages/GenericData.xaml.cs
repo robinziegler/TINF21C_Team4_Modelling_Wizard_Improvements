@@ -137,7 +137,7 @@ namespace ModellingWizard.UIs.SubPages
             }
             else
             {
-                var Win = new ModalViews.GenericData.AddRoleClass();
+                var Win = new ModalViews.Add.AddSubLib(Objects.Enums.LibType.RoleClass);
                 ContentDialog dialog = new();
 
                 // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
@@ -152,23 +152,16 @@ namespace ModellingWizard.UIs.SubPages
                 ContentDialogResult result = await dialog.ShowAsync();
                 if (result == ContentDialogResult.Primary)
                 {
-                    if (Win.RoleClassTreeView.SelectedItems != null && Win.RoleClassTreeView.SelectedItems.Count > 0)
+                    if (Win.LibTreeView.SelectedItems != null && Win.LibTreeView.SelectedItems.Count > 0)
                     {
                         List<Objects.Libaries.Libary> libstoadd = new();
-                        Win.RoleClassTreeView.SelectedItems.ToList().ForEach(item =>
+                        Win.LibTreeView.SelectedItems.ToList().ForEach(item =>
                         {
-                        var x = item as Objects.MyTreNode;
-                        x.lib.SubObjects.Clear();
-                            if (x.Depth == 0)
-                            {
-                                Instances.Loaded_RoleClass_Data ??= new();
-                                libstoadd.Add(x.lib);
-                            }
-                            else
-                            {
-                            }
-                            
-
+                            var x = (MyTreNode) item;
+                            Instances.Loaded_RoleClass_Data.SubObjects.Add(x.lib);
+                            Instances.LibReload();
+                            var win = (MainWindow)App.m_window;
+                            win.ReloadInformations();
                         });
                     }
                 }

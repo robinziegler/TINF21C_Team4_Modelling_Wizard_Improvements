@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ModellingWizard.Objects.Libaries
 {
-    public class Libary
+    public class Libary : ICloneable 
     {
         public string myGuid { get; set; }    
         public string Name { get; set; }
@@ -20,6 +20,15 @@ namespace ModellingWizard.Objects.Libaries
             SubObjects = new();
             myGuid = Guid.NewGuid().ToString();
         } 
+
+        public Object Clone()
+        {
+            foreach(Libary obj in SubObjects)
+            {
+                obj.MemberwiseClone();
+            }
+            return this.MemberwiseClone();
+        }
     }
 
     public class LibaryObject

@@ -18,7 +18,7 @@
             <NavigationView.MenuItems>
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>
-                <NavigationViewItem Content="Add Role Class" Icon="Add" Tag="SystemAdd" ToolTipService.ToolTip="Add Role Class" Visibility="Collapsed"/>
+                <NavigationViewItem Content="Add System Unit Class" Icon="Add" Tag="SystemAdd" ToolTipService.ToolTip="Add System Unit Class"/>
             </NavigationView.FooterMenuItems>
             <Frame x:Name="ContentFrame" />
         </NavigationView>

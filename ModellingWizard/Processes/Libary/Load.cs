@@ -10,9 +10,27 @@ namespace ModellingWizard.Processes.Libary
 {
     public class Load
     {
-        public static (Objects.Libaries.Libary, Objects.Libaries.Libary) LoadLib(byte[] binary, string name)
+        public static (Objects.Libaries.Libary, Objects.Libaries.Libary, Objects.Libaries.Libary) LoadLib(byte[] binary, string name)
         {
             CAEXDocument doc = CAEXDocument.LoadFromBinary(binary);
+            /* Load system class from libary */
+            Objects.Libaries.Libary SystemUnitClassLib = new();
+            SystemUnitClassLib.Name = name;
+            foreach (var classLibType in doc.CAEXFile.RoleClassLib)
+            {
+                Objects.Libaries.Libary SubLib = new()
+                {
+                    Name = classLibType.Name
+                };
+
+                foreach (var classLib in classLibType.RoleClass)
+                {
+                    SubLib.SubObjects.Add(LoadRoleClassSubLibs(classLib));
+                }
+
+                SystemUnitClassLib.SubObjects.Add(SubLib);
+            }
+
 
             /* Load role classes  from libary */
             Objects.Libaries.Libary RoleClassLib = new();
@@ -51,7 +69,22 @@ namespace ModellingWizard.Processes.Libary
                 InterfacesLib.SubObjects.Add(SubLib);
             }
 
-            return (RoleClassLib, InterfacesLib);
+            return (RoleClassLib, InterfacesLib, SystemUnitClassLib);
+        }
+
+        public static Objects.Libaries.Libary LoadSystemUnitClassLibs(RoleFamilyType input)
+        {
+            Objects.Libaries.Libary SubLib = new()
+            {
+                Name = input.Name,
+                Attributes = CheckForRoleClassAttributes(input)
+            };
+            foreach (var classLib in input.RoleClass)
+            {
+                SubLib.SubObjects.Add(LoadSystemUnitClassLibs(classLib));
+            }
+
+            return SubLib;
         }
 
         public static Objects.Libaries.Libary LoadRoleClassSubLibs(RoleFamilyType input)
