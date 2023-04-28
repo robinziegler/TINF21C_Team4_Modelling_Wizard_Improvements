@@ -175,17 +175,16 @@ namespace ModellingWizard
                     OpenedFileName.Text = file.DisplayName;
                     Instances.CurrentFile = new(file.Path);
                 }
-                NavigationView.SelectedItem = MainPage_Navigation_Interfaces;
-                NavigationView.SelectedItem = MainPage_Navigation_GenericData;
+                ReloadInformations();
             }
-            catch 
+            catch (Exception e)
             {
                 ContentDialog dialog = new()
                 {
                     XamlRoot = this.Content.XamlRoot,
                     Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                     Title = "Error while opening file",
-                    Content = "Please check your file!",
+                    Content = "Please check your file!" + e,
                     PrimaryButtonText = "Ok"
                 };
                 ContentDialogResult result = await dialog.ShowAsync();
@@ -351,7 +350,7 @@ namespace ModellingWizard
         public void ReloadInformations()
         {
             var currentSelected = NavigationView.SelectedItem;
-            NavigationView.SelectedItem = MainPage_Navigation_Interfaces;
+            NavigationView.SelectedItem = MainPage_Navigation_SystemClass ;
             NavigationView.SelectedItem = MainPage_Navigation_GenericData;
             NavigationView.SelectedItem = currentSelected;
         }

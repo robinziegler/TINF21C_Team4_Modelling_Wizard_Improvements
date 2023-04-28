@@ -26,6 +26,21 @@ namespace ModellingWizard.Processes.Open
                 // Load the amlx container from the given filepath
                 AutomationMLContainer amlx = new AutomationMLContainer(filepath);
 
+                /* Load Attachments */
+                //string tempPath = Path.GetTempPath();
+                //amlx.ExtractAllFiles(tempPath);
+
+                //string[] files = Directory.GetFiles(tempPath, "*.*", SearchOption.AllDirectories);
+                //files.ToList().ForEach(fileName =>
+                //{
+                // // Byte[] bytes = File.ReadAllBytes(fileName);
+                // var OpenedFile = File.Open(fileName, FileMode.Open);
+                // attachment = new AttachmentObject();
+                //attachment.Title = OpenedFile.Name;
+                //attachment.Base64Content = Convert.ToBase64String(OpenedFile());
+                //Instances.Attachments.Add(attachment);
+                //});
+
                 // Get the root path -> main .aml file
                 IEnumerable<PackagePart> rootParts = amlx.GetPartsByRelationShipType(AutomationMLContainer.RelationshipType.Root);
 
