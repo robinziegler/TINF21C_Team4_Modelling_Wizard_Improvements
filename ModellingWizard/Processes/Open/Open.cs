@@ -99,7 +99,7 @@ namespace ModellingWizard.Processes.Open
             }
             else
             {
-                (Objects.Libaries.Libary RoleClassLib, Objects.Libaries.Libary InterfacesLib) = Libary.Load.LoadLib(binary, name);
+                (Objects.Libaries.Libary RoleClassLib, Objects.Libaries.Libary InterfacesLib, Objects.Libaries.Libary SystemUnitClassLib) = Libary.Load.LoadLib(binary, name);
                 Instances.Loaded_RoleClass_Data = RoleClassLib;
                 Instances.Loaded_Interfaces_Data = InterfacesLib;
                 return (RoleClassLib, InterfacesLib);

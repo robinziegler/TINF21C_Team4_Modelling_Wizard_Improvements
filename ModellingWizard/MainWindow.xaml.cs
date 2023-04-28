@@ -95,17 +95,61 @@ namespace ModellingWizard
         }
 
         /* File options */
-        private void File_New_Click(object sender, RoutedEventArgs e)
+        private async void File_New_Click(object sender, RoutedEventArgs e)
         {
-            Instances.Loaded_System_Unit_Libs = new();
-            Instances.Loaded_RoleClass_Data = new();
-            Instances.Loaded_Interfaces_Data = new();
-            Instances.Attachments = new();
+            if(unsavedInformations)
+            {
+                ContentDialog dialog = new()
+                {
+                    XamlRoot = this.Content.XamlRoot,
+                    Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                    Title = "You have unsaved data",
+                    Content = "If you continue, data may be lost",
+                    PrimaryButtonText = "Continue",
+                    SecondaryButtonText = "Cancel"
+                };
+                ContentDialogResult result = await dialog.ShowAsync();
+                if(result == ContentDialogResult.Primary)
+                {
+                    unsavedInformations = false;
+                    SomethingChanged(false);
+                    Processes.New.CreateSysClass.Execute();
+                    ReloadInformations();
+                }
+            }
+            else
+            {
+                Processes.New.CreateSysClass.Execute();
+                ReloadInformations();
+            }
         }
 
-        private void File_Open_Click(object sender, RoutedEventArgs e)
+        private async void File_Open_Click(object sender, RoutedEventArgs e)
         {
-            OpenFile();
+            if (unsavedInformations)
+            {
+                ContentDialog dialog = new()
+                {
+                    XamlRoot = this.Content.XamlRoot,
+                    Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                    Title = "You have unsaved data",
+                    Content = "If you continue, data may be lost",
+                    PrimaryButtonText = "Continue",
+                    SecondaryButtonText = "Cancel"
+                };
+                ContentDialogResult result = await dialog.ShowAsync();
+                if (result == ContentDialogResult.Primary)
+                {
+                    unsavedInformations = false;
+                    SomethingChanged(false);
+                    OpenFile();
+                }
+            }
+            else
+            {
+                OpenFile();
+            }
+            
         }
 
         private async void OpenFile()
@@ -294,11 +338,17 @@ namespace ModellingWizard
             }
             else if(result == ContentDialogResult.Secondary)
             {
-                
+                Processes.New.CreateSysClass.Execute();
+                ReloadInformations();
             }
         }
 
         private void Grid_Main_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            ReloadInformations();
+        }
+
+        public void ReloadInformations()
         {
             var currentSelected = NavigationView.SelectedItem;
             NavigationView.SelectedItem = MainPage_Navigation_Interfaces;

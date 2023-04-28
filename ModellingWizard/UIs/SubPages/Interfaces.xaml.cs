@@ -35,27 +35,6 @@ namespace ModellingWizard.UIs.SubPages
         private int LoadDepth = 0;
         private NavigationViewItem currentItem;
 
-        private async void AddInterfaceButton_Click(object sender, RoutedEventArgs e)
-        {
-            var Win = new ModalViews.Interfaces.AddInterface();
-            ContentDialog dialog = new()
-            {
-                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
-                XamlRoot = this.XamlRoot,
-                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
-                Title = "Add interface",
-                PrimaryButtonText = "Add",
-                CloseButtonText = "Cancel",
-                DefaultButton = ContentDialogButton.Primary,
-                Content = Win
-            };
-
-            ContentDialogResult result = await dialog.ShowAsync();
-            if (result == ContentDialogResult.Primary)
-            {
-                Win.InterfaceTreeView.SelectedItems.Count();
-            }
-        }
         private void loadTestObject(Objects.Libaries.Libary lib)
         {
             if (lib != null)
@@ -96,15 +75,15 @@ namespace ModellingWizard.UIs.SubPages
                 NavigationView.Header = null;
                 NavigationView.SelectedItem = item;
             }
-            /*else
+            else
             {
-                var Win = new ModalViews.GenericData.AddRoleClass();
+                var Win = new ModalViews.Add.AddSubLib(Objects.Enums.LibType.Interfaces);
                 ContentDialog dialog = new();
 
                 // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
                 dialog.XamlRoot = this.XamlRoot;
                 dialog.Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style;
-                dialog.Title = "Add role class";
+                dialog.Title = "Add interface";
                 dialog.PrimaryButtonText = "Add";
                 dialog.CloseButtonText = "Cancel";
                 dialog.DefaultButton = ContentDialogButton.Primary;
@@ -113,27 +92,20 @@ namespace ModellingWizard.UIs.SubPages
                 ContentDialogResult result = await dialog.ShowAsync();
                 if (result == ContentDialogResult.Primary)
                 {
-                    if (Win.RoleClassTreeView.SelectedItems != null && Win.RoleClassTreeView.SelectedItems.Count > 0)
+                    if (Win.LibTreeView.SelectedItems != null && Win.LibTreeView.SelectedItems.Count > 0)
                     {
                         List<Objects.Libaries.Libary> libstoadd = new();
-                        Win.RoleClassTreeView.SelectedItems.ToList().ForEach(item =>
+                        Win.LibTreeView.SelectedItems.ToList().ForEach(item =>
                         {
-                            var x = item as Objects.MyTreNode;
-                            x.lib.SubObjects.Clear();
-                            if (x.Depth == 0)
-                            {
-                                Instances.Loaded_RoleClass_Data ??= new();
-                                libstoadd.Add(x.lib);
-                            }
-                            else
-                            {
-                            }
-
-
+                            var x = (MyTreNode)item;
+                            Instances.Loaded_Interfaces_Data.SubObjects.Add(x.lib);
+                            Instances.LibReload();
+                            var win = (MainWindow)App.m_window;
+                            win.ReloadInformations();
                         });
                     }
                 }
-            }*/
+            }
         }
 
 
