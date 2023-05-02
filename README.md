@@ -2,7 +2,8 @@
 
 This project is worked on by students of the DHBW Stuttgart in the context of the lecture "Software Engineering" in the third and fourth semester. The project is supervised by Markus Rentschler and Christian Holder.
 
-The current state of development is shown on the automatic github-pages deployment. For further information on this Project please examine the [Github wiki](https://github.com/robinziegler/TINF21C_Team4_Modelling_Wizard_Improvements/wiki).
+The current state of development can be downloaded [here](https://github.com/robinziegler/TINF21C_Team4_Modelling_Wizard_Improvements/releases/tag/2.1.0). 
+More information about the project can be found in the [Github wiki](https://github.com/robinziegler/TINF21C_Team4_Modelling_Wizard_Improvements/wiki).
 
 ___
 
