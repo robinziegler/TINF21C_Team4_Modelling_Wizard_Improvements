@@ -1,4 +1,11 @@
 # TINF21C_Modelling_Wizard_Improvements
+
+This project is worked on by students of the DHBW Stuttgart in the context of the lecture "Software Engineering" in the third and fourth semester. The project is supervised by Markus Rentschler and Christian Holder.
+
+The current state of development is shown on the automatic github-pages deployment. For further information on this Project please examine the [Github wiki](https://github.com/robinziegler/TINF21C_Team4_Modelling_Wizard_Improvements/wiki).
+
+___
+
 The Modelling Wizard is an application that was developed in a number of [previous projects](#old-project-statuses).
 A device model can be created via a GUI. The addition 
 of device interfaces (e.g. physical ports) and file attachments is possible. The model can be created manually or by reading existing description formats in different file formats (AMLX, AML, EDZ, IODD, GSD). 
