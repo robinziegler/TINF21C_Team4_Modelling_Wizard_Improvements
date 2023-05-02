@@ -1,7 +1,6 @@
-# TINF21C_Modelling_Wizard_Improvements
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/96117790/235611093-21ddf1e2-d115-47f3-a584-5f5a8c799792.png"/>
-</p>
+# TINF21C_Modelling_Wizard_Improvements</h1>
+
+![LargeTile scale-100](https://user-images.githubusercontent.com/96117790/235612416-1266158c-9ab2-42ea-8c29-7102ea67e350.png)
 
 This project is worked on by students of the DHBW Stuttgart in the context of the lecture "Software Engineering" in the third and fourth semester. The project is supervised by Markus Rentschler and Christian Holder.
 
@@ -25,7 +24,7 @@ The user interface will be improved and errors in the program will be identified
 5. Testing of the functionalities
 6. Creation of a detailed user documentation
 
-# Collaborators
+## Collaborators
 
 - [Robin Ziegler](https://github.com/robinziegler) - Project Manager
 - [Dana Frey](https://github.com/DanaFrey) - Tech. Documentation
@@ -35,15 +34,15 @@ The user interface will be improved and errors in the program will be identified
 - [Fabian Kreuzer](https://github.com/Fabiankreuzer) - System Architect
 - [Maximilian Trumpp](https://github.com/maximiliantrumpp) - Product Manager
 
-# Links
+## Links
 
-## Installation Guide
+### Installation Guide
 - https://github.com/robinziegler/TINF21C_Team4_Modelling_Wizard_Improvements/wiki/Instruction
 
-## Information and Downloads
+### Information and Downloads
 - https://www.automationml.org/download-archive/
 
-## Old Project Statuses
+### Old Project Statuses
 - https://github.com/H4CK3R-01/TINF20C_ModellingWizard_Devices
 - https://github.com/DekaAthlos/TINF19C-ModellingWizard/tree/master
 - https://github.com/WAntonia/TINF18C_Team_3_DD2AML-Converter
