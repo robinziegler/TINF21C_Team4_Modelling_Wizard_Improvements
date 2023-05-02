@@ -1,4 +1,7 @@
 # TINF21C_Modelling_Wizard_Improvements
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/96117790/235611093-21ddf1e2-d115-47f3-a584-5f5a8c799792.png"/>
+</p>
 
 This project is worked on by students of the DHBW Stuttgart in the context of the lecture "Software Engineering" in the third and fourth semester. The project is supervised by Markus Rentschler and Christian Holder.
 
