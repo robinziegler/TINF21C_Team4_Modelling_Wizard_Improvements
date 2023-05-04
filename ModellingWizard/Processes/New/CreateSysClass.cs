@@ -20,11 +20,7 @@ namespace ModellingWizard.Processes.New
             //Add standard static SystemUnitClass
             Instances.Loaded_System_Unit_Libs.Name = "";
 
-            var MainLib = new Objects.Libaries.Libary();
-            MainLib.Name = Objects.Instances.System_Unit_Libs.Name;
-            MainLib.SubObjects.Add((Objects.Libaries.Libary) ((Objects.Libaries.Libary)Objects.Instances.System_Unit_Libs.SubObjects.Find(x => x.Name == "AutomationMLComponentStandardRCL").Clone()).SubObjects.Find(x => x.Name == "AutomationComponent").Clone());
-
-            Instances.Loaded_System_Unit_Libs = (Objects.Libaries.Libary) MainLib.Clone();
+           
             Objects.Instances.LibReload();
         }
 
