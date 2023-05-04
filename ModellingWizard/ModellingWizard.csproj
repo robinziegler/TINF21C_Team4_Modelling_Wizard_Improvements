@@ -20,10 +20,10 @@
     <None Remove="UIs\ModalViews\Help_Menu\ManualPage.xaml" />
     <None Remove="UIs\ModalViews\Main\StartUpDialog.xaml" />
     <None Remove="UIs\SubPages\Attachments.xaml" />
-    <None Remove="UIs\SubPages\GenericData.xaml" />
-    <None Remove="UIs\SubPages\GenericData_Detail.xaml" />
     <None Remove="UIs\SubPages\Interfaces.xaml" />
     <None Remove="UIs\SubPages\Interfaces_Detail.xaml" />
+    <None Remove="UIs\SubPages\RoleClass.xaml" />
+    <None Remove="UIs\SubPages\RoleClass_Detail.xaml" />
     <None Remove="UIs\SubPages\SystemClass _Details.xaml" />
     <None Remove="UIs\SubPages\SystemClass.xaml" />
   </ItemGroup>
@@ -79,7 +79,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="UIs\SubPages\GenericData_Detail.xaml">
+    <Page Update="UIs\SubPages\RoleClass_Detail.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -89,7 +89,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="UIs\SubPages\GenericData.xaml">
+    <Page Update="UIs\SubPages\RoleClass.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
