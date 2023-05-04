@@ -50,14 +50,17 @@ namespace ModellingWizard
             string applicationInstallationnDate = AppInfo.Current.Package.InstalledDate.ToString().Split(" ")[0];
             AppbarTitle.Text = applicationName;
             SetTitleBar(AppTitleBar);
-            _currentTheme = (int)App.Current.RequestedTheme;
+            Instances.CurrentTheme = (int)App.Current.RequestedTheme;
+            ThemeSwitch.Text = Instances.CurrentTheme == (int)ApplicationTheme.Dark ? "Lightmode" : "Darkmode";
+
+
+            AppMode.Text = Instances.ExpertMode ? "Easy Mode" : "Expert Mode";
+            CAEXVersionButton.Text = Instances.UseCAEX3 ? "Use CAEX 3.0 File" : "Use CAEX 2.15 File";
 
             /* Informations about opend file */
             OpenedFileName.Text = Instances.FileName;
             SavedInformation.Text = "[unloaded]";
         }
-
-        private int _currentTheme { get; set; }
 
         /* Infos if opend file is saved or not */
         private bool unsavedInformations = false;
@@ -108,26 +111,25 @@ namespace ModellingWizard
                     Title = "You have unsaved data",
                     Content = "If you continue, data may be lost",
                     PrimaryButtonText = "Continue",
-                    SecondaryButtonText = "Cancel"
+                    SecondaryButtonText = "Cancel",
+                    RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
                 };
                 ContentDialogResult result = await dialog.ShowAsync();
                 if(result == ContentDialogResult.Primary)
                 {
                     unsavedInformations = false;
-                    Instances.CurrentFile?.Close();
                     SomethingChanged(false);
                     Processes.New.CreateSysClass.Execute();
                     ReloadInformations();
-                    CheckFile();
+                    SetWarning();
                     
                 }
             }
             else
             {
-                Instances.CurrentFile?.Close();
                 Processes.New.CreateSysClass.Execute();
                 ReloadInformations();
-                CheckFile();
+                SetWarning();
             }
         }
 
@@ -142,7 +144,8 @@ namespace ModellingWizard
                     Title = "You have unsaved data",
                     Content = "If you continue, data may be lost",
                     PrimaryButtonText = "Continue",
-                    SecondaryButtonText = "Cancel"
+                    SecondaryButtonText = "Cancel",
+                    RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
                 };
                 ContentDialogResult result = await dialog.ShowAsync();
                 if (result == ContentDialogResult.Primary)
@@ -156,7 +159,7 @@ namespace ModellingWizard
             {
                 OpenFile();
             }
-            CheckFile();
+            SetWarning();
 
 
         }
@@ -182,7 +185,6 @@ namespace ModellingWizard
                 {
                     var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
                     OpenedFileName.Text = file.DisplayName;
-                    Instances.CurrentFile?.Close();
                     Instances.CurrentFile = new(file.Path);
                 }
                 ReloadInformations();
@@ -194,8 +196,9 @@ namespace ModellingWizard
                     XamlRoot = this.Content.XamlRoot,
                     Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                     Title = "Error while opening file",
-                    Content = "Please check your file!" + e,
-                    PrimaryButtonText = "Ok"
+                    Content = "Please check your file! ", // + e,
+                    PrimaryButtonText = "Ok",
+                    RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
                 };
                 ContentDialogResult result = await dialog.ShowAsync();
             }
@@ -203,6 +206,40 @@ namespace ModellingWizard
         }
 
         private async void File_Save_Click(object sender, RoutedEventArgs e)
+        {
+            switch (CheckFileAndGetWarning())
+            {
+                case Objects.Enums.WarningType.Non:
+                    ShowSaveDialog();
+                    break;
+                case Objects.Enums.WarningType.SUCNotFound:
+                    ContentDialog dialogNotFound = new()
+                    {
+                        XamlRoot = this.Content.XamlRoot,
+                        Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                        Title = "Error no system unit class",
+                        Content = "Your file doesn't include a system unit class. Please add a valid system unit class.",
+                        PrimaryButtonText = "Ok",
+                        RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
+                    };
+                    _ = await dialogNotFound.ShowAsync();
+                    break;
+                case Objects.Enums.WarningType.AttributesNull:
+                    ContentDialog dialogAttribute = new()
+                    {
+                        XamlRoot = this.Content.XamlRoot,
+                        Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                        Title = "Error in system unit class",
+                        Content = "Check if the system unit class includes valid data for manufacturer and productcode.",
+                        PrimaryButtonText = "Ok",
+                        RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
+                    };
+                    _ = await dialogAttribute.ShowAsync();
+                    break;
+            }
+        }
+
+        private async void ShowSaveDialog()
         {
             try
             {
@@ -232,7 +269,8 @@ namespace ModellingWizard
                     Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                     Title = "Error while saving the file",
                     Content = "Please check your inserted data! " + ex.ToString(),
-                    PrimaryButtonText = "Ok"
+                    PrimaryButtonText = "Ok",
+                    RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
                 };
                 ContentDialogResult result = await dialog.ShowAsync();
             }
@@ -286,7 +324,8 @@ namespace ModellingWizard
                 Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                 Title = "About",
                 CloseButtonText = "Close",
-                Content = Win
+                Content = Win,
+                RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
             };
             ContentDialogResult result = await dialog.ShowAsync();
         }
@@ -300,7 +339,8 @@ namespace ModellingWizard
                 Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                 Title = "Manual",
                 CloseButtonText = "Close",
-                Content = Win
+                Content = Win,
+                RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
             };
             ContentDialogResult result = await dialog.ShowAsync();
         }
@@ -314,18 +354,23 @@ namespace ModellingWizard
         private void ThemeButton_Click(object sender, RoutedEventArgs e)
         {   
 
-            if (_currentTheme == (int)ApplicationTheme.Dark)
+            if (Instances.CurrentTheme == (int)ApplicationTheme.Dark)
             {
-                _currentTheme = 0;
+                Instances.CurrentTheme = 0;
+                ThemeSwitch.Text = "Darkmode";
+                
+                //App.Current.RequestedTheme = ApplicationTheme.Light;
                 Grid_Main.RequestedTheme = ElementTheme.Light;
             }
-            else if (_currentTheme == (int)ApplicationTheme.Light)
+            else if (Instances.CurrentTheme == (int)ApplicationTheme.Light)
             {
-                _currentTheme = 1;
+                Instances.CurrentTheme = 1;
+                ThemeSwitch.Text = "Lightmode";
                 Grid_Main.RequestedTheme = ElementTheme.Dark;
+                //App.Current.RequestedTheme = ApplicationTheme.Dark;
 
             }
-            ApplicationData.Current.LocalSettings.Values["themeSetting"] = _currentTheme;
+            ApplicationData.Current.LocalSettings.Values["themeSetting"] = Instances.CurrentTheme;
         }
 
         private async void Grid_Main_Loaded(object sender, RoutedEventArgs e)
@@ -338,7 +383,8 @@ namespace ModellingWizard
                 Title = "Modelling Wizard",
                 Content = "Do you want to open or create a new file?",
                 PrimaryButtonText = "Open File",
-                SecondaryButtonText = "Create new File"
+                SecondaryButtonText = "Create new File",
+                RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
             };
             ContentDialogResult result = await dialog.ShowAsync();
             if(result == ContentDialogResult.Primary)
@@ -355,7 +401,7 @@ namespace ModellingWizard
 
         private void Grid_Main_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            ReloadInformations();
+            //ReloadInformations();
         }
 
         public void ReloadInformations()
@@ -399,8 +445,12 @@ namespace ModellingWizard
             }
         }
 
-        public void CheckFile()
+        private Objects.Enums.WarningType CheckFileAndGetWarning()
         {
+            if (Instances.Loaded_System_Unit_Libs == null)
+                return Objects.Enums.WarningType.Non;
+
+            Objects.Enums.WarningType warning = Objects.Enums.WarningType.Non;
             Objects.Libaries.Libary ret = Instances.Loaded_System_Unit_Libs.Find("IdentificationData", false);
             if (ret != null)
             {
@@ -423,24 +473,26 @@ namespace ModellingWizard
                         });
                         if (manufactur != "" && productCode != "")
                         {
-                            SetWarning(Objects.Enums.WarningType.Non);
+                            warning = Objects.Enums.WarningType.Non;
                         }
                         else
                         {
-                            SetWarning(Objects.Enums.WarningType.AttributesNull);
+                            warning = Objects.Enums.WarningType.AttributesNull;
                         }
                     }
                 });
             }
             else
             {
-                SetWarning(Objects.Enums.WarningType.SUCNotFound);
+                warning = Objects.Enums.WarningType.SUCNotFound;
             }
+            return warning;
         }
 
-        private void SetWarning(Objects.Enums.WarningType warning)
+        public void SetWarning()
         {
-            switch(warning)
+            Objects.Enums.WarningType warning = CheckFileAndGetWarning();
+            switch (warning)
             {
                 case Objects.Enums.WarningType.Non:
                     WarningIcon.Visibility = Visibility.Collapsed;
@@ -469,6 +521,12 @@ namespace ModellingWizard
         private void TextBlock_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
             NavigationView.SelectedItem = MainPage_Navigation_SystemClass;
+        }
+
+        private void CAEXVersionButton_Click(object sender, RoutedEventArgs e)
+        {
+            Instances.UseCAEX3 = !Instances.UseCAEX3;
+            CAEXVersionButton.Text = Instances.UseCAEX3 ? "Use CAEX 3.0 File" : "Use CAEX 2.15 File";
         }
     }
 }

@@ -50,10 +50,10 @@ namespace ModellingWizard.UIs.SubPages
                     /* Main Expandern */
                     if (lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0).Count > 0)
                     {
-                        CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new()
-                        {
-                            
-                        };
+                        CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new();
+                        mainDataGrid.AutoGenerateColumns = false;
+                        Objects.OwnDataGrid.DetailDataGrid.Get().ForEach(subColumn => { mainDataGrid.Columns.Add(subColumn); });
+
                         mainDataGrid.ItemsSource = lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0);
                         DetailContent.Items.Add(mainDataGrid);
                     }
@@ -76,10 +76,10 @@ namespace ModellingWizard.UIs.SubPages
                 Header = lib.Name
             };
 
-            CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new()
-            {
+            CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new();
+            mainDataGrid.AutoGenerateColumns = false;
+            Objects.OwnDataGrid.DetailDataGrid.Get().ForEach(subColumn => { mainDataGrid.Columns.Add(subColumn); });
 
-            };
             mainDataGrid.ItemsSource = lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count == 0);
 
             /* Create ListView */
