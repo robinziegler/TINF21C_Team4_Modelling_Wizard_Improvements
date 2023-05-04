@@ -15,7 +15,9 @@ namespace ModellingWizard.Objects
     public class Instances
     {
         /* App Settings */
-        public static bool ExpertMode { get; set; } = true;
+        public static int CurrentTheme {  get; set; }
+        public static bool ExpertMode { get; set; } = false;
+        public static bool UseCAEX3 { get; set; } = false;
 
         /* Configuration Data */
         public static Objects.Libaries.Libary System_Unit_Libs { get; set; } = Processes.Libary.Load.LoadLib(Properties.Resources.AutomationComponentLibrary_v1_0_0_Full, "AutomationComponentLibrary_v1_0_0_Full").Item3;

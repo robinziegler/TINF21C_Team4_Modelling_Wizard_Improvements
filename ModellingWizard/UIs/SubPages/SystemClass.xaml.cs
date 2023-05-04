@@ -107,16 +107,18 @@ namespace ModellingWizard.UIs.SubPages
             else
             {
                 var Win = new ModalViews.Add.AddSubLib(Objects.Enums.LibType.SystemUnitClass);
-                ContentDialog dialog = new();
-
-                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
-                dialog.XamlRoot = this.XamlRoot;
-                dialog.Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style;
-                dialog.Title = "Add system unit class";
-                dialog.PrimaryButtonText = "Add";
-                dialog.CloseButtonText = "Cancel";
-                dialog.DefaultButton = ContentDialogButton.Primary;
-                dialog.Content = Win;
+                ContentDialog dialog = new()
+                {
+                    // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+                    XamlRoot = this.XamlRoot,
+                    Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                    Title = "Add system unit class",
+                    PrimaryButtonText = "Add",
+                    CloseButtonText = "Cancel",
+                    DefaultButton = ContentDialogButton.Primary,
+                    Content = Win,
+                    RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
+                };
 
                 ContentDialogResult result = await dialog.ShowAsync();
                 if (result == ContentDialogResult.Primary)
