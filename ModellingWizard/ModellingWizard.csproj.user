@@ -36,7 +36,7 @@
     <Page Update="UIs\ModalViews\Main\StartUpDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UIs\SubPages\GenericData_Detail.xaml">
+    <Page Update="UIs\SubPages\RoleClass_Detail.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UIs\SubPages\Interfaces_Detail.xaml">
@@ -48,7 +48,7 @@
     <Page Update="UIs\ModalViews\Attachments\AddAttachment.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UIs\SubPages\GenericData.xaml">
+    <Page Update="UIs\SubPages\RoleClass.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UIs\SubPages\Attachments.xaml">

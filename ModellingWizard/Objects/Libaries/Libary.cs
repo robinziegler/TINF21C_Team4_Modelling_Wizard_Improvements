@@ -78,8 +78,41 @@ namespace ModellingWizard.Objects.Libaries
                     });
                 }
             }
-            Console.WriteLine(retLib);
             return retLib;
+        }
+
+        public bool RemoveLib(string id)
+        {
+            if(id == Instances.RoleClassLib.myGuid)
+            {
+                Console.WriteLine("");
+            }
+            bool found = false;
+            Libary foundLib = null;
+            SubObjects.ForEach(subLib =>
+            {
+                if(id == subLib.myGuid)
+                {
+                    foundLib = subLib;
+                    found = true;
+                }
+            });
+
+            if (foundLib == null)
+            {
+                SubObjects.ForEach(subLib =>
+                {
+                    bool foundInSubLib = subLib.RemoveLib(id);
+                    if(foundInSubLib)
+                        found = true;
+                });
+            }
+            else
+            {
+                SubObjects.Remove(foundLib);
+            }
+
+            return found;
         }
     }
 

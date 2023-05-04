@@ -111,30 +111,38 @@ namespace ModellingWizard.UIs.SubPages
         }
 
 
-        /// <summary>method <c>GenerateNavigationMenueItems</c> Generates the Navigation view items depending on the depth in the Libraty tree</summary>
         private void GenerateNavigationMenueItems(Objects.Libaries.Libary sublib)
         {
             if (LoadDepth == 0)
             {
                 if (sublib.SubObjects.Count != 0)
                 {
-                    NavigationView.MenuItems.Add(currentItem = new NavigationViewItem
+                    var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.Interfaces_Detail",
                         Name = sublib.myGuid,
-                    });
+                        IsRightTapEnabled = true
+                    };
+                    x.RightTapped += RightClickForDelete;
+                    x.KeyDown += NavigationView_KeyDown;
+                    currentItem = x;
+                    NavigationView.MenuItems.Add(x);
                     LoadDepth++;
                     loadTestObject(sublib);
                 }
                 else
                 {
-                    NavigationView.MenuItems.Add(new NavigationViewItem
+                    var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.Interfaces_Detail",
                         Name = sublib.myGuid,
-                    });
+                        IsRightTapEnabled = true
+                    };
+                    x.RightTapped += RightClickForDelete;
+                    x.KeyDown += NavigationView_KeyDown;
+                    NavigationView.MenuItems.Add(x);
                 }
             }
             else
@@ -142,26 +150,73 @@ namespace ModellingWizard.UIs.SubPages
                 // Loads every other layer
                 if (sublib.SubObjects.Count != 0)
                 {
-                    currentItem.MenuItems.Add(currentItem = new NavigationViewItem
+                    var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.Interfaces_Detail",
                         Name = sublib.myGuid,
-                    });
+                        IsRightTapEnabled = false
+                    };
+                    currentItem.MenuItems.Add(x);
+                    currentItem = x;
                     LoadDepth++;
                     loadTestObject(sublib);
                 }
                 else
                 {
-                    currentItem.MenuItems.Add(new NavigationViewItem
+                    var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.Interfaces_Detail",
                         Name = sublib.myGuid,
-                    });
+                        IsRightTapEnabled = false
+                    };
+                    currentItem.MenuItems.Add(x);
                 }
             }
+        }
+        private void RightClickForDelete(object sender, RightTappedRoutedEventArgs e)
+        {
+            var navigationViewItem = sender as NavigationViewItem;
+            DeleteObj(navigationViewItem.Content.ToString(), navigationViewItem.Name);
+        }
 
+        private void NavigationView_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Delete || e.Key == Windows.System.VirtualKey.Back)
+            {
+                var selectedItem = NavigationView.SelectedItem as NavigationViewItem;
+                DeleteObj(selectedItem.Content.ToString(), selectedItem.Name);
+            }
+        }
+
+        private async void DeleteObj(string name, string id)
+        {
+
+            if (name != "SystemAdd")
+            {
+                ContentDialog dialog = new()
+                {
+                    // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+                    XamlRoot = this.XamlRoot,
+                    Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                    Title = "Remove interface",
+                    PrimaryButtonText = "Remove",
+                    CloseButtonText = "Cancel",
+                    DefaultButton = ContentDialogButton.Primary,
+                    Content = "Are you sure you want to remove " + name + "?",
+                    RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
+                };
+
+                ContentDialogResult result = await dialog.ShowAsync();
+                if (result == ContentDialogResult.Primary)
+                {
+                    Instances.Loaded_Interfaces_Data.RemoveLib(id);
+                    var win = (MainWindow)App.m_window;
+                    win.ReloadInformations();
+                    win.SetWarning();
+                }
+            }
         }
     }
 }

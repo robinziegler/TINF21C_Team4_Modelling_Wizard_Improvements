@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,53 +12,50 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using System.Threading.Tasks;
 using ModellingWizard.Objects;
-using Aml.Engine.CAEX;
+using ModellingWizard.Processes.Libary;
+using System.CodeDom.Compiler;
+using Microsoft.UI.Xaml.Documents;
+using System.Drawing;
 
 namespace ModellingWizard.UIs.SubPages
 {
-    public sealed partial class SystemClass : Page
+
+
+    
+    // Test Objekt
+    // Only tests 
+    public class AMLObjectTest
+    {
+        public string Name { get; set; }
+        public List<AttributsTest> Attributs { get; set; }
+        public List<AMLObjectTest> underObjects { get; set; }
+    }
+
+    public class AttributsTest
+    {
+        public string Name { get; set; }
+        public string Value { get; set; }
+        public string Default { get; set; }
+        public string Unit { get; set; }
+        public string Semantic { get; set; }
+        public string DataType { get; set; }
+        public List<string> ReferencedClassName { get; set; }
+    }
+    /// <summary>
+    /// This is the Generic Data Page
+    /// </summary>
+    public sealed partial class GenericData : Page
     {
         private int LoadDepth = 0;
         private NavigationViewItem currentItem;
-        public SystemClass()
+        public GenericData()
         {
             this.InitializeComponent();
-            loadTestObject(Instances.Loaded_System_Unit_Libs);
 
-            // set height of the Grid (should be set to the maximum place that can be used)
-            //GenericData_Grid_Row_1.Height = new Microsoft.UI.Xaml.GridLength(600, GridUnitType.Pixel); 
-        }
-
-        private async void AddRoleClassButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        public void SetMode(bool Expert)
-        {
-            Visibility visibility = Expert ? Visibility.Visible : Visibility.Collapsed;
-            /* Settings */
-            //AddRoleClassButton.Visibility = visibility;
-        }
-
-
-        private void ListView_Loading(FrameworkElement sender, object args)
-        {
-            //ListView_AMLObjects.ItemsSource = TestObjekt;
-        }
-
-        private void ListView_AMLObjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.AddedItems.Count > 0)
-            {
-                AMLObjectTest selectedAMLObject = e.AddedItems[0] as AMLObjectTest;
-                if (selectedAMLObject != null)
-                {
-                    List<AttributsTest> attributs = selectedAMLObject.Attributs;
-                    //loadAttributs(attributs);
-                }
-            }
+            //load test data (should be removed later)
+            loadTestObject(Instances.Loaded_RoleClass_Data);
         }
 
         public List<AMLObjectTest> TestObjekt = new List<AMLObjectTest>();
@@ -97,22 +94,15 @@ namespace ModellingWizard.UIs.SubPages
             {
                 return;
             }
-            if (item.Tag.ToString() != "SystemAdd")
+            else if(item.Tag.ToString() == "SystemAdd")
             {
-                ContentFrame.Navigate(Type.GetType(item.Tag.ToString()), item.Name);
-                //NavigationView.Header = item.Content;
-                NavigationView.Header = null;
-                NavigationView.SelectedItem = item;
-            }
-            else
-            {
-                var Win = new ModalViews.Add.AddSubLib(Objects.Enums.LibType.SystemUnitClass);
+                var Win = new ModalViews.Add.AddSubLib(Objects.Enums.LibType.RoleClass);
                 ContentDialog dialog = new()
                 {
                     // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
                     XamlRoot = this.XamlRoot,
                     Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style,
-                    Title = "Add system unit class",
+                    Title = "Add role class",
                     PrimaryButtonText = "Add",
                     CloseButtonText = "Cancel",
                     DefaultButton = ContentDialogButton.Primary,
@@ -128,18 +118,22 @@ namespace ModellingWizard.UIs.SubPages
                         List<Objects.Libaries.Libary> libstoadd = new();
                         Win.LibTreeView.SelectedItems.ToList().ForEach(item =>
                         {
-                            var x = (MyTreNode)item;
-                            Instances.Loaded_System_Unit_Libs.SubObjects.Add(x.lib);
+                            var x = (MyTreNode) item;
+                            Instances.Loaded_RoleClass_Data.SubObjects.Add(x.lib);
                             Instances.LibReload();
                             var win = (MainWindow)App.m_window;
                             win.ReloadInformations();
-                            win.SetWarning();
                         });
                     }
                 }
             }
+            else
+            {
+                ContentFrame.Navigate(Type.GetType(item.Tag.ToString()), item.Name);
+                NavigationView.Header = null;
+                NavigationView.SelectedItem = item;
+            }
         }
-
 
         private void GenerateNavigationMenueItems(Objects.Libaries.Libary sublib)
         {
@@ -150,7 +144,7 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
+                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
                         Name = sublib.myGuid,
                         IsRightTapEnabled = true
                     };
@@ -166,7 +160,7 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
+                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
                         Name = sublib.myGuid,
                         IsRightTapEnabled = true
                     };
@@ -183,7 +177,7 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
+                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
                         Name = sublib.myGuid,
                         IsRightTapEnabled = false
                     };
@@ -197,7 +191,7 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
+                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
                         Name = sublib.myGuid,
                         IsRightTapEnabled = false
                     };
@@ -222,7 +216,7 @@ namespace ModellingWizard.UIs.SubPages
 
         private async void DeleteObj(string name, string id)
         {
-            
+
             if (name != "SystemAdd")
             {
                 ContentDialog dialog = new()
@@ -230,7 +224,7 @@ namespace ModellingWizard.UIs.SubPages
                     // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
                     XamlRoot = this.XamlRoot,
                     Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style,
-                    Title = "Remove system class",
+                    Title = "Remove role class",
                     PrimaryButtonText = "Remove",
                     CloseButtonText = "Cancel",
                     DefaultButton = ContentDialogButton.Primary,
@@ -241,7 +235,7 @@ namespace ModellingWizard.UIs.SubPages
                 ContentDialogResult result = await dialog.ShowAsync();
                 if (result == ContentDialogResult.Primary)
                 {
-                    Instances.Loaded_System_Unit_Libs.RemoveLib(id);
+                    Instances.Loaded_RoleClass_Data.RemoveLib(id);
                     var win = (MainWindow)App.m_window;
                     win.ReloadInformations();
                     win.SetWarning();

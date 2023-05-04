@@ -34,8 +34,11 @@ namespace ModellingWizard.UIs.ModalViews.Add
             
             GetLib(libType).SubObjects.ForEach(x =>
             {
-                MyTreNode t = new() { Content = x.Name };
-                t.lib = x;
+                MyTreNode t = new()
+                {
+                    Content = x.Name,
+                    lib = x
+                };
                 x.SubObjects.ForEach(y =>
                 {
                     t.Children.Add(CreateSubNodes(y));
