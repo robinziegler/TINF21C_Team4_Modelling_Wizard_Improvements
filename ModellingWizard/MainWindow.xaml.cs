@@ -24,6 +24,8 @@ using System.ComponentModel.Design.Serialization;
 using ModellingWizard.UIs.SubPages;
 using Windows.Storage.Pickers;
 using ModellingWizard.Processes.Save;
+using System.Windows.Media;
+using Microsoft.UI.Xaml.Automation;
 
 namespace ModellingWizard
 {
@@ -112,15 +114,20 @@ namespace ModellingWizard
                 if(result == ContentDialogResult.Primary)
                 {
                     unsavedInformations = false;
+                    Instances.CurrentFile?.Close();
                     SomethingChanged(false);
                     Processes.New.CreateSysClass.Execute();
                     ReloadInformations();
+                    CheckFile();
+                    
                 }
             }
             else
             {
+                Instances.CurrentFile?.Close();
                 Processes.New.CreateSysClass.Execute();
                 ReloadInformations();
+                CheckFile();
             }
         }
 
@@ -149,7 +156,9 @@ namespace ModellingWizard
             {
                 OpenFile();
             }
-            
+            CheckFile();
+
+
         }
 
         private async void OpenFile()
@@ -173,6 +182,7 @@ namespace ModellingWizard
                 {
                     var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
                     OpenedFileName.Text = file.DisplayName;
+                    Instances.CurrentFile?.Close();
                     Instances.CurrentFile = new(file.Path);
                 }
                 ReloadInformations();
@@ -263,6 +273,7 @@ namespace ModellingWizard
         {
             Instances.ExpertMode = !Instances.ExpertMode;
             AppMode.Text = Instances.ExpertMode ? "Easy Mode" : "Expert Mode";
+            ReloadInformations();
         }
 
         /* Help Options */
@@ -386,6 +397,78 @@ namespace ModellingWizard
                 });
                
             }
+        }
+
+        public void CheckFile()
+        {
+            Objects.Libaries.Libary ret = Instances.Loaded_System_Unit_Libs.Find("IdentificationData", false);
+            if (ret != null)
+            {
+                ret.Attributes.ForEach(a =>
+                {
+                    if (a.Name == "IdentificationData")
+                    {
+                        string manufactur = "";
+                        string productCode = "";
+                        a.SubAttrebutes.ForEach(sa =>
+                        {
+                            if (sa.Name.ToLower() == "manufacturer")
+                            {
+                                manufactur = sa.Value;
+                            }
+                            if (sa.Name.ToLower() == "productcode")
+                            {
+                                productCode = sa.Value;
+                            }
+                        });
+                        if (manufactur != "" && productCode != "")
+                        {
+                            SetWarning(Objects.Enums.WarningType.Non);
+                        }
+                        else
+                        {
+                            SetWarning(Objects.Enums.WarningType.AttributesNull);
+                        }
+                    }
+                });
+            }
+            else
+            {
+                SetWarning(Objects.Enums.WarningType.SUCNotFound);
+            }
+        }
+
+        private void SetWarning(Objects.Enums.WarningType warning)
+        {
+            switch(warning)
+            {
+                case Objects.Enums.WarningType.Non:
+                    WarningIcon.Visibility = Visibility.Collapsed;
+                    break;
+                case Objects.Enums.WarningType.SUCNotFound:
+                    WarningIcon.Visibility = Visibility.Visible;
+                    WarningIcon.Background = new Microsoft.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 0, 0));
+                    ToolTip tooltipSUCNotFound = new()
+                    {
+                        Content = "Error: Missing System Unit Class"
+                    };
+                    ToolTipService.SetToolTip(WarningIcon, tooltipSUCNotFound);
+                    break;
+                case Objects.Enums.WarningType.AttributesNull:
+                    WarningIcon.Visibility = Visibility.Visible;
+                    WarningIcon.Background = new Microsoft.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 128, 0));
+                    ToolTip tooltipAttribute = new()
+                    {
+                        Content = "Error: Missing attributes for manufacturer or productcode in system unit class"
+                    };
+                    ToolTipService.SetToolTip(WarningIcon, tooltipAttribute);
+                    break;
+            }
+        }
+
+        private void TextBlock_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            NavigationView.SelectedItem = MainPage_Navigation_SystemClass;
         }
     }
 }

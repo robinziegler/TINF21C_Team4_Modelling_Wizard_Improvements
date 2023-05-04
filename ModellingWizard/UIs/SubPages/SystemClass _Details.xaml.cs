@@ -95,6 +95,7 @@ namespace ModellingWizard.UIs.SubPages
             var mainWin = (MainWindow)App.m_window;
             mainWin.ChangedFileName();
             mainWin.SomethingChanged(true);
+            mainWin.CheckFile();
         }
     }
 }
