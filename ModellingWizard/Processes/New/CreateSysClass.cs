@@ -20,38 +20,12 @@ namespace ModellingWizard.Processes.New
             //Add standard static SystemUnitClass
             Instances.Loaded_System_Unit_Libs.Name = "";
 
-           
+            var MainLib = new Objects.Libaries.Libary();
+            MainLib.Name = Objects.Instances.System_Unit_Libs.Name;
+            MainLib.SubObjects.Add((Objects.Libaries.Libary)((Objects.Libaries.Libary)Objects.Instances.System_Unit_Libs.SubObjects.Find(x => x.Name == "AutomationMLComponentStandardRCL")).SubObjects.Find(x => x.Name == "AutomationComponent"));
+
+            Instances.Loaded_System_Unit_Libs = (Objects.Libaries.Libary)MainLib;
             Objects.Instances.LibReload();
-        }
-
-        private static void Add()
-        {
-            /* Manufacturer */
-            Instances.Loaded_System_Unit_Libs.Attributes.Add(new()
-            {
-                Name = "Manufacturer",
-                Value = "",
-                Default = "",
-                Unit = "",
-                Semantic = "",
-                Reference = "",
-                Description = "",
-                CopyRight = "",
-                AttributePath = "",
-                RefBaseClassPath = "",
-                ID = "",
-                ReferencedClassName = "",
-                //RefSemanticList = new CAEXSequence<RefSemanticType>(),
-                SupportesRoleClassType = "",
-                DataType = "",
-                SubAttrebutes = null
-            });
-
-            Instances.Loaded_System_Unit_Libs.SubObjects.Add(new()
-            {
-
-
-            });
         }
     }
 }
