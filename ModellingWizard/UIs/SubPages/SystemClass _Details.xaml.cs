@@ -15,6 +15,7 @@ using Microsoft.UI.Xaml.Navigation;
 using ModellingWizard.Objects;
 using Aml.Engine.CAEX.Extensions;
 using Aml.Engine.CAEX;
+using CommunityToolkit.WinUI.UI.Controls;
 
 namespace ModellingWizard.UIs.SubPages
 {
@@ -70,9 +71,11 @@ namespace ModellingWizard.UIs.SubPages
 
             CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new()
             {
-
+                
             };
+            
             mainDataGrid.ItemsSource = lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count == 0);
+            mainDataGrid.CellEditEnded += new EventHandler<DataGridCellEditEndedEventArgs>(MainGridChanged);
 
             /* Create ListView */
             ListView listView = new ListView();
@@ -86,5 +89,12 @@ namespace ModellingWizard.UIs.SubPages
             return mainExpander;
         }
 
+
+        private void MainGridChanged(object sender, DataGridCellEditEndedEventArgs e)
+        {
+            var mainWin = (MainWindow)App.m_window;
+            mainWin.ChangedFileName();
+            mainWin.SomethingChanged(true);
+        }
     }
 }

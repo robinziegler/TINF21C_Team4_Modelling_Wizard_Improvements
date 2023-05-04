@@ -354,5 +354,38 @@ namespace ModellingWizard
             NavigationView.SelectedItem = MainPage_Navigation_GenericData;
             NavigationView.SelectedItem = currentSelected;
         }
+
+        public void ChangedFileName()
+        {
+            
+            Objects.Libaries.Libary ret = Instances.Loaded_System_Unit_Libs.Find("IdentificationData", false);
+            if(ret != null)
+            {
+                ret.Attributes.ForEach(a =>
+                {
+                    if(a.Name == "IdentificationData")
+                    {
+                        string manufactur = "";
+                        string productCode = "";
+                        a.SubAttrebutes.ForEach(sa =>
+                        {
+                            if(sa.Name.ToLower() == "manufacturer")
+                            {
+                                manufactur = sa.Value;
+                            }
+                            if(sa.Name.ToLower() == "productcode")
+                            {
+                                productCode = sa.Value;
+                            }
+                        });
+                        if(manufactur != "" && productCode != "")
+                        {
+                            OpenedFileName.Text = manufactur + "." + productCode;
+                        }
+                    }
+                });
+               
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Aml.Engine.CAEX;
+using Microsoft.UI.Xaml.Documents;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ModellingWizard.Objects.Libaries
 {
-    public class Libary : ICloneable 
+    public class Libary 
     {
         public string myGuid { get; set; }    
         public string Name { get; set; }
@@ -21,13 +22,64 @@ namespace ModellingWizard.Objects.Libaries
             myGuid = Guid.NewGuid().ToString();
         } 
 
-        public Object Clone()
+        public Libary Find(string name, bool FindLib)
         {
-            foreach(Libary obj in SubObjects)
+            Libary retLib = null;
+            if (FindLib)
             {
-                obj.MemberwiseClone();
+                if (name.ToLower() == name.ToLower())
+                {
+                    retLib = new Libary()
+                    {
+                        myGuid = myGuid,
+                        Name = Name,
+                        Attributes = Attributes,
+                        SubObjects = SubObjects
+                    };
+                }
+                else
+                {
+                    SubObjects.ForEach(x =>
+                    {
+                        Libary ret = x.Find(name, true);
+                        if (ret != null)
+                        {
+                            retLib = ret;
+                        }
+                    });
+                }
+
             }
-            return this.MemberwiseClone();
+            else
+            {
+                Attributes.ForEach(a =>
+                {
+                    if (a.Name.ToLower() == name.ToLower())
+                    {
+                        retLib = new Libary()
+                        {
+                            myGuid = myGuid,
+                            Name = Name,
+                            Attributes = Attributes,
+                            SubObjects = SubObjects
+                        };
+                    }
+                });
+
+                if(retLib == null)
+                {
+                    SubObjects.ForEach(x =>
+                    {
+                        Libary ret = x.Find(name, false);
+                        if (ret != null)
+                        {
+                            retLib = ret;
+                        }
+                    });
+                }
+            }
+            Console.WriteLine(retLib);
+            return retLib;
         }
     }
 
