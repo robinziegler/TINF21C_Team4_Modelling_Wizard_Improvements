@@ -241,8 +241,8 @@ namespace ModellingWizard
 
         private async void ShowSaveDialog()
         {
-            try
-            {
+            //try
+            //{
                 var savePicker = new Windows.Storage.Pickers.FileSavePicker();
                 var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
 
@@ -260,7 +260,7 @@ namespace ModellingWizard
                     Save.SaveFile(file.Path, file.Name, file.FileType);
                     SavedInformation.Text = "[Saved]";
                 }
-            }
+           /* }
             catch (Exception ex)
             {
                 ContentDialog dialog = new()
@@ -273,7 +273,7 @@ namespace ModellingWizard
                     RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
                 };
                 ContentDialogResult result = await dialog.ShowAsync();
-            }
+            }*/
         }
 
         /* Change libary options */
