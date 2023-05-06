@@ -193,6 +193,19 @@
           }
         }
       },
+      "LumenWorks.Framework.IO/3.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/net20/LumenWorks.Framework.IO.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net20/LumenWorks.Framework.IO.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
@@ -554,6 +567,19 @@
           }
         }
       },
+      "LumenWorks.Framework.IO/3.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/net20/LumenWorks.Framework.IO.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net20/LumenWorks.Framework.IO.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
@@ -898,6 +924,19 @@
           }
         }
       },
+      "LumenWorks.Framework.IO/3.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/net20/LumenWorks.Framework.IO.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net20/LumenWorks.Framework.IO.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
         "type": "package",
         "build": {
@@ -1239,6 +1278,19 @@
         "runtime": {
           "lib/net5.0-windows10.0.18362/CommunityToolkit.WinUI.UI.Controls.Primitives.dll": {
             "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
+      "LumenWorks.Framework.IO/3.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/net20/LumenWorks.Framework.IO.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net20/LumenWorks.Framework.IO.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -1662,6 +1714,20 @@
         "lib/net5.0-windows10.0.18362/Design/CommunityToolkit.WinUI.UI.Controls.Primitives.DesignTools.dll",
         "lib/net5.0-windows10.0.18362/Design/CommunityToolkit.WinUI.UI.Controls.Primitives.DesignTools.pdb",
         "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "LumenWorks.Framework.IO/3.8.0": {
+      "sha512": "Br2Q9j/tf2uF3Ci4CajidD18tui9DOg2iIzH5Xjro35ra6r8HGMD12B+ZlJ8v9AN3YXl7iPu5YDGbBlXVcZpHw==",
+      "type": "package",
+      "path": "lumenworks.framework.io/3.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING.txt",
+        "lib/net20/LumenWorks.Framework.IO.dll",
+        "lib/net20/LumenWorks.Framework.IO.xml",
+        "lumenworks.framework.io.3.8.0.nupkg.sha512",
+        "lumenworks.framework.io.nuspec"
       ]
     },
     "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {
@@ -2665,28 +2731,29 @@
       "CommunityToolkit.WinUI.UI.Controls.DataGrid >= 7.1.2",
       "CommunityToolkit.WinUI.UI.Controls.Layout >= 7.1.2",
       "CommunityToolkit.WinUI.UI.Controls.Primitives >= 7.1.2",
+      "LumenWorks.Framework.IO >= 3.8.0",
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22621.756",
       "Microsoft.WindowsAppSDK >= 1.2.230313.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\m.trumpp\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
       "projectName": "ModellingWizard",
-      "projectPath": "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
-      "packagesPath": "C:\\Users\\m.trumpp\\.nuget\\packages\\",
-      "outputPath": "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\source\\repos\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\source\\repos\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "U:\\Anwendungsdaten\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2695,7 +2762,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2757,6 +2823,10 @@
           "CommunityToolkit.WinUI.UI.Controls.Primitives": {
             "target": "Package",
             "version": "[7.1.2, )"
+          },
+          "LumenWorks.Framework.IO": {
+            "target": "Package",
+            "version": "[3.8.0, )"
           },
           "Microsoft.Windows.SDK.BuildTools": {
             "target": "Package",
@@ -2842,5 +2912,17 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Das Paket \"LumenWorks.Framework.IO 3.8.0\" wurde nicht mit dem Projektzielframework \"net6.0-windows10.0.19041\", sondern mit \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" wiederhergestellt. Dieses Paket ist mit Ihrem Projekt möglicherweise nicht vollständig kompatibel.",
+      "libraryId": "LumenWorks.Framework.IO",
+      "targetGraphs": [
+        "net6.0-windows10.0.19041"
+      ]
+    }
+  ]
 }
