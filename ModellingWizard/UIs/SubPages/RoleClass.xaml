@@ -15,6 +15,7 @@
         <NavigationView x:Name="NavigationView" Height="{Binding ActualHeight, ElementName=MainGrid}" VerticalAlignment="Stretch"
                         PaneDisplayMode="Left"
                         IsTabStop="False"
+                        IsBackButtonVisible="Collapsed"
                         SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="false">
             <NavigationView.MenuItems>
             </NavigationView.MenuItems>

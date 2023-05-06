@@ -16,6 +16,7 @@
         <NavigationView x:Name="NavigationView" Grid.Row="1"
                         PaneDisplayMode="Left"
                         IsTabStop="False"
+                        IsBackButtonVisible="Collapsed"
                         SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
             <NavigationView.MenuItems>
             </NavigationView.MenuItems>
