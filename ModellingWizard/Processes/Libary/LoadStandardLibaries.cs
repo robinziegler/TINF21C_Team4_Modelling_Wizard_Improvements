@@ -40,6 +40,7 @@ namespace ModellingWizard.Processes.Libary
             var result = Processes.Libary.Load.LoadLib(binary, name);
             Objects.Instances.RoleClassLib = result.Item1;
             Objects.Instances.InterfacesLib = result.Item2;
+            Objects.Instances.System_Unit_Libs = result.Item3;
         }
     }
 }
