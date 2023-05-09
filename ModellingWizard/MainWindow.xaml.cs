@@ -183,6 +183,7 @@ namespace ModellingWizard
                 var file = await openPicker.PickSingleFileAsync();
                 if (file != null)
                 {
+
                     if (file.Name.EndsWith(".edz"))
                     {
                         ConverterAML converterAML = new ConverterAML();
@@ -197,6 +198,7 @@ namespace ModellingWizard
                         Console.WriteLine(AMLXFile);
                         var results = Processes.Open.Open.OpenFiles(File.ReadAllBytes(AMLXFile), converterAML._AMLXFileName, AMLXFile);
                     }
+                    Instances.Attachments.Clear();
                     var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
                     OpenedFileName.Text = file.DisplayName;
                     Instances.CurrentFile = new(file.Path);
