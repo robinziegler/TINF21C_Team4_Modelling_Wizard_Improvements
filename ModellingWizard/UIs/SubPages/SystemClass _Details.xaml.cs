@@ -128,6 +128,7 @@ namespace ModellingWizard.UIs.SubPages
         {
             var x = mainSUCGrid.ItemsSource;
             mainSUCGrid.ItemsSource = null;
+
             mainSUCGrid.ItemsSource = x;
         }
     }
