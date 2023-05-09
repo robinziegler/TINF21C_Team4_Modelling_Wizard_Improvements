@@ -83,6 +83,8 @@ namespace ModellingWizard.UIs.SubPages
                 //NavigationView.Header = item.Content;
                 NavigationView.Header = null;
                 NavigationView.SelectedItem = item;
+                var mW = (MainWindow)App.m_window;
+                mW.SomethingChanged(true);
             }
             else
             {
@@ -153,7 +155,8 @@ namespace ModellingWizard.UIs.SubPages
                 ContentDialogResult result = await dialog.ShowAsync();
                 if (result == ContentDialogResult.Primary)
                 {
-                    Instances.Loaded_Interfaces_Data.RemoveLib(id);
+                    
+                    Instances.Attachments.Remove(Instances.Attachments.Find(x => x.UUID == id));
                     var win = (MainWindow)App.m_window;
                     win.ReloadInformations();
                     win.SetWarning();
