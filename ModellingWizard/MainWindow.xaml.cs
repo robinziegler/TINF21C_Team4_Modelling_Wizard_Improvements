@@ -64,6 +64,7 @@ namespace ModellingWizard
         {
             unsavedInformations = changed;
             SavedInformation.Text = changed ? "[Unsaved]" : "[Saved]";
+            SetWarning();
         }
 
 
@@ -92,6 +93,7 @@ namespace ModellingWizard
             //NavigationView.Header = item.Content;
             NavigationView.Header = null;
             NavigationView.SelectedItem = item;
+            SetWarning();
         }
 
         /* File options */
@@ -236,8 +238,8 @@ namespace ModellingWizard
 
         private async void ShowSaveDialog()
         {
-            //try
-            //{
+            try
+            {
                 var savePicker = new Windows.Storage.Pickers.FileSavePicker();
                 var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
 
@@ -255,7 +257,7 @@ namespace ModellingWizard
                     Save.SaveFile(file.Path, file.Name, file.FileType);
                     SavedInformation.Text = "[Saved]";
                 }
-           /* }
+            }
             catch (Exception ex)
             {
                 ContentDialog dialog = new()
@@ -268,7 +270,7 @@ namespace ModellingWizard
                     RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
                 };
                 ContentDialogResult result = await dialog.ShowAsync();
-            }*/
+            }
         }
 
         /* Change libary options */
@@ -315,6 +317,7 @@ namespace ModellingWizard
                 var result = Processes.Libary.Load.LoadLib(File.ReadAllBytes(file.Path), file.Name);
                 Objects.Instances.RoleClassLib = result.Item1;
                 Objects.Instances.InterfacesLib = result.Item2;
+                Objects.Instances.System_Unit_Libs = result.Item3;
             }
         }
 
