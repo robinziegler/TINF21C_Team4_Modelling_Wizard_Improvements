@@ -31,6 +31,7 @@
     <None Remove="UIs\ModalViews\Help_Menu\ManualPage.xaml" />
     <None Remove="UIs\ModalViews\Main\StartUpDialog.xaml" />
     <None Remove="UIs\SubPages\Attachments.xaml" />
+    <None Remove="UIs\SubPages\Attachments_Detail.xaml" />
     <None Remove="UIs\SubPages\EmptyAttributes.xaml" />
     <None Remove="UIs\SubPages\Interfaces.xaml" />
     <None Remove="UIs\SubPages\Interfaces_Detail.xaml" />
@@ -95,6 +96,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="UIs\SubPages\Attachments_Detail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="UIs\SubPages\EmptyAttributes.xaml">

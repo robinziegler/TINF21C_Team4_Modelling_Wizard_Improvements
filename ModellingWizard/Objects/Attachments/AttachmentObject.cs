@@ -10,5 +10,11 @@ namespace ModellingWizard.Objects.Attachments
     {
         public string Title { get; set; }
         public string Base64Content { get; set; }
+        public string UUID { get; set; }
+
+        public AttachmentObject() 
+        {
+            UUID = Guid.NewGuid().ToString();
+        }
     }
 }

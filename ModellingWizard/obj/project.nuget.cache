@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C8G8VebNyy453ukvCdNFLBANjiomUxckVP9g95lreFAYZu5BULaqc/0EXB1g4NsvJiOdnRUdj3O+r+Ad0CGu0w==",
+  "dgSpecHash": "yg4+6bFxGBzC25ZG4nXPx8ujFrB4K/VB8u+Vq39gFLk/+CvXCbHCvyIgam07ZkQDX8RO+usCMEcdHX3Z8bbmtg==",
   "success": true,
-  "projectFilePath": "D:\\DHBW\\SWE\\TINF21C_Team4_Modelling_Wizard_Improvements\\ModellingWizard\\ModellingWizard.csproj",
+  "projectFilePath": "D:\\DHBW\\SWE\\Neu\\ModellingWizard\\ModellingWizard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\m.trumpp\\.nuget\\packages\\aml.editor.plugin.contract\\4.0.2\\aml.editor.plugin.contract.4.0.2.nupkg.sha512",
     "C:\\Users\\m.trumpp\\.nuget\\packages\\aml.engine\\3.1.1\\aml.engine.3.1.1.nupkg.sha512",
