@@ -9,60 +9,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Height="500" Width="500">
-        <RichTextBlock>
-            <Paragraph TextAlignment="Left">
-                This Modelling Wizard for Devices standalone application can be used to create
-                or modify Devices and Interfaces. It can als be used to import IODD and GSDML
-                Files whih will be converted to an AMLX Package. Also added functionality to
-                convert EDZ files.
-                <LineBreak/>
-                <LineBreak/>
-                Version: 0.0.1
-                <LineBreak/>
-                Builddate: 01.05.2023
-                <LineBreak/>
-                <LineBreak/>
-                <Bold>Design and Software development of earlier version by</Bold>
-                <LineBreak/>
-                TINF17C (DHBW Stuttgart)
-                <LineBreak/>
-                Raj Kumar Pulaparthi (Otto-von-Guericke University Magdeburg)
-                <LineBreak/>
-                TINF20C (DHBW Stuttgart)
-                <LineBreak/>
-                <LineBreak/>
-                <Bold>Design and Software development of current version by</Bold>
-                <LineBreak/>
-                TINF21C (DHBW Stuttgart)
-                
-                <LineBreak/>
-                <LineBreak/>
-                This Pulgin was created as a group project in the class "Software Engineering"
-                <LineBreak/>
-                Later this plugin was developed as a sample tool that create vendor independant automaton component and inclued as part of Master Thesis
+    <ScrollViewer Height="500" Width="500">
+        <TextBlock TextWrapping="Wrap" Name="AboutText" Loaded="AboutText_Loaded">
 
-                <LineBreak/>
-                <LineBreak/>
-
-                <Bold>Terms and conditions for copying, distribution and modification</Bold>
-                <LineBreak/>
-                This project is licensed under the GPL 3.0 license.
-                <LineBreak/>
-                Please visit out
-                <Hyperlink NavigateUri="https://github.com/robinziegler/TINF21C_Team4_Modelling_Wizard_Improvements">GitHub-Repository</Hyperlink>
-                to learn more about this.
-
-                <LineBreak/>
-                <LineBreak/>
-                
-                This Plugin uses third-party software for the convertions of IODD and GSDML.
-                <LineBreak/>
-                All Rights reserved by the corresponding copyright owner.
-                
-            </Paragraph>
-        </RichTextBlock>
-        <Line/>
-        <Line/>
-    </Grid>
+        </TextBlock>
+    </ScrollViewer>
 </Page>
