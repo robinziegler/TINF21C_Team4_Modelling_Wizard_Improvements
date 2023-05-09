@@ -23,6 +23,7 @@ namespace ModellingWizard.UIs.SubPages
     public sealed partial class SystemClass_Details : Page
     {
         public static DataGrid mainSUCGrid { get; set; }
+        public static CommunityToolkit.WinUI.UI.Controls.Expander mainExp { get; set; }
         public SystemClass_Details()
         {
             this.InitializeComponent();
@@ -78,6 +79,7 @@ namespace ModellingWizard.UIs.SubPages
             /* Check if its main class */
             if(lib.SubAttrebutes.Find(x => x.Name.ToLower() == "productcode") != null)
             {
+                mainExp = mainExpander;
                 mainSUCGrid = mainDataGrid;
             }
             
@@ -135,9 +137,41 @@ namespace ModellingWizard.UIs.SubPages
         }
         private void Datagrid_EndEditRow(object sender, DataGridRowEditEndedEventArgs e)
         {
-            var x = mainSUCGrid.ItemsSource;
-            mainSUCGrid.ItemsSource = new List<LibaryObject>();
-            mainSUCGrid.ItemsSource = x;
+            mainExp.Content = "";
+            var lib = Objects.Instances.Loaded_System_Unit_Libs.Find("IdentificationData", false);
+            if (lib == null) return;
+
+            /* Main Expandern */
+
+            CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new();
+            mainDataGrid.AutoGenerateColumns = false;
+            Objects.OwnDataGrid.DetailDataGrid.Get().ForEach(subColumn => { mainDataGrid.Columns.Add(subColumn); });
+
+            /* Check if its main class */
+            if (lib.Attributes.Find(x => x.Name.ToLower() == "identificationdata").SubAttrebutes.Find(x => x.Name.ToLower() == "productcode") != null)
+            {
+                mainSUCGrid = mainDataGrid;
+            }
+
+
+            mainDataGrid.ItemsSource = lib.Attributes.Find(x => x.Name.ToLower() == "identificationdata").SubAttrebutes.FindAll(x => x.SubAttrebutes.Count == 0);
+            mainDataGrid.LoadingRow += Datagrid_LoadingRow;
+            // mainDataGrid.RowEditEnded += Datagrid_EndEditRow;
+            mainDataGrid.RowEditEnded += Datagrid_EndEditRow;
+            //  mainDataGrid.RowEditEnding += Datagrid_EndingEditRow;
+
+            mainDataGrid.CellEditEnded += new EventHandler<DataGridCellEditEndedEventArgs>(MainGridChanged);
+
+            /* Create ListView */
+            ListView listView = new ListView();
+            listView.Items.Add(mainDataGrid);
+            mainExp.Content = listView;
+            /* Sub Expanders for each Header */
+            lib.Attributes.Find(x => x.Name.ToLower() == "identificationdata").SubAttrebutes.FindAll(x => x.SubAttrebutes.Count > 0).ForEach(attr =>
+            {
+                listView.Items.Add(SubObjects(attr));
+            });
+
 
         }
     }
