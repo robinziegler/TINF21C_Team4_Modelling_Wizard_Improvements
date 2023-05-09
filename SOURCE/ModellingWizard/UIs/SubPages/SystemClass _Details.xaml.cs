@@ -111,25 +111,40 @@ namespace ModellingWizard.UIs.SubPages
 
         private void Datagrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            LibaryObject lib = e.Row.DataContext as LibaryObject;
-            if(lib != null && lib.Name.ToLower() == "manufacturer" || lib.Name.ToLower() == "productcode")
+            try
             {
-                if(lib.Value == null || lib.Value == "")
+                LibaryObject lib = e.Row.DataContext as LibaryObject;
+                if (lib != null && lib.Name.ToLower() == "manufacturer" || lib.Name.ToLower() == "productcode")
                 {
-                    e.Row.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(50, 255, 128, 0));
-                }
-                else
-                {
-                    e.Row.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(50, 0, 255, 0));
+                    if (lib.Value == null || lib.Value == "")
+                    {
+                        e.Row.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(50, 255, 128, 0));
+                    }
+                    else
+                    {
+                        e.Row.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(50, 0, 255, 0));
+                    }
                 }
             }
+            catch { 
+            
+            }
+            
         }
         private void Datagrid_EndEditRow(object sender, DataGridRowEditEndedEventArgs e)
         {
-            var x = mainSUCGrid.ItemsSource;
-            mainSUCGrid.ItemsSource = null;
+            try
+            {
+                var x = mainSUCGrid.ItemsSource;
+                mainSUCGrid.ItemsSource = null;
 
-            mainSUCGrid.ItemsSource = x;
+                mainSUCGrid.ItemsSource = x;
+            }
+            catch 
+            { 
+            
+            }
+           
         }
     }
 }

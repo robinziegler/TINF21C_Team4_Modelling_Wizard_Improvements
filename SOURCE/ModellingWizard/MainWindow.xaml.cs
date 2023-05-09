@@ -207,6 +207,7 @@ namespace ModellingWizard
                     var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
                     OpenedFileName.Text = file.DisplayName;
                     Instances.CurrentFile = new(file.Path);
+                    SomethingChanged(false);
                 }
                 ReloadInformations();
             }
