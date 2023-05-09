@@ -144,9 +144,10 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.GenericData_Detail",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = true
+                        IsRightTapEnabled = true,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     x.RightTapped += RightClickForDelete;
                     x.KeyDown += NavigationView_KeyDown;
@@ -160,9 +161,10 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.GenericData_Detail",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = true
+                        IsRightTapEnabled = true,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     x.RightTapped += RightClickForDelete;
                     x.KeyDown += NavigationView_KeyDown;
@@ -177,9 +179,10 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.GenericData_Detail",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = false
+                        IsRightTapEnabled = false,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     currentItem.MenuItems.Add(x);
                     currentItem = x;
@@ -191,9 +194,10 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.GenericData_Detail",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.GenericData_Detail",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = false
+                        IsRightTapEnabled = false,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     currentItem.MenuItems.Add(x);
                 }

@@ -23,19 +23,7 @@ namespace ModellingWizard.Processes.Open
     {
         public static (Objects.Libaries.Libary, Objects.Libaries.Libary) OpenFiles(byte[] binary, string name, string filepath)
         {
-            if (name.EndsWith(".edz"))
-            {
-                ConverterAML converterAML = new ConverterAML();
 
-                //add path to generate amlx file
-                converterAML._pathAMLDestinationDirectory = Path.GetDirectoryName(name);
-                //function of class to export .edz file to .amlx
-                converterAML.exportStart(name);
-                //get path to amlx file generated
-                string AMLXFile = converterAML._pathAMLDestinationDirectory + "\\" + converterAML._AMLXFileName;
-                //send path to function to open amlx file generated
-                Console.WriteLine(AMLXFile);
-            }
             if (name.EndsWith(".amlx"))
             {
                 // Load the amlx container from the given filepath
@@ -58,13 +46,35 @@ namespace ModellingWizard.Processes.Open
 
                 // Get the root path -> main .aml file
                 IEnumerable<PackagePart> rootParts = amlx.GetPartsByRelationShipType(AutomationMLContainer.RelationshipType.Root);
-
+                
                 // We expect the aml to only have one root part
                 if (rootParts.First() != null)
                 {
 
                     PackagePart part = rootParts.First();
+                    foreach(PackagePart package in amlx.GetParts())
+                    {
+                        if(package != part)
+                        {
+                            byte[] bytes = null;
+                            Objects.Attachments.AttachmentObject attatchment = new Objects.Attachments.AttachmentObject();
+                            attatchment.Title = package.Uri.ToString().Replace("/", "");
+                            using (StreamReader reader = new StreamReader(package.GetStream(), Encoding.UTF8))
+                            {
+                                // Read the Base64 string from the stream
+                                string filestring = reader.ReadToEnd();
 
+                                // Convert the Base64 string to a byte array
+                                bytes = Encoding.UTF8.GetBytes(filestring);
+                            }
+                            if (bytes != null)
+                            {
+                                attatchment.Base64Content = Convert.ToBase64String(bytes);
+                            }
+                            Instances.Attachments.Add(attatchment);
+                        }
+                        
+                    }
                     // load the aml file as an CAEX document
                     CAEXDocument doc = CAEXDocument.LoadFromStream(part.GetStream());
                     amlx.Close();
@@ -118,7 +128,6 @@ namespace ModellingWizard.Processes.Open
                         }
                         SystemLib.SubObjects.Add(SubLib);
                     }
-
 
                     Instances.Loaded_RoleClass_Data = RoleClassLib;
                     Instances.Loaded_Interfaces_Data = InterfacesLib;

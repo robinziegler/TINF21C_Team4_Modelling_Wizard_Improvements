@@ -14,6 +14,8 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using ModellingWizard.Objects;
 using Aml.Engine.CAEX;
+using System.Drawing;
+using ModellingWizard.Processes.Open;
 
 namespace ModellingWizard.UIs.SubPages
 {
@@ -120,14 +122,15 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.SystemClass_Details",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = true
+                        IsRightTapEnabled = true,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     x.RightTapped += RightClickForDelete;
                     x.KeyDown += NavigationView_KeyDown;
                     x.IsExpanded = Index == 0;
-                    x.IsSelected = Index == 0;
+                    //x.IsSelected = Index == 0;
                     currentItem = x;
                     NavigationView.MenuItems.Add(x);
                     LoadDepth++;
@@ -138,14 +141,15 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.SystemClass_Details",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = true
+                        IsRightTapEnabled = true,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     x.RightTapped += RightClickForDelete;
                     x.KeyDown += NavigationView_KeyDown;
                     x.IsExpanded = Index == 0;
-                    x.IsSelected = Index == 0;
+                    //x.IsSelected = Index == 0;
                     NavigationView.MenuItems.Add(x);
                 }
             }
@@ -157,9 +161,10 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.SystemClass_Details",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = false
+                        IsRightTapEnabled = false,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     currentItem.MenuItems.Add(x);
                     currentItem = x;
@@ -171,12 +176,19 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.SystemClass_Details",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = false
+                        IsRightTapEnabled = false,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     currentItem.MenuItems.Add(x);
                 }
+            }
+            /* Open standard lib */
+            Objects.Libaries.Libary ret = Instances.Loaded_System_Unit_Libs.Find("IdentificationData", false);
+            if (ret != null)
+            {
+                ContentFrame.Navigate(Type.GetType("ModellingWizard.UIs.SubPages.SystemClass_Details"), ret.myGuid);
             }
         }
         private void RightClickForDelete(object sender, RightTappedRoutedEventArgs e)

@@ -33,64 +33,132 @@ namespace ModellingWizard.UIs.SubPages
         public Attachments()
         {
             this.InitializeComponent();
-            LoadItems();
+            LoadNavigation();
         }
 
-        private void LoadItems()
+        private void LoadNavigation()
         {
-            LoadedAttachments.ItemsSource = null;
-            LoadedAttachments.ItemsSource = Instances.Attachments;
-        }
-
-        private async void AddAttachmentButton_Click(object sender, RoutedEventArgs e)
-        {
-            /*var Win = new ModalViews.Attachments.AddAttachment();
-            ContentDialog dialog = new ContentDialog();
-
-            // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
-            dialog.XamlRoot = this.XamlRoot;
-            dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
-            dialog.Title = "Add attachment";
-            dialog.PrimaryButtonText = "Add";
-            dialog.CloseButtonText = "Cancel";
-            dialog.DefaultButton = ContentDialogButton.Primary;
-            dialog.Content = Win;
-
-            ContentDialogResult result = await dialog.ShowAsync();
-            if (result == ContentDialogResult.Primary)
+            NavigationView.MenuItems.Clear();
+            Instances.Attachments.ForEach(attachment =>
             {
-                //Win.RoleClassTreeView.SelectedItems.Count();
-            }*/
-
-            var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
-
-            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.m_window);
-
-            WinRT.Interop.InitializeWithWindow.Initialize(openPicker, hWnd);
-
-            openPicker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation =
-                Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
-            openPicker.FileTypeFilter.Add("*");
-
-            var file = await openPicker.PickSingleFileAsync();
-            if (file != null)
-            {
-                var contentOfFile = await file.ReadBytesAsync();
-                Objects.Instances.Attachments.Add(new() 
+                var x = new NavigationViewItem
                 {
-                    Title = file.Name,
-                    Base64Content = System.Convert.ToBase64String(contentOfFile)
-                });
-                LoadItems();
-                
-            }
+                    Content = attachment.Title,
+                    Tag = "ModellingWizard.UIs.SubPages.Attachments_Detail",
+                    Name = attachment.UUID,
+                    IsRightTapEnabled = true,
+                    Icon = new SymbolIcon { Symbol = Symbol.Document }
+                };
+                x.RightTapped += RightClickForDelete;
+                x.KeyDown += NavigationView_KeyDown;
+                NavigationView.MenuItems.Add(x);
+            });
         }
 
         private void LoadedAttachments_RowEditEnded(object sender, CommunityToolkit.WinUI.UI.Controls.DataGridRowEditEndedEventArgs e)
         {
             var x = (MainWindow)App.m_window;
             x.SomethingChanged(true);
+        }
+
+        private async void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            var item = args.SelectedItemContainer as NavigationViewItem;
+
+            if (item == null)
+            {
+                return;
+            }
+            if (item.Tag == null)
+            {
+                return;
+            }
+            if (item.Content == null)
+            {
+                return;
+            }
+            if (item.Tag.ToString() != "SystemAdd")
+            {
+                ContentFrame.Navigate(Type.GetType(item.Tag.ToString()), item.Name);
+                //NavigationView.Header = item.Content;
+                NavigationView.Header = null;
+                NavigationView.SelectedItem = item;
+            }
+            else
+            {
+                var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+
+                var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.m_window);
+
+                WinRT.Interop.InitializeWithWindow.Initialize(openPicker, hWnd);
+
+                openPicker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+                openPicker.SuggestedStartLocation =
+                    Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+                openPicker.FileTypeFilter.Add("*");
+
+                var file = await openPicker.PickSingleFileAsync();
+                if (file != null)
+                {
+                    var contentOfFile = await file.ReadBytesAsync();
+                    Objects.Instances.Attachments.Add(new()
+                    {
+                        Title = file.Name,
+                        Base64Content = System.Convert.ToBase64String(contentOfFile)
+                    });
+                    LoadNavigation();
+
+                }
+            }
+        }
+
+        private void ContentFrame_Loaded(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(Type.GetType("ModellingWizard.UIs.SubPages.Attachments_Detail"), "");
+        }
+
+        private void RightClickForDelete(object sender, RightTappedRoutedEventArgs e)
+        {
+            var navigationViewItem = sender as NavigationViewItem;
+            DeleteObj(navigationViewItem.Content.ToString(), navigationViewItem.Name);
+        }
+
+        private void NavigationView_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Delete || e.Key == Windows.System.VirtualKey.Back)
+            {
+                var selectedItem = NavigationView.SelectedItem as NavigationViewItem;
+                DeleteObj(selectedItem.Content.ToString(), selectedItem.Name);
+            }
+        }
+
+        private async void DeleteObj(string name, string id)
+        {
+
+            if (name != "SystemAdd")
+            {
+                ContentDialog dialog = new()
+                {
+                    // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+                    XamlRoot = this.XamlRoot,
+                    Style = Microsoft.UI.Xaml.Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                    Title = "Remove attachment",
+                    PrimaryButtonText = "Remove",
+                    CloseButtonText = "Cancel",
+                    DefaultButton = ContentDialogButton.Primary,
+                    Content = "Are you sure you want to remove " + name + "?",
+                    RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
+                };
+
+                ContentDialogResult result = await dialog.ShowAsync();
+                if (result == ContentDialogResult.Primary)
+                {
+                    Instances.Loaded_Interfaces_Data.RemoveLib(id);
+                    var win = (MainWindow)App.m_window;
+                    win.ReloadInformations();
+                    win.SetWarning();
+                }
+            }
         }
     }
 }
