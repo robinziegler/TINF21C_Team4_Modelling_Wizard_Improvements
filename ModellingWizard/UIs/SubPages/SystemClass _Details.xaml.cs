@@ -16,12 +16,13 @@ using ModellingWizard.Objects;
 using Aml.Engine.CAEX.Extensions;
 using Aml.Engine.CAEX;
 using CommunityToolkit.WinUI.UI.Controls;
+using ModellingWizard.Objects.Libaries;
 
 namespace ModellingWizard.UIs.SubPages
 {
     public sealed partial class SystemClass_Details : Page
     {
-
+        public static DataGrid mainSUCGrid { get; set; }
         public SystemClass_Details()
         {
             this.InitializeComponent();
@@ -45,6 +46,7 @@ namespace ModellingWizard.UIs.SubPages
                     {
                         CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new();
                         mainDataGrid.AutoGenerateColumns = false;
+                        mainDataGrid.Name = lib.myGuid;
                         Objects.OwnDataGrid.DetailDataGrid.Get().ForEach(subColumn => { mainDataGrid.Columns.Add(subColumn); });
 
                         mainDataGrid.ItemsSource = lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0);
@@ -72,9 +74,18 @@ namespace ModellingWizard.UIs.SubPages
             CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new();
             mainDataGrid.AutoGenerateColumns = false;
             Objects.OwnDataGrid.DetailDataGrid.Get().ForEach(subColumn => { mainDataGrid.Columns.Add(subColumn); });
+
+            /* Check if its main class */
+            if(lib.SubAttrebutes.Find(x => x.Name.ToLower() == "productcode") != null)
+            {
+                mainSUCGrid = mainDataGrid;
+            }
             
             
             mainDataGrid.ItemsSource = lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count == 0);
+            mainDataGrid.LoadingRow += Datagrid_LoadingRow;
+            mainDataGrid.RowEditEnded += Datagrid_EndEditRow;
+            
             mainDataGrid.CellEditEnded += new EventHandler<DataGridCellEditEndedEventArgs>(MainGridChanged);
 
             /* Create ListView */
@@ -96,6 +107,28 @@ namespace ModellingWizard.UIs.SubPages
             mainWin.ChangedFileName();
             mainWin.SomethingChanged(true);
             mainWin.SetWarning();
+        }
+
+        private void Datagrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            LibaryObject lib = e.Row.DataContext as LibaryObject;
+            if(lib != null && lib.Name.ToLower() == "manufacturer" || lib.Name.ToLower() == "productcode")
+            {
+                if(lib.Value == null || lib.Value == "")
+                {
+                    e.Row.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(50, 255, 128, 0));
+                }
+                else
+                {
+                    e.Row.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(50, 0, 255, 0));
+                }
+            }
+        }
+        private void Datagrid_EndEditRow(object sender, DataGridRowEditEndedEventArgs e)
+        {
+            var x = mainSUCGrid.ItemsSource;
+            mainSUCGrid.ItemsSource = null;
+            mainSUCGrid.ItemsSource = x;
         }
     }
 }
