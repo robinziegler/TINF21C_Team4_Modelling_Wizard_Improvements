@@ -50,7 +50,7 @@ namespace ModellingWizard
             var version = Package.Current.Id.Version;
             Instances.AppVersion = string.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
             Instances.Build = string.Format("{0}", version.Revision);
-            AppbarTitle.Text = applicationName + " | " + Instances.AppVersion;
+            AppbarTitle.Text = applicationName + " | " + Instances.AppVersion + "." + Instances.Build;
             SetTitleBar(AppTitleBar);
             Instances.CurrentTheme = (int)App.Current.RequestedTheme;
             ThemeSwitch.Text = Instances.CurrentTheme == (int)ApplicationTheme.Dark ? "Lightmode" : "Darkmode";
