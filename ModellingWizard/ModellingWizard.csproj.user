@@ -33,6 +33,9 @@
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="UIs\SubPages\EmptyAttributes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UIs\ModalViews\Main\StartUpDialog.xaml">
       <SubType>Designer</SubType>
     </Page>

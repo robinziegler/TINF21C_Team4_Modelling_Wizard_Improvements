@@ -56,6 +56,7 @@ namespace ModellingWizard.Objects.Libaries
                 {
                     if (a.Name.ToLower() == name.ToLower())
                     {
+
                         retLib = new Libary()
                         {
                             myGuid = myGuid,
@@ -63,6 +64,8 @@ namespace ModellingWizard.Objects.Libaries
                             Attributes = Attributes,
                             SubObjects = SubObjects
                         };
+                        
+                        
                     }
                 });
 
@@ -80,6 +83,7 @@ namespace ModellingWizard.Objects.Libaries
             }
             return retLib;
         }
+
 
         public bool RemoveLib(string id)
         {
