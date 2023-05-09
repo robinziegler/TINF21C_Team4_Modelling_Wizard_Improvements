@@ -14,6 +14,9 @@ namespace ModellingWizard.Objects
 {
     public class Instances
     {
+        /* Standard data */
+        public static string AppVersion { get; set; }
+        public static string Build { get; set; }
         /* App Settings */
         public static int CurrentTheme {  get; set; }
         public static bool ExpertMode { get; set; } = false;

@@ -28,6 +28,8 @@ using System.Windows.Media;
 using Microsoft.UI.Xaml.Automation;
 using ModellingWizard.Processes.GeneralFunctions;
 using System.Xml.Linq;
+using CommunityToolkit.WinUI.Helpers;
+using Windows.System;
 
 namespace ModellingWizard
 {
@@ -45,7 +47,10 @@ namespace ModellingWizard
             // Set new title bar from xaml
             // the used informations can be changed in appxmanifest
             string applicationName = AppInfo.Current.DisplayInfo.DisplayName;
-            AppbarTitle.Text = applicationName;
+            var version = Package.Current.Id.Version;
+            Instances.AppVersion = string.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
+            Instances.Build = string.Format("{0}", version.Revision);
+            AppbarTitle.Text = applicationName + " | " + Instances.AppVersion;
             SetTitleBar(AppTitleBar);
             Instances.CurrentTheme = (int)App.Current.RequestedTheme;
             ThemeSwitch.Text = Instances.CurrentTheme == (int)ApplicationTheme.Dark ? "Lightmode" : "Darkmode";
@@ -363,10 +368,36 @@ namespace ModellingWizard
             };
             ContentDialogResult result = await dialog.ShowAsync();
         }
+        private void Help_GitHub_Click(object sender, RoutedEventArgs e)
+        {
+            /*  var Win = new UIs.ModalViews.Help_Menu.ManualPage();
+              ContentDialog dialog = new()
+              {
+                  XamlRoot = this.Content.XamlRoot,
+                  Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                  Title = "Manual",
+                  CloseButtonText = "Close",
+                  Content = Win,
+                  RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
+              };
+              ContentDialogResult result = await dialog.ShowAsync();
+            */
+
+        }
 
         private async void Help_Manual_Click(object sender, RoutedEventArgs e)
         {
-            var Win = new UIs.ModalViews.Help_Menu.ManualPage();
+            try
+            {
+                Uri uri = new("https://github.com/robinziegler/TINF21C_Team4_Modelling_Wizard_Improvements/wiki/Manual");
+                bool success = await Launcher.LaunchUriAsync(uri);
+            }
+            catch
+            {
+                
+            }
+
+          /*  var Win = new UIs.ModalViews.Help_Menu.ManualPage();
             ContentDialog dialog = new()
             {
                 XamlRoot = this.Content.XamlRoot,
@@ -377,6 +408,8 @@ namespace ModellingWizard
                 RequestedTheme = Instances.CurrentTheme == 1 ? ElementTheme.Dark : ElementTheme.Light
             };
             ContentDialogResult result = await dialog.ShowAsync();
+          */
+
         }
 
 
