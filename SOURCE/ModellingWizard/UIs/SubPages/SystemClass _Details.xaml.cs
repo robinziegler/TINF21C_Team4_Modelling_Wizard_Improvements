@@ -84,7 +84,7 @@ namespace ModellingWizard.UIs.SubPages
             
             mainDataGrid.ItemsSource = lib.SubAttrebutes.FindAll(x => x.SubAttrebutes.Count == 0);
             mainDataGrid.LoadingRow += Datagrid_LoadingRow;
-            mainDataGrid.RowEditEnded += Datagrid_EndEditRow;
+           // mainDataGrid.RowEditEnded += Datagrid_EndEditRow;
             
             mainDataGrid.CellEditEnded += new EventHandler<DataGridCellEditEndedEventArgs>(MainGridChanged);
 
