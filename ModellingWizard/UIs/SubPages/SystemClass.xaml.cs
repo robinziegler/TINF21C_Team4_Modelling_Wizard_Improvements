@@ -14,6 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using ModellingWizard.Objects;
 using Aml.Engine.CAEX;
+using System.Drawing;
 
 namespace ModellingWizard.UIs.SubPages
 {
@@ -122,7 +123,8 @@ namespace ModellingWizard.UIs.SubPages
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = true
+                        IsRightTapEnabled = true,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     x.RightTapped += RightClickForDelete;
                     x.KeyDown += NavigationView_KeyDown;
@@ -140,7 +142,8 @@ namespace ModellingWizard.UIs.SubPages
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = true
+                        IsRightTapEnabled = true,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     x.RightTapped += RightClickForDelete;
                     x.KeyDown += NavigationView_KeyDown;
@@ -159,7 +162,8 @@ namespace ModellingWizard.UIs.SubPages
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = false
+                        IsRightTapEnabled = false,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     currentItem.MenuItems.Add(x);
                     currentItem = x;
@@ -173,7 +177,8 @@ namespace ModellingWizard.UIs.SubPages
                         Content = sublib.Name,
                         Tag = "ModellingWizard.UIs.SubPages.SystemClass_Details",
                         Name = sublib.myGuid,
-                        IsRightTapEnabled = false
+                        IsRightTapEnabled = false,
+                        Icon = new SymbolIcon { Symbol = Symbol.Library }
                     };
                     currentItem.MenuItems.Add(x);
                 }
