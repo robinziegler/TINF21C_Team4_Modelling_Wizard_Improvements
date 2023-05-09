@@ -13,16 +13,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Button Name="AddAttachmentButton" Content="Add Attachment" Click="AddAttachmentButton_Click"/>
-        <controls:DataGrid Grid.Row="1" Name="LoadedAttachments" AutoGenerateColumns="False" RowEditEnded="LoadedAttachments_RowEditEnded">
-            <controls:DataGrid.Columns>
-                <controls:DataGridTextColumn Header="Title" Binding="{Binding Title}" />
-                <!--<controls:DataGridTextColumn Header=""/>-->
-            </controls:DataGrid.Columns>
-        </controls:DataGrid>
+        <NavigationView x:Name="NavigationView" Grid.Row="1"
+                        PaneDisplayMode="Left"
+                        IsTabStop="False"
+                        IsBackButtonVisible="Collapsed"
+                        SelectionChanged="NavigationView_SelectionChanged" IsSettingsVisible="False">
+            <NavigationView.MenuItems>
+            </NavigationView.MenuItems>
+            <NavigationView.FooterMenuItems>
+                <NavigationViewItem Content="Add Attachment" Icon="Add" Tag="SystemAdd" ToolTipService.ToolTip="Add Attachment"/>
+            </NavigationView.FooterMenuItems>
+            <Frame x:Name="ContentFrame" Loaded="ContentFrame_Loaded"/>
+        </NavigationView>
     </Grid>
 </Page>

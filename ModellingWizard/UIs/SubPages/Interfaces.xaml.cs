@@ -120,7 +120,7 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.Interfaces_Detail",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.Interfaces_Detail",
                         Name = sublib.myGuid,
                         IsRightTapEnabled = true,
                         Icon = new SymbolIcon { Symbol = Symbol.Library }
@@ -137,7 +137,7 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.Interfaces_Detail",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.Interfaces_Detail",
                         Name = sublib.myGuid,
                         IsRightTapEnabled = true,
                         Icon = new SymbolIcon { Symbol = Symbol.Library }
@@ -155,7 +155,7 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.Interfaces_Detail",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.Interfaces_Detail",
                         Name = sublib.myGuid,
                         IsRightTapEnabled = false,
                         Icon = new SymbolIcon { Symbol = Symbol.Library }
@@ -170,7 +170,7 @@ namespace ModellingWizard.UIs.SubPages
                     var x = new NavigationViewItem
                     {
                         Content = sublib.Name,
-                        Tag = "ModellingWizard.UIs.SubPages.Interfaces_Detail",
+                        Tag = sublib.Attributes.Count == 0 ? "ModellingWizard.UIs.SubPages.EmptyAttributes" : "ModellingWizard.UIs.SubPages.Interfaces_Detail",
                         Name = sublib.myGuid,
                         IsRightTapEnabled = false,
                         Icon = new SymbolIcon { Symbol = Symbol.Library }
