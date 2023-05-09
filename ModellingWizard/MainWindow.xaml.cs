@@ -64,6 +64,7 @@ namespace ModellingWizard
         {
             unsavedInformations = changed;
             SavedInformation.Text = changed ? "[Unsaved]" : "[Saved]";
+            SetWarning();
         }
 
 
@@ -92,6 +93,7 @@ namespace ModellingWizard
             //NavigationView.Header = item.Content;
             NavigationView.Header = null;
             NavigationView.SelectedItem = item;
+            SetWarning();
         }
 
         /* File options */

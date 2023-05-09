@@ -30,37 +30,6 @@ namespace ModellingWizard.UIs.SubPages
             //GenericData_Grid_Row_1.Height = new Microsoft.UI.Xaml.GridLength(600, GridUnitType.Pixel); 
         }
 
-        private async void AddRoleClassButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        public void SetMode(bool Expert)
-        {
-            Visibility visibility = Expert ? Visibility.Visible : Visibility.Collapsed;
-            /* Settings */
-            //AddRoleClassButton.Visibility = visibility;
-        }
-
-
-        private void ListView_Loading(FrameworkElement sender, object args)
-        {
-            //ListView_AMLObjects.ItemsSource = TestObjekt;
-        }
-
-        private void ListView_AMLObjects_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.AddedItems.Count > 0)
-            {
-                AMLObjectTest selectedAMLObject = e.AddedItems[0] as AMLObjectTest;
-                if (selectedAMLObject != null)
-                {
-                    List<AttributsTest> attributs = selectedAMLObject.Attributs;
-                    //loadAttributs(attributs);
-                }
-            }
-        }
-
         public List<AMLObjectTest> TestObjekt = new List<AMLObjectTest>();
 
         /// <summary>method <c>loadTestObject</c> lads the currently loaded Roll clases fron instances into a Navigation view</summary>
@@ -68,13 +37,14 @@ namespace ModellingWizard.UIs.SubPages
         {
             if (lib != null)
             {
-
+                int index = 0; 
                 foreach (Objects.Libaries.Libary sublib in lib.SubObjects)
                 {
                     if (sublib != null)
                     {
-                        GenerateNavigationMenueItems(sublib);
+                        GenerateNavigationMenueItems(sublib, index);
                     }
+                    index++;
                 }
                 LoadDepth--;
             }
@@ -141,7 +111,7 @@ namespace ModellingWizard.UIs.SubPages
         }
 
 
-        private void GenerateNavigationMenueItems(Objects.Libaries.Libary sublib)
+        private void GenerateNavigationMenueItems(Objects.Libaries.Libary sublib, int Index)
         {
             if (LoadDepth == 0)
             {
@@ -156,6 +126,8 @@ namespace ModellingWizard.UIs.SubPages
                     };
                     x.RightTapped += RightClickForDelete;
                     x.KeyDown += NavigationView_KeyDown;
+                    x.IsExpanded = Index == 0;
+                    x.IsSelected = Index == 0;
                     currentItem = x;
                     NavigationView.MenuItems.Add(x);
                     LoadDepth++;
@@ -172,6 +144,8 @@ namespace ModellingWizard.UIs.SubPages
                     };
                     x.RightTapped += RightClickForDelete;
                     x.KeyDown += NavigationView_KeyDown;
+                    x.IsExpanded = Index == 0;
+                    x.IsSelected = Index == 0;
                     NavigationView.MenuItems.Add(x);
                 }
             }
