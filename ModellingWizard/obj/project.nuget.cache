@@ -1,5 +1,6 @@
 {
   "version": 2,
+
   "dgSpecHash": "yg4+6bFxGBzC25ZG4nXPx8ujFrB4K/VB8u+Vq39gFLk/+CvXCbHCvyIgam07ZkQDX8RO+usCMEcdHX3Z8bbmtg==",
   "success": true,
   "projectFilePath": "D:\\DHBW\\SWE\\Neu\\ModellingWizard\\ModellingWizard.csproj",
@@ -33,6 +34,7 @@
     "C:\\Users\\m.trumpp\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\6.0.16\\microsoft.aspnetcore.app.runtime.win-arm64.6.0.16.nupkg.sha512",
     "C:\\Users\\m.trumpp\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.16\\microsoft.netcore.app.runtime.win-x64.6.0.16.nupkg.sha512",
     "C:\\Users\\m.trumpp\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.16\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.16.nupkg.sha512"
+
   ],
   "logs": [
     {

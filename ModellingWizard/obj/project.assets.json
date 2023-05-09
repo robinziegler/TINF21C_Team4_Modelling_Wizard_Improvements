@@ -2738,6 +2738,7 @@
   },
   "packageFolders": {
     "C:\\Users\\m.trumpp\\.nuget\\packages\\": {},
+
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -2748,12 +2749,14 @@
       "projectPath": "D:\\DHBW\\SWE\\Neu\\ModellingWizard\\ModellingWizard.csproj",
       "packagesPath": "C:\\Users\\m.trumpp\\.nuget\\packages\\",
       "outputPath": "D:\\DHBW\\SWE\\Neu\\ModellingWizard\\obj\\",
+
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "U:\\Anwendungsdaten\\NuGet\\NuGet.Config",
+
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
