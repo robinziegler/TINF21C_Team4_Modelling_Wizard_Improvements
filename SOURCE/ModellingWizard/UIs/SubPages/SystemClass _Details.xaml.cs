@@ -135,9 +135,7 @@ namespace ModellingWizard.UIs.SubPages
         }
         private void Datagrid_EndEditRow(object sender, DataGridRowEditEndedEventArgs e)
         {
-            var x = mainSUCGrid.ItemsSource;
             mainSUCGrid.ItemsSource = new List<LibaryObject>();
-            mainSUCGrid.ItemsSource = x;
 
         }
     }
