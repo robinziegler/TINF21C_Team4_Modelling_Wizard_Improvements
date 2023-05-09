@@ -114,7 +114,7 @@ namespace ModellingWizard.UIs.SubPages
             try
             {
                 LibaryObject lib = e.Row.DataContext as LibaryObject;
-                if (lib != null && lib.Name.ToLower() == "manufacturer" || lib.Name.ToLower() == "productcode")
+                if (lib != null && (lib.Name.ToLower() == "manufacturer" || lib.Name.ToLower() == "productcode"))
                 {
                     if (lib.Value == null || lib.Value == "")
                     {
