@@ -26,6 +26,8 @@ using Windows.Storage.Pickers;
 using ModellingWizard.Processes.Save;
 using System.Windows.Media;
 using Microsoft.UI.Xaml.Automation;
+using ModellingWizard.Processes.GeneralFunctions;
+using System.Xml.Linq;
 
 namespace ModellingWizard
 {
@@ -175,11 +177,26 @@ namespace ModellingWizard
                 openPicker.SuggestedStartLocation =
                     Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
                 openPicker.FileTypeFilter.Add(".aml");
+                openPicker.FileTypeFilter.Add(".edz");
                 openPicker.FileTypeFilter.Add(".amlx");
 
                 var file = await openPicker.PickSingleFileAsync();
                 if (file != null)
                 {
+                    if (file.Name.EndsWith(".edz"))
+                    {
+                        ConverterAML converterAML = new ConverterAML();
+
+                        //add path to generate amlx file
+                        converterAML._pathAMLDestinationDirectory = Path.GetDirectoryName(file.Path);
+                        //function of class to export .edz file to .amlx
+                        converterAML.exportStart(file.Path);
+                        //get path to amlx file generated
+                        string AMLXFile = converterAML._pathAMLDestinationDirectory + "\\" + converterAML._AMLXFileName;
+                        //send path to function to open amlx file generated
+                        Console.WriteLine(AMLXFile);
+                        var results = Processes.Open.Open.OpenFiles(File.ReadAllBytes(AMLXFile), converterAML._AMLXFileName, AMLXFile);
+                    }
                     var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
                     OpenedFileName.Text = file.DisplayName;
                     Instances.CurrentFile = new(file.Path);

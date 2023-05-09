@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using Aml.Editor.Plugin;
 using Aml.Engine.Adapter;
 using Aml.Engine.AmlObjects;
 using Aml.Engine.CAEX;
@@ -14,6 +15,7 @@ using ModellingWizard.Objects.Attachments;
 using ModellingWizard.Objects.Libaries;
 using ModellingWizard.Processes.Libary;
 using ModellingWizard.UIs.SubPages;
+using ModellingWizard.Processes.GeneralFunctions;
 
 namespace ModellingWizard.Processes.Open
 {
@@ -21,6 +23,19 @@ namespace ModellingWizard.Processes.Open
     {
         public static (Objects.Libaries.Libary, Objects.Libaries.Libary) OpenFiles(byte[] binary, string name, string filepath)
         {
+            if (name.EndsWith(".edz"))
+            {
+                ConverterAML converterAML = new ConverterAML();
+
+                //add path to generate amlx file
+                converterAML._pathAMLDestinationDirectory = Path.GetDirectoryName(name);
+                //function of class to export .edz file to .amlx
+                converterAML.exportStart(name);
+                //get path to amlx file generated
+                string AMLXFile = converterAML._pathAMLDestinationDirectory + "\\" + converterAML._AMLXFileName;
+                //send path to function to open amlx file generated
+                Console.WriteLine(AMLXFile);
+            }
             if (name.EndsWith(".amlx"))
             {
                 // Load the amlx container from the given filepath
