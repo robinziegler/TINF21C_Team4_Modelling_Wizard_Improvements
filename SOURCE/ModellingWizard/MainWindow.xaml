@@ -71,7 +71,10 @@
                                     Click="ChangeLibary_IndustrialSensorLibrary_v1_0_0_Click" 
                                     GroupName="Libaries"/>
                     <MenuFlyoutSeparator />
-                    <MenuFlyoutItem Name="ChangeLibary_AddLibary"                                            Text="Add Libary"                                        Click="ChangeLibary_AddLibary_Click"/>
+                    <RadioMenuFlyoutItem Name="ChangeLibary_AddLibary"
+                                    Text="Add Libary"
+                                    Click="ChangeLibary_AddLibary_Click"
+                                    GroupName="Libaries"/>
                 </MenuBarItem>
 
                 <MenuBarItem Title="Options">
