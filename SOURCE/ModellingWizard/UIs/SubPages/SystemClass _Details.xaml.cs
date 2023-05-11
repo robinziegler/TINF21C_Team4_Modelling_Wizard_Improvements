@@ -49,7 +49,7 @@ namespace ModellingWizard.UIs.SubPages
                         mainDataGrid.AutoGenerateColumns = false;
                         mainDataGrid.Name = lib.myGuid;
                         Objects.OwnDataGrid.DetailDataGrid.Get().ForEach(subColumn => { mainDataGrid.Columns.Add(subColumn); });
-
+                        mainDataGrid.HorizontalAlignment = HorizontalAlignment.Left;
                         mainDataGrid.ItemsSource = lib.Attributes.FindAll(x => x.SubAttrebutes.Count == 0);
                         DetailContent.Items.Add(mainDataGrid);
                     }
@@ -74,6 +74,7 @@ namespace ModellingWizard.UIs.SubPages
 
             CommunityToolkit.WinUI.UI.Controls.DataGrid mainDataGrid = new();
             mainDataGrid.AutoGenerateColumns = false;
+            mainDataGrid.HorizontalAlignment = HorizontalAlignment.Left;
             Objects.OwnDataGrid.DetailDataGrid.Get().ForEach(subColumn => { mainDataGrid.Columns.Add(subColumn); });
 
             /* Check if its main class */
