@@ -9,7 +9,7 @@
   <Identity
     Name="87cfa8d2-89c6-4b49-8063-cf02f0212854"
     Publisher="CN=TINF21C"
-    Version="0.2.7.0" />
+    Version="1.0.0.0" />
 
   <Properties>
     <DisplayName>ModellingWizard</DisplayName>
