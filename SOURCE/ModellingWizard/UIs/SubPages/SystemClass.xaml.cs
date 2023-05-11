@@ -109,6 +109,7 @@ namespace ModellingWizard.UIs.SubPages
                         });
                     }
                 }
+                NavigationView.SelectedItem = null;
             }
         }
 
