@@ -469,7 +469,7 @@ namespace ModellingWizard
 
         private void Grid_Main_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            //ReloadInformations();
+            ReloadInformations();
         }
 
         public void ReloadInformations()
