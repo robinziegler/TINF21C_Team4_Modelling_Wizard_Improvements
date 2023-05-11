@@ -126,7 +126,8 @@ namespace ModellingWizard
                     Processes.New.CreateSysClass.Execute();
                     ReloadInformations();
                     SetWarning();
-                    
+                    SomethingChanged(false);
+
                 }
             }
             else
@@ -134,6 +135,7 @@ namespace ModellingWizard
                 Processes.New.CreateSysClass.Execute();
                 ReloadInformations();
                 SetWarning();
+                SomethingChanged(false);
             }
         }
 
@@ -280,7 +282,7 @@ namespace ModellingWizard
                 if (file != null)
                 {
                     Save.SaveFile(file.Path, file.Name, file.FileType);
-                    SavedInformation.Text = "[Saved]";
+                    SomethingChanged(false);
                 }
             }
             catch (Exception ex)
@@ -458,7 +460,7 @@ namespace ModellingWizard
             if(result == ContentDialogResult.Primary)
             {
                 OpenFile();
-                SavedInformation.Text = "[Saved]";
+                SomethingChanged(false);
             }
             else if(result == ContentDialogResult.Secondary)
             {
