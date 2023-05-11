@@ -44,7 +44,7 @@
                     <MenuFlyoutItem Name="File_Save" Text="Save" Click="File_Save_Click"/>
                 </MenuBarItem>
 
-                <MenuBarItem Title="Libaries">
+                <MenuBarItem Title="Libraries">
                     <RadioMenuFlyoutItem Name="ChangeLibary_AutomationComponentLibrary_v1_0_0"                    
                                     Text="AutomationComponentLibrary_v1_0_0"                 
                                     Click="ChangeLibary_AutomationComponentLibrary_v1_0_0_Click" 
@@ -72,7 +72,7 @@
                                     GroupName="Libaries"/>
                     <MenuFlyoutSeparator />
                     <RadioMenuFlyoutItem Name="ChangeLibary_AddLibary"
-                                    Text="Add Libary"
+                                    Text="Add Library"
                                     Click="ChangeLibary_AddLibary_Click"
                                     GroupName="Libaries"/>
                 </MenuBarItem>
