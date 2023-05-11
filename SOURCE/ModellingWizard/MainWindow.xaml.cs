@@ -172,6 +172,7 @@ namespace ModellingWizard
 
         private async void OpenFile()
         {
+            string fileNameOld = Instances.FileName;
             try
             {
                 var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -215,6 +216,7 @@ namespace ModellingWizard
             }
             catch (Exception e)
             {
+                Instances.FileName = fileNameOld;
                 ContentDialog dialog = new()
                 {
                     XamlRoot = this.Content.XamlRoot,
