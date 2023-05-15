@@ -126,7 +126,7 @@ namespace ModellingWizard
                     Processes.New.CreateSysClass.Execute();
                     ReloadInformations();
                     SetWarning();
-                    SomethingChanged(false);
+                    SomethingChanged(true);
 
                 }
             }
@@ -135,7 +135,7 @@ namespace ModellingWizard
                 Processes.New.CreateSysClass.Execute();
                 ReloadInformations();
                 SetWarning();
-                SomethingChanged(false);
+                SomethingChanged(true);
             }
         }
 
