@@ -141,6 +141,7 @@ namespace ModellingWizard.Processes.Open
                 (Objects.Libaries.Libary RoleClassLib, Objects.Libaries.Libary InterfacesLib, Objects.Libaries.Libary SystemUnitClassLib) = Libary.Load.LoadLib(binary, name);
                 Instances.Loaded_RoleClass_Data = RoleClassLib;
                 Instances.Loaded_Interfaces_Data = InterfacesLib;
+                Instances.Loaded_System_Unit_Libs = SystemUnitClassLib;
                 return (RoleClassLib, InterfacesLib);
             }
                 

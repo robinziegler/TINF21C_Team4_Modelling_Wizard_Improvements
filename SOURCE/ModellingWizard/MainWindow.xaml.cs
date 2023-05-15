@@ -203,14 +203,20 @@ namespace ModellingWizard
                         //get path to amlx file generated
                         string AMLXFile = converterAML._pathAMLDestinationDirectory + "\\" + converterAML._AMLXFileName;
                         //send path to function to open amlx file generated
-                        Console.WriteLine(AMLXFile);
-                        var results = Processes.Open.Open.OpenFiles(File.ReadAllBytes(AMLXFile), converterAML._AMLXFileName, AMLXFile);
+                        Processes.Open.Open.OpenFiles(File.ReadAllBytes(AMLXFile), converterAML._AMLXFileName, AMLXFile);
                     }
-                    Instances.Attachments.Clear();
-                    var result = Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
-                    OpenedFileName.Text = file.DisplayName;
-                    Instances.CurrentFile = new(file.Path);
-                    SomethingChanged(false);
+                    else
+                    {
+                        Instances.Attachments.Clear();
+                        Processes.Open.Open.OpenFiles(File.ReadAllBytes(file.Path), file.Name, file.Path);
+                        OpenedFileName.Text = file.DisplayName;
+                        if (!file.Name.EndsWith(".aml"))
+                        {
+                            Instances.CurrentFile = new(file.Path);
+                        }
+                        SomethingChanged(false);
+                    }
+
                 }
                 ReloadInformations();
             }

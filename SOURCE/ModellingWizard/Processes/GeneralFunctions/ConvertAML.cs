@@ -1272,19 +1272,19 @@ namespace ModellingWizard.Processes.GeneralFunctions
                 Uri partUri = PackUriHelper.CreatePartUri(new Uri("/" + _AMLFileName, UriKind.Relative));
                 amlx.AddRoot(_pathAMLDestinationDirectory + "\\" + _AMLFileName, partUri);
 
-                if (_ComponentPicture != "")
+                if (_ComponentPicture != "" && _ComponentPicture != null)
                 {
                     Uri partUriPicture = PackUriHelper.CreatePartUri(new Uri(_componentPictureRoot, UriKind.Relative));
                     amlx.AddRoot(_ComponentPicture, partUriPicture);
                 }
 
-                if (_file2dgmRoot != "")
+                if (_file2dgmRoot != "" && _file2dgmRoot!=null)
                 {
                     Uri partUriFile2dgm = PackUriHelper.CreatePartUri(new Uri(_file2dgmRoot, UriKind.Relative));
                     amlx.AddRoot(_file2dgm, partUriFile2dgm);
                 }
 
-                if (_file3dgmRoot != "")
+                if (_file3dgmRoot != "" && _file3dgmRoot != null)
                 {
                     Uri partUriFile3dgm = PackUriHelper.CreatePartUri(new Uri(_file3dgmRoot, UriKind.Relative));
                     amlx.AddRoot(_file3dgm, partUriFile3dgm);
