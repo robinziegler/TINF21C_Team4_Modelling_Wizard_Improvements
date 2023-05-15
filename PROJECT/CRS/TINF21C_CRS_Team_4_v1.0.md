@@ -9,6 +9,7 @@
 |V0.6|14.04.2023|[Maximilian Trumpp](https://github.com/maximiliantrumpp)|Revision|
 |V1.0|11.05.2023|[Maximilian Trumpp](https://github.com/maximiliantrumpp)|Final version|
 
+Main author and responsible for this document: Maximilian Trumpp
 # 1. Introduction
 This document is the basis of the Modelling Wizard project of the TINF21C team. The document contains all requirements of the customer for this project. The other documents use this document as a basis. 
 
@@ -23,7 +24,7 @@ AutomationML (AML) is the short form of Automation MarkUp Language and is used t
 4.	PLCopen XML describes the logic. Internal behavior and states if objects, action-sequences and I/O connections are implemented via this format. An IODD (IO Device Description) file describes the sensor and actuator of a plant or component. It also contains information on identify, parameters, process data, communication and more. It is written in XML-format, same as AML, which ensures a conversion.
 
 # 4. Product Usage
-## .1 Business Process
+## 4.1 Business Process
 All Business Processes are included in the old [wiki](https://github.com/H4CK3R-01/TINF20C_ModellingWizard_Devices/blob/04980943011ff843bdf6ded0b3f02ac33294d35e/PROJECT/CRS/TINF20C_CRS_ModellingDevices_Team_1_0v1-2.pdf) of the application. Due to the requirement to fix the bugs and improve usability, no new business processes have emerged.
 
 ## 4.2 Use Cases
@@ -142,6 +143,12 @@ When the user creates a new device, it should not have any values except for the
 ### 4.3.6 /LF16/ Export device
 After the end of the editor the user should have the possibility to save the device in a file.
 
+### 4.3.7 /LF17/ Easy Mode
+The user wants to be able to view and edit basic information of the attributes.
+
+### 4.3.8 /LF18/ Expert Mode
+The user wants to be able to view and edit advanced information of the attributes.
+
 ## 4.4 Non-functional Requirements
 ### 4.4.1 /NF11/GUI improvements
 The application should present an appealing interface. The graphical user interface should have a very good usability for an easy operation.The user should be able to navigate easily and intuitively in the application.
@@ -149,19 +156,13 @@ The application should present an appealing interface. The graphical user interf
 ### 4.4.2 /NF12/Display device in a readable way
 The informations from the either opened or created device should be displayed in a readable way for the user. In expert mode the user can view more details of the device.
 
-### 4.4.3 /NF13/Easy Mode
-The user wants to be able to view and edit basic information of the attributes.
-
-### 4.4.4 /NF14/Expert Mode
-The user wants to be able to view and edit advanced information of the attributes.
-
-### 4.4.5 /NF15/Portable
+### 4.4.3 /NF13/Portable
 If possible, the application should be able to run as a portable, without an installation. 
 
-### 4.4.6 /NF16/Performance
+### 4.4.4 /NF14/Performance
 The application should respond instantly after a user's action. There should not be long loading times.
 
-### 4.4.7 /NF17/Compatibility
+### 4.4.5 /NF15/Compatibility
 The application should be executable on every current system such as Windows 10 or higher. Furthermore the application is only executable on the Windows platform.
 
 # 5. Prototypes of the UI 
